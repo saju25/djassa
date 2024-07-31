@@ -568,7 +568,7 @@ th {
   border: 1px solid transparent;
   border-radius: 0;
   padding: 8px 15px 8px;
-  background-color: #000;
+  background-color: #F535AA;
   color: #fff;
   font-family: Poppins, Helvetica, Tahoma, Arial, sans-serif;
   font-weight: 400;
@@ -4636,14 +4636,15 @@ table {
   23. Pages
 ========================================================================*/
 .page.section-header {
-  background: #f9f9f9;
+  background: #F535AA;
   border: 1px solid #e8e9eb;
+  margin-top: 65px;
 }
 
 .page.section-header h1 {
   text-transform: uppercase;
   margin: 0;
-  color: #000;
+  color: #fff;
   padding: 25px 0;
   font-size: 18px;
 }
@@ -7363,108 +7364,9 @@ body.home15-funiture-template {
   border-color: #eeeeee;
 }
 
-/* Newsletter */
-.newsletter-section {
-  background-color: #f9f9f9;
-  border: 1px solid #e8e9eb;
-  padding: 35px 0;
-}
-
-.newsletter-section .footer-newsletter {
-  width: 60%;
-}
-
-.newsletter-section .section-header {
-  margin: 0 20px 0 0;
-  float: left;
-  display: inline-block;
-}
-
-.newsletter-section .section-header label {
-  font-weight: 400;
-  margin-bottom: 0;
-  color: #000;
-}
-
-.newsletter-section .section-header span {
-  display: block;
-  font-size: 13px;
-  text-align: left;
-}
-
-.newsletter-section .input-group {
-  max-width: 100%;
-  margin: 0;
-  width: auto;
-  position: relative;
-  display: table;
-  border-collapse: separate;
-}
-
-.newsletter-section .input-group__btn {
-  white-space: nowrap;
-  width: 1%;
-  display: table-cell;
-  vertical-align: middle;
-  margin: 0;
-}
-
-.newsletter-section .input-group .btn,
-.newsletter-section .input-group__field {
-  height: 40px;
-}
-
-.newsletter-section .input-group__field {
-  background-color: #fff;
-}
-
-.newsletter-section .input-group__field,
-.newsletter-section .input-group__btn .btn {
-  border-radius: 0;
-}
-
-.newsletter-section .btn {
-  color: #fff;
-  background-color: #000;
-}
-
-.newsletter-section .btn:hover,
-.newsletter-section .btn:focus {
-  background-color: #444444;
-}
-
-.visually-hidden,
-.icon__fallback-text {
-  position: absolute !important;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-
-/* End Newsletter */
-
-/* Social Icon */
-.site-footer__social-icons li {
-  padding: 0 10px;
-}
-
-.social-icons .icon {
-  color: #111111;
-  font-size: 16px;
-}
-
-.site-footer__social-icons .icon {
-  width: 16px;
-}
-
-/* End Social Icon */
 
 .site-footer {
-  background: #141414;
+  background: #F535AA;
 }
 
 .site-footer ul {
@@ -7581,4 +7483,33 @@ body.home15-funiture-template {
   filter: blur(5px);
   transition: filter 400ms, -webkit-filter 400ms;
   -webkit-transition: filter 400ms, -webkit-filter 400ms;
+}
+
+
+
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: none !important;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+  height: 100px;
+}
+
+.dropify-wrapper .dropify-message p {
+  font-size: 16px;
+  /* Adjust the font size as needed */
+}
+
+.dropify-wrapper .dropify-message .dropify-error {
+  font-size: 12px;
+  /* Adjust the font size for error messages */
+}
+
+.dropify-wrapper {
+  height: 101px;
 }

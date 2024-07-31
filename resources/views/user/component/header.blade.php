@@ -67,7 +67,7 @@
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="{{route('home')}}">
-                    <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template"
+                    <img src="{{asset('assets')}}/images/logo.svg" alt="Belle Multipurpose Html Template"
                         title="Belle Multipurpose Html Template" />
                 </a>
             </div>
@@ -82,17 +82,9 @@
                 <!--Desktop Menu-->
                 <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                     <ul id="siteNav" class="site-nav medium center hidearrow">
-                        <li class="lvl1 parent megamenu"><a href="#">Home <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="#">Shop <i class="anm anm-angle-down-l"></i></a>
-                        </li>
-                        <li class="lvl1 parent megamenu"><a href="#">Product <i class="anm anm-angle-down-l"></i></a>
-                        </li>
-                        <li class="lvl1 parent dropdown"><a href="#">Pages <i class="anm anm-angle-down-l"></i></a>
-                        </li>
-                        <li class="lvl1 parent dropdown"><a href="#">Blog <i class="anm anm-angle-down-l"></i></a>
-                        </li>
-                        <li class="lvl1"><a href="#"><b>Buy Now!</b> <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
 
 
@@ -105,7 +97,7 @@
             <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                 <div class="logo">
                     <a href="{{route('home')}}">
-                        <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template"
+                        <img src="{{asset('assets')}}/images/logo.svg" alt="Belle Multipurpose Html Template"
                             title="Belle Multipurpose Html Template" />
                     </a>
                 </div>
@@ -118,17 +110,9 @@
 <div class="mobile-nav-wrapper" role="navigation">
     <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
     <ul id="MobileNav" class="mobile-nav">
-        <li class="lvl1 parent megamenu"><a href="index.html">Home <i class="anm anm-plus-l"></i></a>
+        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-plus-l"></i></a>
         </li>
-        <li class="lvl1 parent megamenu"><a href="#">Shop <i class="anm anm-plus-l"></i></a>
-        </li>
-        <li class="lvl1 parent megamenu"><a href="product-layout-1.html">Product <i class="anm anm-plus-l"></i></a>
-        </li>
-        <li class="lvl1 parent megamenu"><a href="about-us.html">Pages <i class="anm anm-plus-l"></i></a>
-        </li>
-        <li class="lvl1 parent megamenu"><a href="blog-left-sidebar.html">Blog <i class="anm anm-plus-l"></i></a>
-        </li>
-        <li class="lvl1"><a href="#"><b>Buy Now!</b></a>
+       <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b></a>
         </li>
     </ul>
 </div>

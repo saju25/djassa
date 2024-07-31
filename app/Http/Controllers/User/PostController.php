@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Models\Post;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\File;
+use App\Models\Post;
 use Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use \Carbon\Carbon;
 
 class PostController extends Controller
 {
-    
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('user.profile.new-job-post');
+        return view('user.profile.new-add-post');
     }
 
     /**
@@ -38,9 +38,8 @@ class PostController extends Controller
             'skill' => 'required',
             'deadline' => 'required',
             'gender' => 'required',
-            'file' => 'nullable|max:10240|mimes:docx,pdf,zip' //a required, max 10000kb, doc or docx file
+            'file' => 'nullable|max:10240|mimes:docx,pdf,zip', //a required, max 10000kb, doc or docx file
         ]);
-
 
         $hireCount = Auth::user();
 
@@ -55,44 +54,42 @@ class PostController extends Controller
             if ($trial_end->lt(Carbon::today())) {
                 # code...
                 toastr()->success('', 'Please Update subscription to hire!');
-                    return redirect(route('user.sub'));
+                return redirect(route('user.sub'));
             }
-        }elseif ($hireCount->sub_id == 1) {
+        } elseif ($hireCount->sub_id == 1) {
             # code...
             if ($enddate->lt(Carbon::today())) {
                 # code...
                 toastr()->success('', 'Please Update subscription to hire!');
-                    return redirect(route('user.sub'));
+                return redirect(route('user.sub'));
             }
             if ($hireCount->hire_count > 29) {
                 # code...
                 toastr()->success('', 'Please Update subscription to hire!');
                 return redirect(route('user.sub'));
             }
-        }elseif ($hireCount->sub_id == 2) {
+        } elseif ($hireCount->sub_id == 2) {
             # code...
             if ($enddate->lt(Carbon::today())) {
                 # code...
                 toastr()->success('', 'Please Update subscription to hire!');
-                    return redirect(route('user.sub'));
+                return redirect(route('user.sub'));
             }
         }
 
-
         $post = Post::create([
-            'user_id'         => \Auth::id(),
-            'job_title'       => $request->job_title,
-            'slug'            => Str::slug($request->job_title, '-'),
-            'job_type'        => $request->job_type,
-            'job_category'    => $request->job_category,
-            'career_level'    => $request->career_level,
+            'user_id' => \Auth::id(),
+            'job_title' => $request->job_title,
+            'slug' => Str::slug($request->job_title, '-'),
+            'job_type' => $request->job_type,
+            'job_category' => $request->job_category,
+            'career_level' => $request->career_level,
             'job_description' => $request->job_description,
-            'amount'          => $request->amount,
-            'when_needed'     => $request->when_needed,
-            'deadline'        => $request->deadline,
-            'gender'          => $request->gender,
+            'amount' => $request->amount,
+            'when_needed' => $request->when_needed,
+            'deadline' => $request->deadline,
+            'gender' => $request->gender,
         ]);
-
 
         $array = explode(',', $request->skill);
         $result = [];
@@ -102,15 +99,14 @@ class PostController extends Controller
         }
         $post->skill = $result;
 
-
         $document = $request->file('file');
         $slug = Str::slug($request->job_title, '-');
-        if($document){
+        if ($document) {
             $extension = $document->getClientOriginalExtension();
-            $fileNameToStore = $slug.'.'.$extension; // Filename to store
+            $fileNameToStore = $slug . '.' . $extension; // Filename to store
             $destinationPath = 'files/post/document';
             $document->move(public_path($destinationPath), $fileNameToStore);
-            $post->file = 'files/post/document/'.$fileNameToStore;
+            $post->file = 'files/post/document/' . $fileNameToStore;
             $post->save();
         }
         $post->save();
@@ -118,5 +114,4 @@ class PostController extends Controller
         return redirect()->back();
     }
 
-    
 }
