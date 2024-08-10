@@ -75,7 +75,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/candidate-detail', [DashboardController::class, 'candidateDetails'])->name('candidate.detail');
     //job post
     Route::get('/user/new-add-post', [PostController::class, 'create'])->name('user.add.post');
-    Route::post('/store/add', [PostController::class, 'store'])->name('store.job');
+    Route::post('/store/add', [PostController::class, 'store'])->name('store.add');
     //user Sub
     Route::get('/user/sub', [SubController::class, 'index'])->name('user.sub');
     Route::get('/user/sub/{id}', [SubController::class, 'sub'])->name('user.subs');

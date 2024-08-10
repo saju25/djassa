@@ -14,7 +14,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="p-3">
-                    <form action="{{ route('store.job') }}" method="post" enctype="multipart/form-data">
+                    <form id="productForm" action="{{ route('store.add') }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
 
                         <div class="m-3 row">
@@ -22,7 +23,7 @@
                                 <div>
                                     <label class="col-form-label">Name</label>
                                 </div>
-                                <input type="text" name="job_title" class="form-control" placeholder="Name">
+                                <input type="text" name="name" class="form-control" placeholder="Name">
 
                                 @error('job_title')
                                 <span class="text-danger">{{ $message }}</span>
@@ -85,35 +86,56 @@
                         <div class="m-3 row">
 
                             <div class="col-md-6 ">
-                                <div class="meth">
-                                    <div>
-                                        <label class="col-form-label">Variants</label>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-md-6">
-                                            <select class="form-select w-100" name="career_level">
-                                                <option selected disabled selected>Option</option>
-                                                <option value="Débutant">Size</option>
-                                                <option value="Débutant">Color</option>
-                                                <option value="Débutant">Weight</option>
-                                                <option value="Débutant">Smell</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" name="variant_value" class="form-control"
-                                                placeholder="Value">
-                                        </div>
-                                    </div>
-
-
-
-                                    @error('career_level')
-                                    <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                <div>
+                                    <label class="col-form-label">Variants</label>
                                 </div>
-                                <div class="mt-3">
-                                    <div class="w-100 btn btn-success variant_add"><i class="fa-solid fa-plus">
-                                        </i>Add another option</div>
+                                <div class="meth">
+
+                                    <div class="row mt-2 justify-content-center align-items-center">
+                                        <div class="col-md-3 mt-2">
+                                            <span class="p-2">Color</span>
+                                            <label class="switch">
+                                                <input id="color" type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+
+                                        </div>
+                                        <div class="col-md-9 color-col">
+                                            <input class="colorIn" id="colorIn" name="" value="Red">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meth">
+
+                                    <div class="row mt-2 justify-content-center align-items-center">
+                                        <div class="col-md-3 mt-2">
+                                            <span class="p-2">Weight</span>
+                                            <label class="switch">
+                                                <input id="weight" type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input class="weightIn" id="weightIn" name="" value="20 kg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meth">
+
+                                    <div class="row mt-2 justify-content-center align-items-center">
+                                        <div class="col-md-3 mt-2">
+                                            <span class="p-2">Size</span>
+                                            <label class="switch">
+                                                <input id="size" type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input class="sizeIn" id="sizeIn" name="" value="XL">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -121,7 +143,8 @@
                                     <label class="col-form-label">Product Photo</label>
                                 </div>
                                 <div class="dropify_div">
-                                    <input type="file" id="input-file-now" class="dropify" multiple />
+                                    <input type="file" id="input-file-now" name="product_img[]" class="dropify"
+                                        multiple />
                                     <div id="file-preview">
 
                                     </div>
@@ -131,8 +154,6 @@
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-
-
                         </div>
 
                         <div class="m-3 row">
@@ -141,11 +162,12 @@
                                 <div>
                                     <label class="col-form-label">Category</label>
                                 </div>
-                                <select class="form-select w-100" name="job_category">
-                                    <option selected disabled selected>Select Category</option>
+                                <select class="form-select w-100" name="add_category">
+                                    <option selected disabled selected>Select one</option>
                                     <option value="Household">Household</option>
-                                    <option value="Household">Management</option>
-                                    <option value="Household">Electronics</option>
+                                    <option value="Management">Management</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="LED TV">LED TV</option>
                                 </select>
 
                                 @error('job_category')
@@ -154,11 +176,13 @@
                             </div>
 
                         </div>
-                        <div class="m-3 row">
-                            <div class=" mt-3">
-                                <input class="w-100 btn btn-success" type="submit" value="Publier le travail">
+
+                        <div class="row m-3">
+                            <div class="col-12">
+                                <input class="w-100 btn btn-success" type="submit" value="Publish Your Add">
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -169,94 +193,49 @@
 
     @push('script')
     <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+
     <script>
-
-
-        // Dropify add functionality
         $(document).ready(function () {
-            // Initialize Dropify
-            var drEvent = $('#input-file-now').dropify();
-        });
+            let value = 0;
 
-
-        // Dropify data show
-
-
-        // $(document).ready(function () {
-
-
-        //     // Initialize Dropify
-        //     var drEvent = $('#input-file-now').dropify();
-
-        //     // Handle multiple file uploads
-        //     $('#input-file-now').on('change', function () {
-        //         $('#remove-file').css("display", "block");
-
-        //         var files = this.files;
-        //         var fileList = [];
-
-        //         $('#file-preview').empty(); // Clear previous previews
-
-        //         for (var i = 0; i < files.length; i++) {
-        //             fileList.push(files[i].name);
-
-        //             var reader = new FileReader();
-
-        //             reader.onload = function (e) {
-        //                 var img = $('<img>').attr('src', e.target.result).css({
-        //                     'width': '100px',
-        //                     'height': '100px',
-        //                     'margin': '10px'
-        //                 });
-        //                 var html = `
-        //     <button type="button" class="dropify-clear">Remove</button>
-        // `;
-
-        //                 $('#file-preview').append(img);
-        //                 $('#file-preview').append(html);
-
-
-        //             };
-
-        //             reader.readAsDataURL(files[i]);
-        //         }
-
-        //         console.log('Selected files:', fileList);
-        //     });
-        // });
-
-        // ClassicEditor add functionality
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
+            $("#color").on("change", function () {
+                value += 1;
+                const variantValue = $("#colorIn");
+                if (value % 2 === 0) {
+                    variantValue.attr("name", "");
+                } else {
+                    variantValue.attr("name", "color");
+                }
             });
-
-        // Variant add functionality
+        });
         $(document).ready(function () {
-            $('.variant_add').on('click', function () {
-                var html = `
-             <div class="row mt-2">
-                                    <div class="col-md-6">
-                                        <select class="form-select w-100" name="career_level">
-                                            <option selected disabled selected>Option</option>
-                                            <option value="Débutant">Size</option>
-                                            <option value="Débutant">Color</option>
-                                            <option value="Débutant">Weight</option>
-                                            <option value="Débutant">Smell</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="variant_value" class="form-control"
-                                            placeholder="Value">
-                                    </div>
-                                </div>
-        `;
+            let value = 0;
 
-                $('.meth').append(html); // Append the new HTML to the .meth element
+            $("#weight").on("change", function () {
+                value += 1;
+                const variantValue = $("#weightIn");
+                if (value % 2 === 0) {
+                    variantValue.attr("name", "");
+                } else {
+                    variantValue.attr("name", "weight");
+                }
+            });
+        });
+        $(document).ready(function () {
+            let value = 0;
+
+            $("#size").on("change", function () {
+                value += 1;
+                const variantValue = $("#sizeIn");
+                if (value % 2 === 0) {
+                    variantValue.attr("name", "");
+                } else {
+                    variantValue.attr("name", "size");
+                }
             });
         });
     </script>
+
     @endpush
 
 </x-app-layout>

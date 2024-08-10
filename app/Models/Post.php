@@ -10,20 +10,27 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'job_title', 'slug', 'job_type', 'job_category', 'career_level','job_description', 'when_needed', 'amount', 'skill', 'deadline', 'file', 'gender',
+        'name',
+        'sku',
+        'description',
+        'best_price',
+        'discounted_price',
+        'color',
+        'weight',
+        'size',
+        'add_category',
     ];
 
-
-    public function user() {
-      return $this->belongsTo(User::class, 'user_id');
-    }
-
-    public function hire() {
-        return $this->belongsTo(Hire::class, 'id', 'post_id');
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class, 'user_id');
+    // }
 
     protected $casts = [
-        'skill' => 'array', // Cast skill attribute to array
+        'color' => 'array',
+        'weight' => 'array',
+        'size' => 'array',
+        'img_path' => 'array',
     ];
 
 }

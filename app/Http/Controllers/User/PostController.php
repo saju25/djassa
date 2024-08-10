@@ -4,11 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
-use \Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -26,91 +23,82 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+
         $request->validate([
-            'job_title' => 'required',
-            'job_type' => 'required',
-            'job_category' => 'required',
-            'career_level' => 'required',
-            'job_description' => 'required',
-            'amount' => 'min:5|required|numeric',
-            'when_needed' => 'nullable',
-            'skill' => 'required',
-            'deadline' => 'required',
-            'gender' => 'required',
-            'file' => 'nullable|max:10240|mimes:docx,pdf,zip', //a required, max 10000kb, doc or docx file
+            'name' => 'required|string|max:255',
+            'sku' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'best_price' => 'required|numeric',
+            'discounted_price' => 'required|numeric',
+            'color' => 'nullable|json',
+            'weight' => 'nullable|json',
+            'size' => 'nullable|json',
+            'add_category' => 'required|string|max:255',
+            'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048', // Validate image files
         ]);
 
-        $hireCount = Auth::user();
+        // $hireCount = Auth::user();
 
-        $enddate = Carbon::parse($hireCount->sub_date);
+        // $enddate = Carbon::parse($hireCount->sub_date);
 
-        $enddate = $enddate->addDays(30);
+        // $enddate = $enddate->addDays(30);
 
-        $trial_end = Carbon::parse($hireCount->created_at)->addDays(30);
+        // $trial_end = Carbon::parse($hireCount->created_at)->addDays(30);
 
-        if ($hireCount->sub_id == null) {
-            # code...
-            if ($trial_end->lt(Carbon::today())) {
-                # code...
-                toastr()->success('', 'Please Update subscription to hire!');
-                return redirect(route('user.sub'));
-            }
-        } elseif ($hireCount->sub_id == 1) {
-            # code...
-            if ($enddate->lt(Carbon::today())) {
-                # code...
-                toastr()->success('', 'Please Update subscription to hire!');
-                return redirect(route('user.sub'));
-            }
-            if ($hireCount->hire_count > 29) {
-                # code...
-                toastr()->success('', 'Please Update subscription to hire!');
-                return redirect(route('user.sub'));
-            }
-        } elseif ($hireCount->sub_id == 2) {
-            # code...
-            if ($enddate->lt(Carbon::today())) {
-                # code...
-                toastr()->success('', 'Please Update subscription to hire!');
-                return redirect(route('user.sub'));
+        // if ($hireCount->sub_id == null) {
+        //     # code...
+        //     if ($trial_end->lt(Carbon::today())) {
+        //         # code...
+        //         toastr()->success('', 'Please Update subscription to hire!');
+        //         return redirect(route('user.sub'));
+        //     }
+        // } elseif ($hireCount->sub_id == 1) {
+        //     # code...
+        //     if ($enddate->lt(Carbon::today())) {
+        //         # code...
+        //         toastr()->success('', 'Please Update subscription to hire!');
+        //         return redirect(route('user.sub'));
+        //     }
+        //     if ($hireCount->hire_count > 29) {
+        //         # code...
+        //         toastr()->success('', 'Please Update subscription to hire!');
+        //         return redirect(route('user.sub'));
+        //     }
+        // } elseif ($hireCount->sub_id == 2) {
+        //     # code...
+        //     if ($enddate->lt(Carbon::today())) {
+        //         # code...
+        //         toastr()->success('', 'Please Update subscription to hire!');
+        //         return redirect(route('user.sub'));
+        //     }
+        // }
+
+// Store image files
+        $imagePaths = [];
+        if ($request->hasFile('product_img')) {
+            foreach ($request->file('product_img') as $image) {
+                // Store the image in the public disk
+                $path = $image->store('images', 'public');
+                // Get the URL to the stored image
+                $imagePaths[] = Storage::url($path);
             }
         }
 
-        $post = Post::create([
-            'user_id' => \Auth::id(),
-            'job_title' => $request->job_title,
-            'slug' => Str::slug($request->job_title, '-'),
-            'job_type' => $request->job_type,
-            'job_category' => $request->job_category,
-            'career_level' => $request->career_level,
-            'job_description' => $request->job_description,
-            'amount' => $request->amount,
-            'when_needed' => $request->when_needed,
-            'deadline' => $request->deadline,
-            'gender' => $request->gender,
-        ]);
+// Create a new product record
+        $product = new Post();
+        $product->name = $request->input('name');
+        $product->sku = $request->input('sku');
+        $product->description = $request->input('description');
+        $product->best_price = $request->input('best_price');
+        $product->discounted_price = $request->input('discounted_price');
+        $product->color = $request->input('color');
+        $product->weight = $request->input('weight');
+        $product->size = $request->input('size');
+        $product->add_category = $request->input('add_category');
+        $product->img_path = json_encode($imagePaths); // Store image paths in JSON format
+        $product->save();
 
-        $array = explode(',', $request->skill);
-        $result = [];
-
-        foreach ($array as $key => $value) {
-            $result[$key + 1] = trim($value); // Ensure to trim any whitespace
-        }
-        $post->skill = $result;
-
-        $document = $request->file('file');
-        $slug = Str::slug($request->job_title, '-');
-        if ($document) {
-            $extension = $document->getClientOriginalExtension();
-            $fileNameToStore = $slug . '.' . $extension; // Filename to store
-            $destinationPath = 'files/post/document';
-            $document->move(public_path($destinationPath), $fileNameToStore);
-            $post->file = 'files/post/document/' . $fileNameToStore;
-            $post->save();
-        }
-        $post->save();
-        toastr()->success('', 'Message ajouté avec succès!');
+        toastr()->success('', 'Your product add product  successfully  dones!');
         return redirect()->back();
     }
 

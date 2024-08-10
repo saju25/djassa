@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Job_aplication;
 use App\Models\Post;
 use App\Models\RefundMony;
 use App\Models\SocialMedia;
@@ -20,17 +19,9 @@ class HomeController extends Controller
     {
         Artisan::call('subscriptions:update');
         Artisan::call('schedule:run');
-        $latestPosts = Post::take(6)->latest()->get();
-        $jobPostCategory = Post::all();
+        $latestAdd = Post::take(6)->latest()->get();
 
-        $jobCats = Post::selectRaw('job_category, COUNT(*) as count')
-            ->groupBy('job_category')
-            ->get();
-
-        $appliedJobs = Job_aplication::selectRaw('post_id, COUNT(*) as count')
-            ->groupBy('post_id')->get();
-
-        return view('homepage', compact('latestPosts', 'jobCats', 'appliedJobs'));
+        return view('homepage', compact('latestAdd'));
     }
 
     //candidate profile details

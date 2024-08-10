@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('fullname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -22,16 +22,17 @@ return new class extends Migration
             $table->string('sub_id')->nullable();
             $table->string('sub_date')->nullable();
             $table->string('otp_code')->nullable();
-            $table->boolean('is_activated')->default(0);
+            $table->tinyInteger('is_activated')->default(0);
             $table->string('photo')->nullable();
             $table->text('about_info')->nullable();
-            $table->boolean('job_apply_count')->nullable()->default(0);
-            $table->boolean('active_status')->nullable()->default(0);
-            $table->string('avatar')->default("avatar.png");
-            $table->boolean('dark_mode')->default("avatar.png");
+            $table->tinyInteger('job_apply_count')->default(0);
+            $table->tinyInteger('active_status')->default(0);
+            $table->string('avatar')->default('avatar.png');
+            $table->tinyInteger('dark_mode')->default(0); // Corrected the default value
             $table->string('messenger_color')->nullable();
-            $table->rememberToken();
+            $table->string('remember_token', 100)->nullable();
             $table->timestamps();
+
         });
     }
 

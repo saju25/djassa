@@ -17,7 +17,6 @@ class Delivery extends Model
         'attachment',
     ];
 
-
     public function seller()
     {
         return $this->belongsTo(User::class, 'seller_id');

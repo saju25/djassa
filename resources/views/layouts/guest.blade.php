@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<!-- guest -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Djassa</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('user') }}/img/WhatsApp.png">
-      <!-- dropify -->
-     <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
-
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- font family -->
     <link rel="shortcut icon" href="{{ asset('assets') }}/images/favicon.png" />
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/plugins.css">
+      <link rel="stylesheet" href="{{ asset('assets') }}/css/fondawasom-all.min.css">
+    <!-- Dropify CSS -->
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/dropify.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/tagify.css">
     <!-- Bootstap CSS -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.min.css">
     <!-- Main Style CSS -->
@@ -54,6 +55,11 @@
     <script src="{{ asset('assets') }}/js/bootstrap.min.js"></script>
     <script src="{{ asset('assets') }}/js/plugins.js"></script>
     <script src="{{ asset('assets') }}/js/dropify.js"></script>
+    <script src="{{ asset('assets') }}/js/dropify.js"></script>
+    <script src="{{ asset('assets') }}/js/dropify.js"></script>
+    <script src="{{ asset('assets') }}/js/costom.js"></script>
+    <script src="{{ asset('assets') }}/js/fondawasom-all.min.js"></script>
+
 
     <script src="{{ asset('assets') }}/js/lazysizes.js"></script>
     <script src="{{ asset('assets') }}/js/main.js"></script>

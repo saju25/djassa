@@ -139,18 +139,25 @@
             }
         }),
         (i.prototype.setFileInformations = function (e) {
-            (this.file.object = e), (this.file.name = e.name), (this.file.size = e.size), (this.file.type = e.type), (this.file.width = null), (this.file.height = null);
+            (this.file.object = e),
+                (this.file.name = e.name),
+                (this.file.size = e.size),
+                (this.file.type = e.type),
+                (this.file.width = null),
+                (this.file.height = null);
         }),
         (i.prototype.setFileDimensions = function (e, i) {
-            (this.file.width = e), (this.file.height = i);
+            (this.file.width = e),
+                (this.file.height = i);
         }),
         (i.prototype.setPreview = function (i, t) {
             this.wrapper.removeClass("has-error").addClass("has-preview"), this.filenameWrapper.children(".dropify-filename-inner").html(this.file.name);
             var s = this.preview.children(".dropify-render");
             if ((this.hideLoader(), i === !0)) {
 
-                var r = e("<img />").attr("src", t);
+                r = e("<img />").attr("src", t);
                 this.settings.height && r.css("max-height", this.settings.height), r.appendTo(s);
+
             } else e("<i />").attr("class", "dropify-font-file").appendTo(s), e('<span class="dropify-extension" />').html(this.getFileType()).appendTo(s);
             this.preview.fadeIn();
         }),
