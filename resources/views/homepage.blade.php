@@ -53,30 +53,29 @@
             </div>
             <div class="grid-products">
                 <div class="row">
-             @foreach($latestAdd as $latestAdd)
+                    @foreach($latestAdd as $latestAdd)
 
                     <div class="col-md-3">
                         <div class="item ">
                             <!-- start product image -->
                             <div class="product-image">
                                 <!-- start product image -->
-                                <a href="short-description.html">
-                                @php
-                                     // This is already an array
+                                <a
+                                    href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
+                                    @php
+                                    // This is already an array
                                     $imgs = $latestAdd->img_path;
                                     // Decode JSON string to PHP array
                                     $array = json_decode( $imgs, true);
                                     @endphp
-                                    @if (  $array )
-                                     <!-- image -->
+                                    @if ( $array )
+                                    <!-- image -->
 
-                                    <img class="primary blur-up lazyload"
-                                        src=" {{$array[0]}}" alt="image"
+                                    <img class="primary blur-up lazyload" src=" {{$array[0]}}" alt="image"
                                         title="product">
                                     <!-- End image -->
                                     <!-- Hover image -->
-                                    <img class="hover blur-up lazyload"
-                                        src=" {{$array[1]}}" alt="image"
+                                    <img class="hover blur-up lazyload" src=" {{$array[1]}}" alt="image"
                                         title="product">
                                     <!-- End hover image -->
                                     @endif
@@ -87,8 +86,11 @@
                                 <!-- Start product button -->
                                 <form class="variants add" action="#" onclick="window.location.href='cart.html'"
                                     method="post">
-                                    <button class="btn btn-success" type="button" tabindex="0">Buy
-                                        Now</button>
+                                    <a
+                                        href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
+                                        <button class="btn btn-success" type="button" tabindex="0">Buy
+                                            Now</button>
+                                    </a>
                                 </form>
 
                                 <!-- end product button -->
@@ -98,14 +100,17 @@
                                 <!-- product name -->
                                 <div class="product-name">
                                     <a href="short-description.html w-100">
-                                        {{ ucwords(Str::limit($latestAdd->name, 15, '...')) }}
+                                        {{ ucwords(Str::limit($latestAdd->name, 25, '...')) }}
                                     </a>
                                 </div>
                                 <!-- End product name -->
                                 <!-- product price -->
                                 <div class="product-price">
-                                    <span class="old-price"><i class="fa-solid fa-dollar-sign px-2"></i>{{$latestAdd->best_price}}</span>
-                                    <span class="price"><i class="fa-solid fa-dollar-sign px-2"></i>{{$latestAdd->discounted_price }}</span>
+                                    <span class="old-price"><i
+                                            class="fa-solid fa-dollar-sign px-2"></i>{{$latestAdd->best_price}}</span>
+                                    <span class="price"><i
+                                            class="fa-solid fa-dollar-sign px-2"></i>{{$latestAdd->discounted_price
+                                        }}</span>
                                 </div>
                                 <!-- End product price -->
 

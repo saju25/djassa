@@ -881,6 +881,7 @@
 				newVal = parseInt(oldValue) + 1;
 			} else if (oldValue > 1) {
 				newVal = parseInt(oldValue) - 1;
+				console.log(newVal)
 			}
 			$(qtyField).find(".qty").val(newVal);
 		});

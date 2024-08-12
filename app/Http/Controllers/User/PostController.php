@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -37,7 +38,7 @@ class PostController extends Controller
             'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048', // Validate image files
         ]);
 
-        // $hireCount = Auth::user();
+        $user = Auth::user();
 
         // $enddate = Carbon::parse($hireCount->sub_date);
 
@@ -86,6 +87,7 @@ class PostController extends Controller
 
 // Create a new product record
         $product = new Post();
+        $product->user_id = $user->id;
         $product->name = $request->input('name');
         $product->sku = $request->input('sku');
         $product->description = $request->input('description');

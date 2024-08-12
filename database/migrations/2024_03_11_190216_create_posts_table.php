@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->dropForeign(['post_id']);
+
             $table->id();
             $table->integer('user_id')->nullable();
             $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->string('sku')->nullable();
             $table->text('description')->nullable();
             $table->decimal('best_price', 10, 2);

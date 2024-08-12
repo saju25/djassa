@@ -7,17 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Djassa</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('user') }}/img/WhatsApp.png">
-     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- font family -->
+
     <link rel="shortcut icon" href="{{ asset('assets') }}/images/favicon.png" />
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/plugins.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/fondawasom-all.min.css">
-      <!-- Dropify CSS -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/dropify.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/tagify.css">
 
+  @stack('styles')
     <!-- Bootstap CSS -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.min.css">
     <!-- Main Style CSS -->
@@ -48,11 +44,9 @@
 
     <!-- Including Jquery -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{{ asset('assets') }}/js/tagify.js"></script>
   <script src="{{ asset('assets') }}/js/costom.js"></script>
 <!-- font awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
-    <script src="{{ asset('assets') }}/js/vendor/modernizr-3.6.0.min.js"></script>
+   <script src="{{ asset('assets') }}/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="{{ asset('assets') }}/js/vendor/jquery.cookie.js"></script>
     <script src="{{ asset('assets') }}/js/vendor/wow.min.js"></script>
     <!-- Including Javascript -->
@@ -61,8 +55,7 @@
     <script src="{{ asset('assets') }}/js/plugins.js"></script>
      <script src="{{ asset('assets') }}/js/lazysizes.js"></script>
     <script src="{{ asset('assets') }}/js/main.js"></script>
-     <script src="{{ asset('assets') }}/js/dropify.js"></script>
-        <script src="{{ asset('assets') }}/js/fondawasom-all.min.js"></script>
+    <script src="{{ asset('assets') }}/js/fondawasom-all.min.js"></script>
 
 
          {{-- sweetalert --}}

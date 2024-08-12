@@ -24,6 +24,10 @@ html {
   overflow-y: auto;
 }
 
+#page-content {
+  margin-top: 85px;
+}
+
 body {
   font-size: 13px;
   line-height: 1.5;
@@ -1816,7 +1820,6 @@ textarea:-ms-input-placeholder {
   -ms-transition: all ease-out 0.4s;
   -webkit-transition: all ease-out 0.4s;
   transition: all ease-out 0.4s;
-  height: 300px;
 }
 
 .grid-products .item .product-image .hover {
@@ -2295,10 +2298,10 @@ a.quick-view {
 
 .grid-products .item .product-name a {
   color: #000;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
   margin-bottom: 0;
-  font-weight: 600;
+
 }
 
 .grid-products .item .product-name a:hover {

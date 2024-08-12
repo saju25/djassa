@@ -190,9 +190,16 @@
     </div>
     </div>
 
-
+@push('styles')
+        <!-- Dropify CSS -->
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/dropify.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/tagify.css">
+@endpush
     @push('script')
     <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+    <script src="{{ asset('assets') }}/js/dropify.js"></script>
+  <script src="{{ asset('assets') }}/js/tagify.js"></script>
+
 
     <script>
         $(document).ready(function () {
