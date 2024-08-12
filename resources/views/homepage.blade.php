@@ -99,7 +99,7 @@
                             <div class="product-details text-center">
                                 <!-- product name -->
                                 <div class="product-name">
-                                    <a href="short-description.html w-100">
+                                    <a href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
                                         {{ ucwords(Str::limit($latestAdd->name, 25, '...')) }}
                                     </a>
                                 </div>
