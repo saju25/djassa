@@ -35,7 +35,8 @@
         }
 
         .post_btn {
-            background-color: #10c558;
+            background-color: #f535aa
+;
         }
 
         .post_btn:hover {
@@ -50,7 +51,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center otp_div">
             <div class="col-md-5 otp_sec bg-white p-4">
-                <h3 class="mt-3 text-center text-warning" style="font-weight: bold;">Vérification de l'E-mail</h3>
+                <h3 class="mt-3 text-center text-warning" style="font-weight: bold;">Email Verification</h3>
 
                 @if(session()->has('message'))
                 <div class="alert alert-success">
@@ -72,12 +73,12 @@
                 <form action="{{ route('verifyotp')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Entrez OTP</label>
+                        <label for="recipient-name" class="col-form-label">Enter OTP</label>
                         <input type="hidden" name="user" value="{{ $user->id }}" class="form-control" placeholder="Entrez OTP">
                         <input type="number" name="token" class="form-control" placeholder="Entrez OTP">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3 w-100 post_btn">Soumettre</button>
-                    <a href="{{ route('resend-otp', $user->id) }}" class="btn btn-primary mt-3 w-100 post_btn">Vous n’avez pas reçu? Renvoyer</a>
+                    <button type="submit" class="btn btn-primary mt-3 w-100 post_btn">Submit</button>
+                    <a href="{{ route('resend-otp', $user->id) }}" class="btn btn-primary mt-3 w-100 post_btn">You have not received? Resend</a>
                 </form>
             </div>
         </div>
