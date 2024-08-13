@@ -301,9 +301,9 @@
                             <div class="col-md-6">
 
                                 <div>
-                                    <label class="col-form-label">Location</label>
+                                    <label class="col-form-label">Phone Number</label>
                                 </div>
-                                <input type="text" name="location" class="form-control" placeholder="Location">
+                                <input type="number" name="number" class="form-control" placeholder="Your Phone Number">
 
                                 @error('location')
                                 <span class="text-danger">{{ $message }}</span>

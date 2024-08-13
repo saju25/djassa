@@ -25,7 +25,7 @@ class Post extends Model
         'add_category',
         'sub_cate',
         'city',
-        'location',
+        'number',
     ];
 
     public function user()

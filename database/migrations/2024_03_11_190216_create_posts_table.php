@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('add_category')->nullable();
             $table->string('sub_cate')->nullable();
             $table->string('city')->nullable();
-            $table->string('location')->nullable();
+            $table->string('number')->nullable();
             $table->timestamps();
 
         });

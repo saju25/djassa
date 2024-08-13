@@ -38,7 +38,7 @@ class PostController extends Controller
             'sub_cate' => 'required|string|max:255',
             'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048',
             'city' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
+            'number' => 'required|number|max:255',
         ]);
 
         $user = Auth::user();
@@ -103,7 +103,7 @@ class PostController extends Controller
         $product->sub_cate = $request->input('sub_cate');
         $product->img_path = json_encode($imagePaths); // Store image paths in JSON format
         $product->city = $request->input('city');
-        $product->location = $request->input('location');
+        $product->number = $request->input('number');
 
         $product->save();
 
