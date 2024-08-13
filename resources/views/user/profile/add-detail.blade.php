@@ -212,6 +212,7 @@
                                             </div>
                                         </div>
                                         <div class="product-form__item--submit">
+
                                             <a target=”_blank”
                                                 href="https://wa.me/+225{{ $product->number }}?text=urlencodedtext">
                                                 <button type="button" name="add" class="btn product-form__cart-submit">
