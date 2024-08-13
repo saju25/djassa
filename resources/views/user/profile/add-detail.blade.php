@@ -370,7 +370,7 @@
                             <div class="product-details text-center">
                                 <!-- product name -->
                                 <div class="product-name">
-                                    <a href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
+                                    <a href="{{ route('add.details', ['id' => $rdlated_add->id,'slug' => $rdlated_add->slug]) }}">
                                         {{ ucwords(Str::limit($rdlated_add->name, 25, '...')) }}
                                     </a>
                                 </div>

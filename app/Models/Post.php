@@ -23,6 +23,9 @@ class Post extends Model
         'weight',
         'size',
         'add_category',
+        'sub_cate',
+        'city',
+        'location',
     ];
 
     public function user()

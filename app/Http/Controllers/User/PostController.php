@@ -34,8 +34,11 @@ class PostController extends Controller
             'color' => 'nullable|json',
             'weight' => 'nullable|json',
             'size' => 'nullable|json',
-            'add_category' => 'required|string|max:255',
-            'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048', // Validate image files
+            'add_cate' => 'required|string|max:255',
+            'sub_cate' => 'required|string|max:255',
+            'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'city' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
         ]);
 
         $user = Auth::user();
@@ -96,8 +99,12 @@ class PostController extends Controller
         $product->color = $request->input('color');
         $product->weight = $request->input('weight');
         $product->size = $request->input('size');
-        $product->add_category = $request->input('add_category');
+        $product->add_category = $request->input('add_cate');
+        $product->sub_cate = $request->input('sub_cate');
         $product->img_path = json_encode($imagePaths); // Store image paths in JSON format
+        $product->city = $request->input('city');
+        $product->location = $request->input('location');
+
         $product->save();
 
         toastr()->success('', 'Your product add product  successfully  dones!');
