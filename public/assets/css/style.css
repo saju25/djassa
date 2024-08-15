@@ -1803,7 +1803,8 @@ textarea:-ms-input-placeholder {
 .grid-products .item .product-image {
   position: relative;
   overflow: hidden;
-  margin: 0 auto 15px;
+  margin: 12px 1px;
+
 }
 
 .grid-products .item .product-image>a {
@@ -7657,4 +7658,18 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.search_div {
+  font-size: 1.84615em;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  color: #000000;
+  padding: 5px !important;
+  border-radius: 5px;
+}
+
+.search_div .form-control {
+  border: none;
 }

@@ -84,8 +84,11 @@
                     <ul id="siteNav" class="site-nav medium center hidearrow">
                         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-angle-down-l"></i></a>
                         </li>
+                         <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b> <i class="anm anm-angle-down-l"></i></a>
+                        </li>
                         <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
+
 
 
 
@@ -112,8 +115,10 @@
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-plus-l"></i></a>
         </li>
+         <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b></a>
+        </li>
        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b></a>
         </li>
-    </ul>
+       </ul>
 </div>
 <!--End Mobile Menu-->

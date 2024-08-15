@@ -1,19 +1,16 @@
 
 <x-guest-layout>
-        <!--Page Title-->
-    <div class="page section-header text-center ">
-        <div class="page-title">
-            <div class="wrapper">
-                <h1 class="page-width">Email Verification
-                </h1>
-            </div>
-        </div>
-    </div>
-    <!--End Page Title-->
+    	<!--Page Title-->
+    	<div class="page section-header text-center">
+			<div class="page-title">
+        		<div class="wrapper"><h1 class="page-width">Email Verification</h1></div>
+      		</div>
+		</div>
+        <!--End Page Title-->
     <div class="container ">
         <div class="row justify-content-center align-items-center otp_div">
             <div class="col-md-7">
-                <img src="{{asset('assets')}}/images/about2.jpg" alt="">
+                <img src="{{asset('assets')}}/images/business-laptop.png" alt="">
             </div>
             <div class="col-md-5 otp_sec bg-white p-4">
                 @if(session()->has('message'))

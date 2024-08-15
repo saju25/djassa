@@ -35,7 +35,7 @@ Route::get('/test-fail', [SubController::class, 'fail']);
 Route::get('/withdraw-success', [SubController::class, 'withdraw_success']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/find-job', [HomeController::class, 'findJobs'])->name('find.job');
+Route::get('/all-product', [HomeController::class, 'findProduct'])->name('all.product');
 
 //al candidates
 Route::get('/all-candidates', [HomeController::class, 'allCandidates'])->name('all.candidates');

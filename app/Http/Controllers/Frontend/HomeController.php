@@ -33,7 +33,7 @@ class HomeController extends Controller
     }
 
     //find jobs
-    public function findJobs(Request $request)
+    public function findProduct(Request $request)
     {
         // dd($request->all());
         $keywords = $request->keyword;
@@ -44,12 +44,12 @@ class HomeController extends Controller
         $amount = $request->amount;
         $per_page = $request->per_page ?: 15;
 
-        $jobs = Post::query()->with('user')->latest('id');
+        $products = Post::query()->with('user')->latest('id');
 
         if ($keywords || $location || $job_category || $job_type || $career_level || $amount) {
-            $jobs->where(function ($query) use ($keywords, $location, $job_type, $job_category, $career_level, $amount) {
+            $products->where(function ($query) use ($keywords, $location, $job_type, $job_category, $career_level, $amount) {
                 if ($keywords) {
-                    $query->where('job_title', 'like', '%' . $keywords . '%')
+                    $query->where('name', 'like', '%' . $keywords . '%')
                         ->orWhere('slug', 'like', '%' . $keywords . '%');
                 }
                 if ($location) {
@@ -80,7 +80,7 @@ class HomeController extends Controller
             });
         }
 
-        $jobs = $jobs->paginate($per_page);
+        $products = $products->paginate($per_page);
 
         //check for job_type old values
         $fulltime = in_array('Full Time', $request->input('job_type', []));
@@ -159,7 +159,7 @@ class HomeController extends Controller
         $GestiondesDéchetsetRecyclage = in_array("Gestion des Déchets et Recyclage", $request->input('job_category', []));
         $BiensdeConsommationetRetail = in_array("Biens de Consommation et Retail", $request->input('job_category', []));
 
-        return view('find-job', compact('jobs', 'fulltime', 'parttime', 'freelance', 'Débutant', 'Intermédiaire', 'Expert', 'oneTwoHund', 'oneHunOneThu', 'OneThuOneTwoThu', 'developmentWebLogical', 'designEtCreation', 'redictionEtTraduction', 'marketingEtVente', 'supportAdminstratif', 'servicesClient', 'formationEtCoacing', 'servicesTecnic', 'photographieEtVidéographie', 'santéEtBienêtre', 'ArtetDivertissement', 'ÉducationetTutorat', 'ConstructionetRénovation', 'LogistiqueetTransport', 'FinanceetComptabilité', 'ConseiletStratégie', 'PlomberieetÉlectricité', 'JardinageetPaysagisme', 'NettoyageetEntretien', 'SécuritéetSurveillance', 'CuisineetRestauration', 'CoiffureetEsthétique', 'MaintenanceetRéparationÉquipements', 'EvénementieletAnimation', 'BricolageetPetitsTravaux', 'BabysittingetGardedEnfants', 'ServicesauxAnimaux', 'EnseignementetFormation', 'DéveloppementPersonnel', 'RédactiondeCVetLettresdeMotivation', 'GraphismeetIllustration', 'DéveloppementMobile', 'EcommerceetDropshipping', 'RéparationdeVéhicules', 'BienêtreetSpa', 'AccompagnementetServicesauxPersonnesÂgées', 'AssistanceJuridique', 'ArchitectureetDesigndIntérieur', 'ServicesFunéraires', 'AgricultureetElevage', 'ProductionetRéalisationAudiovisuelle', 'RestaurationetHôtellerie', 'DécorationetAmeublement', 'RecrutementetChassedeTêtes', 'GestiondePropriétésImmobilières', 'NutritionetDiététique', 'ProgrammationetAutomatisation', 'CommunityManagement', 'ServicedeTraductionetInterprétation', 'IntelligenceArtificielleetMachineLearning', 'ConceptiondeJeuxVidéo', 'GestiondeProjets', 'ServicesPhotographiques', 'RechercheetDéveloppement', 'ServicesdAssurance', 'DesigndeMode', 'InformatiqueetRéseaux', 'GestiondesDéchetsetRecyclage', 'BiensdeConsommationetRetail'));
+        return view('all-product', compact('products', 'fulltime', 'parttime', 'freelance', 'Débutant', 'Intermédiaire', 'Expert', 'oneTwoHund', 'oneHunOneThu', 'OneThuOneTwoThu', 'developmentWebLogical', 'designEtCreation', 'redictionEtTraduction', 'marketingEtVente', 'supportAdminstratif', 'servicesClient', 'formationEtCoacing', 'servicesTecnic', 'photographieEtVidéographie', 'santéEtBienêtre', 'ArtetDivertissement', 'ÉducationetTutorat', 'ConstructionetRénovation', 'LogistiqueetTransport', 'FinanceetComptabilité', 'ConseiletStratégie', 'PlomberieetÉlectricité', 'JardinageetPaysagisme', 'NettoyageetEntretien', 'SécuritéetSurveillance', 'CuisineetRestauration', 'CoiffureetEsthétique', 'MaintenanceetRéparationÉquipements', 'EvénementieletAnimation', 'BricolageetPetitsTravaux', 'BabysittingetGardedEnfants', 'ServicesauxAnimaux', 'EnseignementetFormation', 'DéveloppementPersonnel', 'RédactiondeCVetLettresdeMotivation', 'GraphismeetIllustration', 'DéveloppementMobile', 'EcommerceetDropshipping', 'RéparationdeVéhicules', 'BienêtreetSpa', 'AccompagnementetServicesauxPersonnesÂgées', 'AssistanceJuridique', 'ArchitectureetDesigndIntérieur', 'ServicesFunéraires', 'AgricultureetElevage', 'ProductionetRéalisationAudiovisuelle', 'RestaurationetHôtellerie', 'DécorationetAmeublement', 'RecrutementetChassedeTêtes', 'GestiondePropriétésImmobilières', 'NutritionetDiététique', 'ProgrammationetAutomatisation', 'CommunityManagement', 'ServicedeTraductionetInterprétation', 'IntelligenceArtificielleetMachineLearning', 'ConceptiondeJeuxVidéo', 'GestiondeProjets', 'ServicesPhotographiques', 'RechercheetDéveloppement', 'ServicesdAssurance', 'DesigndeMode', 'InformatiqueetRéseaux', 'GestiondesDéchetsetRecyclage', 'BiensdeConsommationetRetail'));
     }
 
     // all candidates list
@@ -172,7 +172,7 @@ class HomeController extends Controller
             $keywords = '%' . strtolower($keywords) . '%';
             $candidatesQuery->whereRaw('LOWER(fullname) like ?', [$keywords])
                 ->orWhereRaw('LOWER(username) like ?', [$keywords])
-                ->orWhereRaw('LOWER(job_title) like ?', [$keywords])
+                ->orWhereRaw('LOWER(name) like ?', [$keywords])
                 ->orWhereRaw('LOWER(job_category) like ?', [$keywords])
                 ->orWhereRaw('LOWER(tag) like ?', [$keywords]);
         }

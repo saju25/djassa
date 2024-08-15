@@ -38,7 +38,7 @@ class PostController extends Controller
             'sub_cate' => 'required|string|max:255',
             'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048',
             'city' => 'required|string|max:255',
-            'number' => 'required|number|max:255',
+            'number' => 'required|numeric',
         ]);
 
         $user = Auth::user();
