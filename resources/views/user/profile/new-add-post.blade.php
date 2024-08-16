@@ -303,7 +303,7 @@
                                 <div>
                                     <label class="col-form-label">Phone Number</label>
                                 </div>
-                                <input type="number" name="number" class="form-control" placeholder="Your Phone Number">
+                                <input type="number" name="number" class="form-control" placeholder="8865....">
 
                                 @error('location')
                                 <span class="text-danger">{{ $message }}</span>

@@ -113,10 +113,13 @@
                                 </div>
                                 <div id="quantity_message">Hurry! Only <span class="items">{{$product->sku}}</span> left
                                     in stock.</div>
-                                <form method="post" action="http://annimexweb.com/cart/add"
-                                    id="product_form_10508262282" accept-charset="UTF-8"
+                                <form method="post" action="{{route('cart.page')}}" id="product_form_10508262282"
+                                    accept-charset="UTF-8"
                                     class="product-form product-form-product-template hidedropdown"
                                     enctype="multipart/form-data">
+                                    @csrf
+                                    <!-- color  -->
+                                    <input type="number" name="product_id" value="{{$product->id}}" hidden>
                                     @php
                                     // Assuming $product->color is a JSON-encoded string
                                     $colorsArray = json_decode($product->color, true);
@@ -134,7 +137,7 @@
                                             <div data-value="{{ $colorValue }}"
                                                 class="swatch-element color {{ strtolower($colorValue) }} available">
                                                 <input class="swatchInput" id="{{ $swatchId }}" type="radio"
-                                                    name="option-0" value="{{ $colorValue }}">
+                                                    name="color" value="{{ $colorValue }}">
                                                 <label class="swatchLbl color small" for="{{ $swatchId }}"
                                                     style="background-color:{{ $colorValue }};"
                                                     title="{{ ucfirst($colorValue) }}"></label>
@@ -144,60 +147,71 @@
                                         </div>
                                     </div>
                                     @endif
+
+                                    <!-- weight  -->
                                     @php
-                                    // Assuming $product->color is a JSON-encoded string
+                                    // Assuming $product->weight is a JSON-encoded string
                                     $weightsArray = json_decode($product->weight, true);
                                     @endphp
-                                    @if ( $weightsArray)
-                                    @foreach($weightsArray as $index => $weightArray)
-                                    @php
-                                    $weightValue = $weightArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($weightValue);
-                                    @endphp
+
+                                    @if ($weightsArray)
                                     <div class="swatch clearfix swatch-1 option2" data-option-index="1">
                                         <div class="product-form__item">
                                             <label class="header">Weight:</label>
-                                            <div data-value="XS" class="swatch-element xs available">
-                                                <input class="swatchInput" id="swatch-1-xs" type="radio" name="option-1"
-                                                    value="{{ $weightValue}}">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1-xs"
-                                                    title="XS">{{ $weightValue}}</label>
+                                            @foreach ($weightsArray as $index => $weightArray)
+                                            @php
+                                            $weightValue = $weightArray['value'];
+                                            // Generate a unique ID for each swatch
+                                            $swatchId = "swatch-{$index}-" . strtolower($weightValue);
+                                            @endphp
+
+                                            <div class="swatch-element available">
+                                                <input class="swatchInput" id="{{ $swatchId }}" type="radio"
+                                                    name="weight" value="{{ $weightValue }}">
+                                                <label class="swatchLbl medium rectangle" for="{{ $swatchId }}"
+                                                    title="{{ $weightValue }}">{{ $weightValue
+                                                    }}</label>
                                             </div>
+
+                                            @endforeach
                                         </div>
                                     </div>
-                                    @endforeach
-
                                     @endif
+
+
+                                    <!-- size  -->
+
                                     @php
-                                    // Assuming $product->color is a JSON-encoded string
+                                    // Assuming $product->size is a JSON-encoded string
                                     $sizesArray = json_decode($product->size, true);
                                     @endphp
-                                    @if ( $sizesArray)
-                                    @foreach($sizesArray as $index => $sizetArray)
-                                    @php
-                                    $sizetArray = $sizetArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($sizetArray);
-                                    @endphp
+
+                                    @if ($sizesArray)
                                     <div class="swatch clearfix swatch-1 option2" data-option-index="1">
                                         <div class="product-form__item">
                                             <label class="header">Size:</label>
-                                            <div data-value="XS" class="swatch-element xs available">
-                                                <input class="swatchInput" id="swatch-1-xs" type="radio" name="option-1"
-                                                    value="{{ $sizetArray}}">
-                                                <label class="swatchLbl medium rectangle" for="swatch-1-xs"
-                                                    title="XS">{{ $sizetArray}}</label>
+                                            @foreach ($sizesArray as $index => $sizeArray)
+                                            @php
+                                            $sizeValue = $sizeArray['value'];
+                                            // Generate a unique ID for each swatch
+                                            $swatchId = "swatch-{$index}-" . strtolower($sizeValue);
+                                            @endphp
+
+                                            <div class="swatch-element available">
+                                                <input class="swatchInput" id="{{ $swatchId }}" type="radio" name="size"
+                                                    value="{{ $sizeValue }}">
+                                                <label class="swatchLbl medium rectangle" for="{{ $swatchId }}"
+                                                    title="{{ $sizeValue }}">{{ $sizeValue
+                                                    }}</label>
                                             </div>
+
+                                            @endforeach
                                         </div>
                                     </div>
-                                    @endforeach
-
                                     @endif
 
-                                    <p class="infolinks"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a
-                                            href="#productInquiry" class="emaillink btn"> Ask About this Product</a></p>
-                                    <!-- Product Action -->
+
+
                                     <div class="product-action clearfix">
                                         <div class="product-form__item--quantity">
                                             <div class="wrapQtyBtn">
@@ -226,7 +240,7 @@
                                             <h3 style="cursor: none;" class="btn btn-success w-100 mt-2"> Out Of Stock
                                             </h3>
                                             @else
-                                            <button type="button"
+                                            <button type="submit"
                                                 class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy
                                                 it now</button>
                                             @endif

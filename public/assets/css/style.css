@@ -1821,6 +1821,7 @@ textarea:-ms-input-placeholder {
   -ms-transition: all ease-out 0.4s;
   -webkit-transition: all ease-out 0.4s;
   transition: all ease-out 0.4s;
+  height: 350px;
 }
 
 .grid-products .item .product-image .hover {

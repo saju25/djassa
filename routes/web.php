@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\User\AdressController;
+use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\HireController;
 use App\Http\Controllers\User\JobAplicationController;
@@ -25,6 +26,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+// NEW PROJECT ROUTE START
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/all-product', [HomeController::class, 'findProduct'])->name('all.product');
+
+// OTP VERIFY ROUTE
+Route::get('verify-account', [DashboardController::class, 'verifyaccount'])->name('verifyAccount');
+Route::post('verifyotp', [DashboardController::class, 'useractivation'])->name('verifyotp');
+Route::get('/verify-otp/{user}', [DashboardController::class, 'verifyOtpByUser'])->name('otp-verify');
+Route::get('/resend-otp/{user}', [DashboardController::class, 'resendOtp'])->name('resend-otp');
+
+// NEW PROJECT ROUTE END
 
 Route::get('/policy-and-confidentiality', [HomeController::class, 'policy'])->name('policy-and-confidentiality');
 
@@ -34,21 +47,26 @@ Route::get('/test-fail', [SubController::class, 'fail']);
 
 Route::get('/withdraw-success', [SubController::class, 'withdraw_success']);
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/all-product', [HomeController::class, 'findProduct'])->name('all.product');
-
 //al candidates
 Route::get('/all-candidates', [HomeController::class, 'allCandidates'])->name('all.candidates');
-
-Route::get('verify-account', [DashboardController::class, 'verifyaccount'])->name('verifyAccount');
-Route::post('verifyotp', [DashboardController::class, 'useractivation'])->name('verifyotp');
-Route::get('/verify-otp/{user}', [DashboardController::class, 'verifyOtpByUser'])->name('otp-verify');
-Route::get('/resend-otp/{user}', [DashboardController::class, 'resendOtp'])->name('resend-otp');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+// NEW PROJECT ROUTE START
+
+//ADD DETAILS ROUTE
+    Route::get('/add-details/{id}/{slug}', [FrontendAddController::class, 'addPostDetails'])->name('add.details');
+
+//ADD STORE ROUTE
+    Route::get('/user/new-add-post', [PostController::class, 'create'])->name('user.add.post');
+    Route::post('/store/add', [PostController::class, 'store'])->name('store.add');
+//CART PAGE ROUTE
+    Route::post('/cart-page', [CartController::class, 'index'])->name('cart.page');
+
+// NEW PROJECT ROUTE END
 
     //Withdraw
 
@@ -73,14 +91,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //user dashboard
     Route::get('/user/deshboard', [DashboardController::class, 'userDashboard'])->name('user.dashboard');
     Route::get('/candidate-detail', [DashboardController::class, 'candidateDetails'])->name('candidate.detail');
-    //job post
-    Route::get('/user/new-add-post', [PostController::class, 'create'])->name('user.add.post');
-    Route::post('/store/add', [PostController::class, 'store'])->name('store.add');
+
     //user Sub
     Route::get('/user/sub', [SubController::class, 'index'])->name('user.sub');
     Route::get('/user/sub/{id}', [SubController::class, 'sub'])->name('user.subs');
-    //job post details
-    Route::get('/add-details/{id}/{slug}', [FrontendAddController::class, 'addPostDetails'])->name('add.details');
 
     //order route
     Route::get('/hire-person/{id}', [HireController::class, 'store'])->name('hire.person');
