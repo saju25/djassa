@@ -18,7 +18,7 @@
             <div class="profile_img_div ">
 
                                     <div class="candidate_pic" onmousemove="hiIcon()" onmouseout="viIcon()">
-                                        <img class="img-fluid " src="{{asset($user->photo)}}" alt="">
+                                        <img class="profile_img " src="{{asset($user->photo)}}" alt="">
                                              <i class="fa-solid fa-circle-plus in_fo_add "
                                             onclick="document.getElementById('getFile').click()"> </i>
                                     </div>
