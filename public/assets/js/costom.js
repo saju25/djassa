@@ -55,6 +55,25 @@ $(document).ready(function () {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+       document.querySelectorAll('a[data-ajax]').forEach(function (link) {
+              link.addEventListener('click', function (e) {
+                     e.preventDefault();
+                     fetch(this.href)
+                            .then(response => response.text())
+                            .then(html => {
+                                   document.querySelector('.container').innerHTML = html;
+                            });
+              });
+       });
+});
+
+
+
+
+
+
+
 
 
 

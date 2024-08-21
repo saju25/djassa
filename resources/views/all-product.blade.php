@@ -2,23 +2,28 @@
     <div id="page-content">
         <!--Collection Banner-->
         <form id="myForm" action="{{ route('all.product') }}" method="GET">
-            <div class="row justify-content-center text-center pt-5 pb-5 page section-header ">
-                <h1 class="find_banner_title w-100">Shop</h1>
-                <div class="col-md-8 ">
-                    <div class="row mt-3 search_div  justify-content-around">
-                        <div class="d-flex justify-content-center align-items-center col-md-5">
-                            <i class="fa-solid fa-magnifying-glass find_banner_form_icon"></i>
-                            <input name="keyword" class="form-control me-2" type="search"
-                                value="{{ request('keyword') }}" placeholder="Product Name">
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center col-md-4">
-                            <i class="fa-solid fa-location-crosshairs find_banner_form_icon"></i>
-                            <input name="location" value="{{ request('location') }}" class="form-control me-2"
-                                type="search" placeholder="Location">
-                        </div>
 
-                        <div class="d-flex justify-content-center align-items-center col-md-3">
-                            <button class="btn btn-outline-success w-100" onclick="click()">Search</button>
+            <div class=" page section-header ">
+                <div class="container row flex-column justify-content-center align-items-center text-center pt-5 pb-5">
+                    <div class="col-md-4">
+                        <h1 class="find_banner_title w-100">Shop</h1>
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="row mt-3 search_div  justify-content-around m-3">
+                            <div class="d-flex justify-content-center align-items-center col-md-5">
+                                <i class="fa-solid fa-magnifying-glass find_banner_form_icon"></i>
+                                <input name="keyword" class="form-control me-2" type="search"
+                                    value="{{ request('keyword') }}" placeholder="Product Name">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center col-md-4 ">
+                                <i class="fa-solid fa-location-crosshairs find_banner_form_icon"></i>
+                                <input name="location" value="{{ request('location') }}" class="form-control me-2"
+                                    type="search" placeholder="Location">
+                            </div>
+
+                            <div class="d-flex justify-content-center align-items-center col-md-3">
+                                <button class="btn btn-outline-success w-100" onclick="click()">Search</button>
+                            </div>
                         </div>
                     </div>
                 </div>

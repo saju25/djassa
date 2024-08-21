@@ -37,7 +37,7 @@
                         {{auth()->user()->fullname}}
                     </li>
                     <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item  text-center" href="{{ route('candidate.detail') }}">Profile</a>
+                        <li><a class="dropdown-item  text-center" href="{{ route('profile.detail') }}">Profile</a>
                         </li>
 
                         <li class="dropdown-item">

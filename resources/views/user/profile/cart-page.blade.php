@@ -1,21 +1,26 @@
 <x-app-layout>
     <!--Body Content-->
     <div id="page-content">
-        <!--Page Title-->
-        <div class="page section-header text-center">
-            <div class="page-title">
-                <div class="wrapper">
-                    <h1 class="page-width">Your cart</h1>
+        <form action="{{route('order.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <!--Page Title-->
+            <div class="page section-header text-center">
+                <div class="page-title">
+                    <div class="wrapper">
+                        <h1 class="page-width">Your cart</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--End Page Title-->
+            <!--End Page Title-->
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
-                    <form action="#" method="post" class="cart style2">
-                        <table>
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+
+                        <table class="cart_product_table">
                             <thead class="cart__row cart__header">
                                 <tr>
                                     <th colspan="2" class="text-center">Product</th>
@@ -46,11 +51,11 @@
                                         </div>
 
                                         <div class="cart__meta-text">
-                                            Color: {{ $postData['color'] ?? 'Not Available' }}
+                                            Color: {{ $postData['color'] ?? 'Any' }}
                                             <br>
-                                            Size: {{ $postData['size'] ?? 'Not Available' }}
+                                            Size: {{ $postData['size'] ?? 'Any' }}
                                             <br>
-                                            Weight : {{ $postData['weight'] ?? 'Not Available' }}
+                                            Weight : {{ $postData['weight'] ?? 'Any' }}
                                             <br>
                                         </div>
                                     </td>
@@ -78,7 +83,49 @@
 
 
                         </table>
-
+                        <div class="mobile_cart">
+                            <div class="cart__image-wrapper cart-flex-item">
+                                <img class="cart__image" src="{{$array[0]}}" alt="Elastic Waist Dress - Navy / Small">
+                            </div>
+                            <div>
+                                <a href="#">
+                                    {{ ucwords(Str::limit($product->name, 25, '...')) }}
+                                </a>
+                            </div>
+                            <div class="d-flex">
+                                <span class="font-weight-bold mx-2 col-4">Price</span>
+                                <span class="col-8">{{$product->discounted_price
+                                    }}</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="font-weight-bold mx-2 col-4">Quantity</span>
+                                <span class="col-8">{{$postData['quantity']
+                                    }}</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="font-weight-bold mx-2 col-4">Total</span>
+                                <span class="col-8">{{$product->discounted_price*$postData['quantity']
+                                    }}.00</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="font-weight-bold mx-2 col-4">Color:</span><span class="col-8">{{
+                                    $postData['color'] ??
+                                    'Any'
+                                    }}</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="font-weight-bold mx-2 col-4">Size:</span><span class="col-8">{{
+                                    $postData['size'] ??
+                                    'Any'
+                                    }}</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="font-weight-bold mx-2 col-4">Weight :</span><span class="col-8">{{
+                                    $postData['weight'] ??
+                                    'Any'
+                                    }}</span>
+                            </div>
+                        </div>
                         <div class="currencymsg">We processes all orders in USD. While the content of your cart is
                             currently displayed in USD, the checkout will use USD at the most current exchange rate.
                         </div>
@@ -86,10 +133,17 @@
                         <div id="shipping-calculator" class="mb-4">
                             <h5 class="small--text-center">Get shipping estimates</h5>
                             <div class="row">
+
+                                <input type="hidden" name="add_id" value="{{ $product->id }}">
+                                <input type="hidden" name="color" value="{{ $postData['color'] ?? 'Any' }}">
+                                <input type="hidden" name="size" value="{{ $postData['size'] ?? 'Any' }}">
+                                <input type="hidden" name="weight" value="{{ $postData['weight'] ?? 'Any' }}">
+                                <input type="hidden" name="total_amount" value="{{$product->discounted_price*$postData['quantity']
+                                                }}">
                                 <div class="col-12 col-sm-12 col-md-4">
                                     <div class="form-group">
                                         <label for="address_country">City</label>
-                                        <select id="address_country" name="address" required>
+                                        <select id="address_country" name="city" required>
                                             <option selected disabled>Select one</option>
                                             <option value="Abidjan">Abidjan</option>
                                             <option value="Aboisso">Aboisso</option>
@@ -176,28 +230,29 @@
                                 <div class="col-12 col-sm-12 col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="number" placeholder="8855..." required>
+                                        <input type="number" name="number" placeholder="8855..." required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-4">
                                     <div class="form-group">
                                         <label for="address_zip">Postal/Zip Code</label>
-                                        <input type="text" id="address_zip" name="zip" required>
+                                        <input type="text" id="zip_code" name="zip_code" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 actionRow text-center">
-                                    <div><input type="submit" class="btn btn-success get-rates" value="Proceed to Oder">
+                                    <div>
+                                        <input type="submit" class="btn btn-success get-rates" value="Proceed to Oder">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </form>
+
+                    </div>
+
                 </div>
-
             </div>
-        </div>
-
+        </form>
     </div>
     <!--End Body Content-->
 </x-app-layout>

@@ -3,14 +3,15 @@
 use App\Http\Controllers\Frontend\AddController as FrontendAddController;
 use App\Http\Controllers\Frontend\DeliveryController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\User\AdressController;
 use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\HireController;
 use App\Http\Controllers\User\JobAplicationController;
+use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\User\PostController;
+use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\SocialMediaController;
 use App\Http\Controllers\User\SubController;
 use Illuminate\Http\Request;
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+
 // NEW PROJECT ROUTE START
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -65,6 +67,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/store/add', [PostController::class, 'store'])->name('store.add');
 //CART PAGE ROUTE
     Route::post('/cart-page', [CartController::class, 'index'])->name('cart.page');
+//ORDER ROUTE
+    Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+    //candidate profile details
+    Route::get('/candidate/profile/{id}', [HomeController::class, 'candidateProfile'])->name('candidate.profile.details');
+    Route::get('/profile-detail/my-add', [ProfileController::class, 'profileAdd'])->name('profile.add');
+    Route::get('/profile-detail/my-order', [ProfileController::class, 'orderList'])->name('profile.order');
+    Route::get('/profile-detail', [ProfileController::class, 'candidateDetails'])->name('profile.detail');
 
 // NEW PROJECT ROUTE END
 
@@ -90,7 +99,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //user dashboard
     Route::get('/user/deshboard', [DashboardController::class, 'userDashboard'])->name('user.dashboard');
-    Route::get('/candidate-detail', [DashboardController::class, 'candidateDetails'])->name('candidate.detail');
 
     //user Sub
     Route::get('/user/sub', [SubController::class, 'index'])->name('user.sub');
@@ -117,9 +125,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // order delivery
     Route::post('/order-delivery', [DeliveryController::class, 'orderDelivery'])->name('order.delivery');
-
-    //candidate profile details
-    Route::get('/candidate/profile/{id}', [HomeController::class, 'candidateProfile'])->name('candidate.profile.details');
 
     //refund money
     Route::post('/refund-money', [HomeController::class, 'refundMoney'])->name('user.refund');

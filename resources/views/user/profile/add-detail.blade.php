@@ -455,9 +455,11 @@
                             @if($related_c_P->isEmpty())
                             <p>No related posts found.</p>
                             @else
+                            @foreach($related_c_P as $rdlated_add)
                             <ul>
-                                @foreach($related_c_P as $rdlated_add)
-                                <div class="col-12">
+
+                                <div class="col-12 ">
+
                                     <div class="item ">
                                         <!-- start product image -->
                                         <div class="product-image">
@@ -527,9 +529,11 @@
                                         </div>
                                         <!-- End product details -->
                                     </div>
+
                                 </div>
-                                @endforeach
+
                             </ul>
+                            @endforeach
                             @endif
 
                         </div>

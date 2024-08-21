@@ -7674,3 +7674,121 @@ input:checked+.slider:before {
 .search_div .form-control {
   border: none;
 }
+
+.profile_imgs {
+  position: relative;
+  height: 300px;
+}
+
+.cover_img_div {
+  position: absolute;
+  width: 100%;
+}
+
+.profile_img_div {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.profile_img_div .img-fluid {
+  border-radius: 50%;
+  border: 3px solid white;
+  transform: translate(10px);
+}
+
+.mobile_cart {
+  display: none;
+}
+
+#dropdownMenuButton {
+  cursor: pointer;
+}
+
+.side_div {
+  background-color: #f535aa;
+}
+
+.sizebar {
+  padding: 5px;
+
+}
+
+.sizebar ul li {
+  list-style: none;
+  font-size: 15px;
+
+
+}
+
+.sizebar ul li .diactive {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  transition: 0.01s;
+  margin-bottom: 5px;
+}
+
+.sizebar ul li:hover a {
+  background-color: white;
+  color: black;
+  display: block;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.active {
+  background-color: white;
+  color: black;
+  display: block;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 5px;
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.data_table_img {
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+}
+
+.candidate_pic {
+  position: relative;
+}
+
+.in_fo_add {
+  color: red;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-25px);
+  border: 3px solid white;
+  border-radius: 50%;
+}

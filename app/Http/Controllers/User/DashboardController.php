@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
+use App\Models\PaymentRequest;
 use App\Models\Post;
 use App\Models\User;
-use App\Mail\WelcomeMail;
-use App\Models\SocialMedia;
 use App\Models\Verifytoken;
 use Illuminate\Http\Request;
-use App\Models\PaymentRequest;
-use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
@@ -53,7 +52,7 @@ class DashboardController extends Controller
     {
         $user = User::query()->where('id', $id)->first();
         return view('otp_verification', compact('user'));
-        
+
     }
 
     //resend otp
@@ -64,7 +63,7 @@ class DashboardController extends Controller
         $user->otp_code = $validToken;
         $user->save();
         Verifytoken::where($user->token)->update([
-            'token' => $validToken
+            'token' => $validToken,
         ]);
 
         $get_user_email = $user->email;
@@ -75,10 +74,6 @@ class DashboardController extends Controller
         return redirect()->back();
     }
 
-
-
-
-
     public function verifyAccount(Request $request)
     {
         if (!Auth::check() && Auth::user()->is_activated < 1) {
@@ -86,8 +81,8 @@ class DashboardController extends Controller
             $validToken = rand(10, 100. . '2024');
             Log::info("valid token is" . $validToken);
             $get_token = new Verifytoken();
-            $get_token->token =  $validToken;
-            $get_token->email =  $user->email;
+            $get_token->token = $validToken;
+            $get_token->email = $user->email;
             $get_token->save();
             $get_user_email = $user->email;
             $get_user_name = $user->username;
@@ -96,18 +91,7 @@ class DashboardController extends Controller
             return view('otp_verification');
         }
         return back();
-        
-    }
 
-
-
-    //candidate details
-    public function candidateDetails(Request $request)
-    {
-       
-        $user = $request->user();
-        $socialMedia = SocialMedia::first();
-        return view('user.profile.candidate-detail', compact('user', 'socialMedia'));
     }
 
     //Withdraw
@@ -141,7 +125,6 @@ class DashboardController extends Controller
         $user->update();
 
         toastr()->success('', 'Withdraw Request Sent!');
-
 
         return redirect(route('user.withdraw'));
     }
