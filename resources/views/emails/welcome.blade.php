@@ -14,8 +14,7 @@
             <div style="background-color: #EDEADE;padding: 5px 5px;">
                 <a href="https://djassa.net/"><img style="max-width: 300px;" src="https: //ibb.co/yfVLwHq
 " alt=""></a>
-                <p>Connecter l’Afrique pour libérer le talent</p>
-            </div>
+             </div>
             <h1>Hi <span>{{ $get_user_name}}</span></h1>
            <div>
                 <span style="background: red; color: white; padding: 15px 10px; font-size: 30px; border-radius: 5px;">{{
@@ -23,6 +22,7 @@
             </div>
 
         </div>
+
     </div>
 </body>
 
