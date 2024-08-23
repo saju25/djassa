@@ -7678,11 +7678,26 @@ input:checked+.slider:before {
 .profile_imgs {
   position: relative;
   height: 300px;
+  background-color: palevioletred;
 }
 
 .cover_img_div {
   position: absolute;
   width: 100%;
+  position: relative;
+  height: 300px;
+
+}
+
+.cover_img_add {
+  color: red;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 99;
 }
 
 .profile_img_div {
@@ -7699,7 +7714,7 @@ input:checked+.slider:before {
 .candidate_pic {
   width: 100%;
   height: 100%;
-  background-color: #01bad4;
+  background-color: #b001d4;
 }
 
 .profile_img_div .profile_img {
@@ -7797,4 +7812,10 @@ tr:nth-child(even) {
   height: 60px;
   width: 60px;
   border-radius: 10px;
+}
+
+.home_cat {
+  background-color: #f535aa;
+  color: white;
+  font-size: 15px;
 }

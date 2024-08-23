@@ -41,6 +41,115 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">Category collection</h2>
+                        <p>Our most popular Category based on sales</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <div>Mobiles</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                       <i class="fa-solid fa-shop"></i>
+                       <div>Electronics</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                     <i class="fa-solid fa-car"></i>
+                      <div>Vehicles</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                    <i class="fa-solid fa-house-laptop"></i>
+                      <div>Property</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                   <i class="fa-solid fa-people-pulling"></i>
+                    <div>Home & Living</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                  <i class="fa-solid fa-dog"></i>
+                    <div>Pets & Animals</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                 <i class="fa-solid fa-person-half-dress"></i>
+                    <div>Men's Fashion & Grooming</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-person-drowning"></i>
+                            <div>Women's Fashion & Beauty</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                       <i class="fa-solid fa-person-skiing"></i>
+                    <div>Hobbies, Sports & Kids</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-briefcase"></i>
+                    <div>Business & Industry</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-briefcase"></i>
+                    <div>Business & Industry</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    <div>Essentials</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-book-open"></i>
+                    <div>Education</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-tractor"></i>
+                    <div>Agriculture</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                         <i class="fa-solid fa-gears"></i>
+                    <div>Services</div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-3">
+                    <div class="text-center home_cat p-2">
+                        <i class="fa-solid fa-binoculars"></i>
+                    <div>Other</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--End Home slider-->
         <div class="container">
             <div class="row">
@@ -55,7 +164,7 @@
                 <div class="row">
                     @foreach($latestAdd as $latestAdd)
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6 col-6">
                         <div class="item ">
                             <!-- start product image -->
                             <div class="product-image">
@@ -99,7 +208,8 @@
                             <div class="product-details text-center">
                                 <!-- product name -->
                                 <div class="product-name">
-                                    <a href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
+                                    <a
+                                        href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
                                         {{ ucwords(Str::limit($latestAdd->name, 25, '...')) }}
                                     </a>
                                 </div>
@@ -130,72 +240,6 @@
                 </div>
             </div>
         </div>
-        <!--Collection Box slider-->
-        <div class="collection-box section">
-            <div class="container-fluid">
-                <div class="collection-grid">
-                    <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
-                            <img data-src="assets/images/collection/fashion.jpg"
-                                src="assets/images/collection/fashion.jpg" alt="Fashion" class="blur-up lazyload" />
-                            <div class="collection-grid-item__title-wrapper">
-                                <h3 class="collection-grid-item__title btn btn--secondary no-border">Fashion</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
-                            <img class="blur-up lazyload" data-src="assets/images/collection/cosmetic.jpg"
-                                src="assets/images/collection/cosmetic.jpg" alt="Cosmetic" />
-                            <div class="collection-grid-item__title-wrapper">
-                                <h3 class="collection-grid-item__title btn btn--secondary no-border">Cosmetic</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="collection-grid-item blur-up lazyloaded">
-                        <a href="collection-page.html" class="collection-grid-item__link">
-                            <img data-src="assets/images/collection/bag.jpg" src="assets/images/collection/bag.jpg"
-                                alt="Bag" class="blur-up lazyload" />
-                            <div class="collection-grid-item__title-wrapper">
-                                <h3 class="collection-grid-item__title btn btn--secondary no-border">Bag</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
-                            <img data-src="assets/images/collection/accessories.jpg"
-                                src="assets/images/collection/accessories.jpg" alt="Accessories"
-                                class="blur-up lazyload" />
-                            <div class="collection-grid-item__title-wrapper">
-                                <h3 class="collection-grid-item__title btn btn--secondary no-border">Accessories
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
-                            <img data-src="assets/images/collection/shoes.jpg" src="assets/images/collection/shoes.jpg"
-                                alt="Shoes" class="blur-up lazyload" />
-                            <div class="collection-grid-item__title-wrapper">
-                                <h3 class="collection-grid-item__title btn btn--secondary no-border">Shoes</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="collection-grid-item">
-                        <a href="collection-page.html" class="collection-grid-item__link">
-                            <img data-src="assets/images/collection/jewellry.jpg"
-                                src="assets/images/collection/jewellry.jpg" alt="Jewellry" class="blur-up lazyload" />
-                            <div class="collection-grid-item__title-wrapper">
-                                <h3 class="collection-grid-item__title btn btn--secondary no-border">Jewellry</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--End Collection Box slider-->
-
-
 
     </div>
 

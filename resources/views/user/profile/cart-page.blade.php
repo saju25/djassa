@@ -66,7 +66,7 @@
                                         <div class="cart__qty text-center">
                                             <div class="qtyField">
 
-                                                <input class="cart__qty-input qty" type="text" name="updates[]" id="qty"
+                                                <input class="cart__qty-input qty" type="text" name="quantity" id="qty"
                                                     value="{{$postData['quantity'] }}" pattern="[0-9]*">
 
                                             </div>

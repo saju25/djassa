@@ -3,6 +3,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,11 +26,19 @@ class OrderController extends Controller
         ]);
         $user = Auth::user();
 
-        // Create a new order using the validated data
+        // Update New sku
+
+        $product = Post::findOrFail($request->input('add_id'));
+        $new_sku = $product->sku - $request->input('quantity');
+        $product->sku = $new_sku;
+        $product->save();
+
+        // Create a new order
 
         $order = new Order();
         $order->user_id = $user->id;
         $order->add_id = $request->input('add_id');
+        $order->quantity = $request->input('quantity');
         $order->color = $request->input('color');
         $order->size = $request->input('size');
         $order->weight = $request->input('weight');

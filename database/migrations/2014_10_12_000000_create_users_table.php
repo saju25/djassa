@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('otp_code')->nullable();
             $table->tinyInteger('is_activated')->default(0);
             $table->string('photo')->nullable();
+            $table->string('cover_photo')->nullable();
             $table->text('about_info')->nullable();
             $table->tinyInteger('job_apply_count')->default(0);
             $table->tinyInteger('active_status')->default(0);

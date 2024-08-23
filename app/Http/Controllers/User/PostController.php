@@ -110,5 +110,95 @@ class PostController extends Controller
         toastr()->success('', 'Your product add product  successfully  dones!');
         return redirect()->back();
     }
+    public function show($id)
+    {
+        $product = Post::where('id', $id)->first();
+        return view('user.profile.edit-add-post', compact('product'));
+
+    }
+    public function update(Request $request, $id)
+    {
+        // Retrieve the existing product record
+        $product = Post::findOrFail($id);
+
+        // Initialize an array to hold image paths
+        $imagePaths = [];
+
+        // Check if new images are uploaded
+        if ($request->hasFile('product_img')) {
+            foreach ($request->file('product_img') as $image) {
+                // Store the image in the public disk
+                $path = $image->store('images', 'public');
+                // Get the URL to the stored image
+                $imagePaths[] = Storage::url($path);
+            }
+        }
+
+        // Update the product details
+        if ($request->input('user_id')) {
+            $product->user_id = $request->input('user_id');
+        }
+        if ($request->input('name')) {
+            $product->name = $request->input('name');
+        }
+        if ($request->input('sku')) {
+            $product->sku = $request->input('sku');
+        }
+        if ($request->input('description')) {
+            $product->description = $request->input('description');
+        }
+        if ($request->input('best_price')) {
+            $product->best_price = $request->input('best_price');
+        }
+        if ($request->input('discounted_price')) {
+            $product->discounted_price = $request->input('discounted_price');
+        }
+        if ($request->input('color')) {
+            $product->color = $request->input('color');
+        }
+        if ($request->input('weight')) {
+            $product->weight = $request->input('weight');
+        }
+        if ($request->input('size')) {
+            $product->size = $request->input('size');
+        }
+        if ($request->input('add_cate')) {
+            $product->add_category = $request->input('add_cate');
+        }
+        if ($request->input('sub_cate')) {
+            $product->sub_cate = $request->input('sub_cate');
+        }
+
+        // If there are new images, update the image paths; otherwise, retain the old paths
+        if (!empty($imagePaths)) {
+            $product->img_path = json_encode($imagePaths);
+        }
+
+        $product->city = $request->input('city');
+        $product->number = $request->input('number');
+
+        // Save the updated record
+        $product->save();
+
+        toastr()->success('', 'Product updated successfully!');
+        return redirect()->route('profile.add');
+    }
+
+    public function destroy($id)
+    {
+        // Find the user by ID
+        $product = Post::findOrFail($id);
+
+        if ($product) {
+            $product->delete(); // Delete the user
+            toastr()->success('', 'Product Delete successfully!');
+            return redirect()->route('profile.add');
+
+        } else {
+            toastr()->success('', 'Product not found!');
+            return redirect()->route('profile.add');
+
+        }
+    }
 
 }

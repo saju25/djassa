@@ -65,6 +65,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //ADD STORE ROUTE
     Route::get('/user/new-add-post', [PostController::class, 'create'])->name('user.add.post');
     Route::post('/store/add', [PostController::class, 'store'])->name('store.add');
+    // Product update
+    Route::get('/product/update/{id}', [PostController::class, 'show'])->name('show.update');
+    Route::post('/product/update/{id}', [PostController::class, 'update'])->name('product.update');
+    // Route for deleting a user by ID
+    Route::delete('/product/{id}', [PostController::class, 'destroy'])->name('product.delete');
+
 //CART PAGE ROUTE
     Route::post('/cart-page', [CartController::class, 'index'])->name('cart.page');
 //ORDER ROUTE

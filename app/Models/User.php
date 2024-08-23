@@ -28,6 +28,7 @@ class User extends Authenticatable
         'provider_id',
         'is_activated',
         'photo',
+        'cover_photo',
         'about_info',
         'job_apply_count',
         'remember_token',
