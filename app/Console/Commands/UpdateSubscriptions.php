@@ -27,22 +27,7 @@ class UpdateSubscriptions extends Command
         foreach ($users as $user) {
             $user->sub_id = null;
             $user->sub_date = null;
-            $user->job_apply_count = null;
             $user->save();
         }
-
-        // $sevenDaysAgo = now()->subDays(7);
-
-        // $usersToReset = User::where('boost_profile_date', '<', $sevenDaysAgo)
-        //     ->get();
-
-        // foreach ($usersToReset as $user) {
-        //     // Update fields
-        //     $user->bost_profile = null; // Assuming 'bost_profile' field name
-        //     $user->boost_profile_date = null; // Assuming 'boost_profile_date' field name
-        //     $user->save();
-        // }
-
-        // $this->info('Subscriptions updated successfully.');
     }
 }

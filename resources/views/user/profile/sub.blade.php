@@ -1,18 +1,30 @@
 <x-app-layout>
 
+     <!--Page Title-->
+            <div class="page section-header text-center">
+                <div class="page-title">
+                    <div class="wrapper">
+                        <h1 class="page-width">Subscription Page</h1>
+                    </div>
+                </div>
+            </div>
+            <!--End Page Title-->
+    <div class="container mt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <img src="{{asset('assets')}}/images/sub_img.png" alt="">
+            </div>
+            <div class="col-md-6">
+                        <div class="basic_div1 text-center ">
+                            <h2 class=""> Monthly subscription at 2000fcfa </h2>
+                            <div class="btn btn-success w-100 p-3 mt-3 cursor-pointer" href="#" onclick='calltouchpay()'>subscription </div>
+ </div>
+            </div>
 
-    <div class="container ">
-        <div class="row">
-
-           <div class="col-md-12">
+           <!-- <div class="col-md-12">
                 <div class="row db_div">
                     <div class="col-md-4">
-                        <div class="basic_div1 text-center ">
-                            <h4 class=""> Prix ​​de base :<br> 3000/mois </h4>
-                            <h6>Par mois 11 emplois Postuler</h6>
-                                <div class="btm btn-success w-100 p-3 mt-3 cursor-pointer" href="#" onclick='calltouchpay()'>S'abonner</div>
-                           
-                        </div>
+
                     </div>
 
                     <div class="col-md-4">
@@ -31,7 +43,7 @@
                           </div>
                     </div>
                  </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -57,7 +69,7 @@
                 sendPaymentInfos(new Date().getTime(),
                                  'XCPNY11168','v4GE9BuvtAA9tuDS9xZsmPLVpAZ0wZFcZFAb9OBcauTQeS3Dw4',
                                  'xcompnay.com',  {!! json_encode(url('test-success')) !!},
-            {!! json_encode(url('test-fail')) !!}, 3000,
+            {!! json_encode(url('test-fail')) !!}, 2000,
                                  'Abidjan',email,first,last,phone);
             }
         </script>

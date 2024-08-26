@@ -23,6 +23,7 @@ class Post extends Model
         'weight',
         'size',
         'add_category',
+        'category_slug',
         'sub_cate',
         'city',
         'number',
@@ -39,6 +40,18 @@ class Post extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
+    }
+
+    /**
+     * Get the options for generating the slug for the 'add_category' field.
+     *
+     * @return SlugOptions
+     */
+    public function getCategorySlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('add_category')
+            ->saveSlugsTo('category_slug');
     }
     protected $casts = [
         'color' => 'array',

@@ -16,7 +16,17 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('user.profile.new-add-post');
+        $user = Auth::user();
+        // dd($user->sub_id);
+        if ($user->sub_id == null) {
+            toastr()->success('', 'Please Update subscription!');
+            return redirect(route('user.sub'));
+
+        } else {
+            return view('user.profile.new-add-post');
+
+        }
+
     }
 
     /**

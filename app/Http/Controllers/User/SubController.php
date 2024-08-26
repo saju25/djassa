@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
-use \Carbon\Carbon;
 use Auth;
+use Illuminate\Http\Request;
+use \Carbon\Carbon;
 
 class SubController extends Controller
 {
@@ -29,33 +29,21 @@ class SubController extends Controller
     {
         $user = Auth::user();
 
-        if ($request->amount > 3000 && $request->amount < 5000) {
+        if ($request->amount > 2000) {
             $user->sub_id = 1;
             $user->sub_date = Carbon::now();
-        }elseif($request->amount > 5000) {
-            $user->sub_id = 2;
-            $user->sub_date = Carbon::now();
-        }elseif($request->amount > 1500 && $request->amount < 3000) {
-            $user->bost_profile = 1;
-            $user->boost_profile_date = Carbon::now();
         }
 
         $user->save();
 
-        toastr()->success('', 'Vous êtes inscrit avec succès!');
+        toastr()->success('', 'You have successfully registered!');
 
-        return redirect()->route('candidate.detail');
+        return redirect()->route('home');
     }
 
     public function fail(Request $request)
     {
-        toastr()->success("", "Informations d'identification non valides fournies pour le paiement!");
+        toastr()->success("", "Invalid credentials provided for payment!");
         return redirect(route('user.sub'));
-    }
-
-    public function withdraw_success()
-    {
-        toastr()->success('', 'Retrait réussi!');
-        return redirect(route('admin.withdraw.index'));
     }
 }

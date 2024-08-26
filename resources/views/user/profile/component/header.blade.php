@@ -6,28 +6,3 @@
             </div>
         </div>
     </div>
-
-
-    <div class="container">
-        <div class="profile_imgs">
-              <div class="profile_img_div ">
-
-                                    <div class="candidate_pic" onmousemove="hiIcon()" onmouseout="viIcon()">
-                                        <img class="profile_img " src="{{asset($user->photo)}}" alt="Profile Picture">
-                                             <i class="fa-solid fa-circle-plus in_fo_add "
-                                            onclick="document.getElementById('getFile').click()"> </i>
-                                    </div>
-                                    @if(Request::url() === route('profile.detail'))
-                                    <div class="up_date_div">
-                                        <form method="post" action="{{ route('user.update.info') }}"
-                                            enctype="multipart/form-data">
-                                            @csrf
-                                            <input id="getFile" style="display:none" type="file"
-                                                onchange="form.submit()" name="photo" />
-                                         </form>
-                                    </div>
-                         @else
-                    @endif
-            </div>
-        </div>
-    </div>

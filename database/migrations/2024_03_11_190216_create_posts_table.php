@@ -27,6 +27,7 @@ return new class extends Migration
             $table->json('size')->nullable();
             $table->json('img_path')->nullable();
             $table->string('add_category')->nullable();
+            $table->string('category_slug')->nullable();
             $table->string('sub_cate')->nullable();
             $table->string('city')->nullable();
             $table->string('number')->nullable();

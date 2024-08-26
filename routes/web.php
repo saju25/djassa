@@ -107,7 +107,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/user/deshboard', [DashboardController::class, 'userDashboard'])->name('user.dashboard');
 
     //user Sub
-    Route::get('/user/sub', [SubController::class, 'index'])->name('user.sub');
+    Route::get('/user/subscription-page', [SubController::class, 'index'])->name('user.sub');
     Route::get('/user/sub/{id}', [SubController::class, 'sub'])->name('user.subs');
 
     //order route

@@ -770,6 +770,11 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li class="level1 sub-level"><a href="#;" class="site-nav">
+                                                <input type="checkbox" name="add_category" value="Other"><span
+                                                    class="px-3">Other</span>
+                                            </a>
+                                          </li>
 
                                     </ul>
                                 </div>

@@ -68,9 +68,54 @@ document.addEventListener('DOMContentLoaded', function () {
        });
 });
 
+// category click search system make
+document.addEventListener('DOMContentLoaded', function () {
+       // Function to handle button click and checkbox change
+       function setupButtonAndCheckbox(buttonId, checkboxId) {
+              var button = document.getElementById(buttonId);
+              var checkbox = document.getElementById(checkboxId);
+              const form = document.getElementById('myForm');
 
+              if (button && checkbox) {
+                     button.addEventListener('click', function () {
+                            checkbox.checked = true;
+                            if (checkbox.checked) {
+                                   form.submit();
+                            }
+                     });
 
+                     checkbox.addEventListener('change', function () {
+                            if (checkbox.checked) {
+                                   form.submit();
+                            }
+                     });
+              } else {
+                     console.error(`Button with ID ${buttonId} or checkbox with ID ${checkboxId} not found.`);
+              }
+       }
 
+       // List of button and checkbox IDs
+       const buttonCheckboxPairs = [
+              { buttonId: 'mb_btn', checkboxId: 'mb_ch' },
+              { buttonId: 'ele_btn', checkboxId: 'ele_ch' },
+              { buttonId: 've_btn', checkboxId: 've_ch' },
+              { buttonId: 'pr_btn', checkboxId: 'pr_ch' },
+              { buttonId: 'ho_btn', checkboxId: 'ho_ch' },
+              { buttonId: 'pe_btn', checkboxId: 'pe_ch' },
+              { buttonId: 'me_btn', checkboxId: 'me_ch' },
+              { buttonId: 'wo_btn', checkboxId: 'wo_ch' },
+              { buttonId: 'hob_btn', checkboxId: 'hob_ch' },
+              { buttonId: 'bus_btn', checkboxId: 'bus_ch' },
+              { buttonId: 'es_btn', checkboxId: 'es_ch' },
+              { buttonId: 'ed_btn', checkboxId: 'ed_ch' },
+              { buttonId: 'ag_btn', checkboxId: 'ag_ch' },
+              { buttonId: 'ser_btn', checkboxId: 'ser_ch' },
+              { buttonId: 'otr_btn', checkboxId: 'otr_ch' }
+       ];
+
+       // Setup all buttons and checkboxes
+       buttonCheckboxPairs.forEach(pair => setupButtonAndCheckbox(pair.buttonId, pair.checkboxId));
+});
 
 
 

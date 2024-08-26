@@ -51,104 +51,133 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <div>Mobiles</div>
+            <form id="myForm" action="{{ route('all.product') }}" method="GET">
+                <div class="row">
+                    <div class="col-md-3 p-3">
+                        <div id="mb_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <div>Mobiles</div>
+                            <input id="mb_ch" type="checkbox" name="add_category" value="Mobiles" hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                       <i class="fa-solid fa-shop"></i>
-                       <div>Electronics</div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="ele_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-shop"></i>
+                            <div>Electronics</div>
+                            <input id="ele_ch" type="checkbox" name="add_category" value="Electronics" hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                     <i class="fa-solid fa-car"></i>
-                      <div>Vehicles</div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="ve_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-car"></i>
+                            <div>Vehicles</div>
+                            <input id="ve_ch" type="checkbox" name="add_category" value="Vehicles" hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                    <i class="fa-solid fa-house-laptop"></i>
-                      <div>Property</div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="pr_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-house-laptop"></i>
+                            <div>Property</div>
+                            <input id="pr_ch" type="checkbox" name="add_category" value="Property" hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                   <i class="fa-solid fa-people-pulling"></i>
-                    <div>Home & Living</div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="ho_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-people-pulling"></i>
+                            <div>Home & Living</div>
+                            <input id="ho_ch" type="checkbox" name="add_category" value="Home & Living" hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                  <i class="fa-solid fa-dog"></i>
-                    <div>Pets & Animals</div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="pe_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-dog"></i>
+                            <div>Pets & Animals</div>
+                            <input id="pe_ch" type="checkbox" name="add_category" value="Pets & Animals" hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                 <i class="fa-solid fa-person-half-dress"></i>
-                    <div>Men's Fashion & Grooming</div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="me_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-person-half-dress"></i>
+                            <div>Men's Fashion & Grooming</div>
+                            <input id="me_ch" type="checkbox" name="add_category" value="Men's Fashion & Grooming"
+                                hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-person-drowning"></i>
+
+                    <div class="col-md-3 p-3">
+                        <div id="wo_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-person-drowning"></i>
                             <div>Women's Fashion & Beauty</div>
+                            <input id="wo_ch" type="checkbox" name="add_category" value="Women's Fashion & Beauty"
+                                hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="hob_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-person-skiing"></i>
+                            <div>Hobbies, Sports & Kids</div>
+                            <input id="hob_ch" type="checkbox" name="add_category" value="Hobbies, Sports & Kids"
+                                hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="bus_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <div>Business & Industry</div>
+                            <input id="bus_ch" type="checkbox" name="add_category" value="Business & Industry" hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="es_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <div>Essentials</div>
+                            <input id="es_ch" type="checkbox" name="add_category" value="Essentials" hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="ed_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-book-open"></i>
+                            <div>Education</div>
+                            <input id="ed_ch" type="checkbox" name="add_category" value="Education" hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="ag_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-tractor"></i>
+                            <div>Agriculture</div>
+                            <input id="ag_ch" type="checkbox" name="add_category" value="Agriculture" hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="ser_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-gears"></i>
+                            <div>Services</div>
+                            <input id="ser_ch" type="checkbox" name="add_category" value="Services" hidden>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <div id="otr_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-binoculars"></i>
+                            <div>Other</div>
+                            <input id="otr_ch" type="checkbox" name="add_category" value="Other" hidden>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                       <i class="fa-solid fa-person-skiing"></i>
-                    <div>Hobbies, Sports & Kids</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-briefcase"></i>
-                    <div>Business & Industry</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-briefcase"></i>
-                    <div>Business & Industry</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-arrows-rotate"></i>
-                    <div>Essentials</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-book-open"></i>
-                    <div>Education</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-tractor"></i>
-                    <div>Agriculture</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                         <i class="fa-solid fa-gears"></i>
-                    <div>Services</div>
-                    </div>
-                </div>
-                <div class="col-md-3 p-3">
-                    <div class="text-center home_cat p-2">
-                        <i class="fa-solid fa-binoculars"></i>
-                    <div>Other</div>
-                    </div>
-                </div>
-            </div>
+
+            </form>
         </div>
         <!--End Home slider-->
         <div class="container">
@@ -164,7 +193,7 @@
                 <div class="row">
                     @foreach($latestAdd as $latestAdd)
 
-                    <div class="col-md-3 col-sm-6 col-6">
+                    <div class="col-md-3 col-sm-6">
                         <div class="item ">
                             <!-- start product image -->
                             <div class="product-image">
@@ -242,7 +271,5 @@
         </div>
 
     </div>
-
-
 
 </x-guest-layout>
