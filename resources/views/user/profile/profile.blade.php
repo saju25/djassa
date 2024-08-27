@@ -68,7 +68,7 @@
                         <ul class="pro_na">
                             <li class="lvl1 parent megamenu">
                                 <a href="{{Route('user.sub')}}">
-                                    please <span class="sub_tex">subscribe</span> to post your add
+                                    Please <span class="sub_tex">subscribe</span>  to permit seller.
 
                                 </a>
                             </li>
