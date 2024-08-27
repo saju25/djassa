@@ -6,9 +6,7 @@
                 <div class="slide">
                     <div class="blur-up lazyload bg-size">
                         <img class="blur-up lazyload bg-img"
-                            data-src="assets/images/slideshow-banners/belle-banner1.jpg"
-                            src="assets/images/slideshow-banners/belle-banner1.jpg" alt="Shop Our New Collection"
-                            title="Shop Our New Collection" />
+                           src="assets/images/banar1.png"  title="Shop Our New Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
@@ -24,9 +22,7 @@
                 <div class="slide">
                     <div class="blur-up lazyload bg-size">
                         <img class="blur-up lazyload bg-img"
-                            data-src="assets/images/slideshow-banners/belle-banner2.jpg"
-                            src="assets/images/slideshow-banners/belle-banner2.jpg" alt="Summer Bikini Collection"
-                            title="Summer Bikini Collection" />
+                            src="assets/images/banar2.jpg"  title="Summer Bikini Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
