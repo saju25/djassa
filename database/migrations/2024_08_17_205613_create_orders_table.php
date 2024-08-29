@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('add_id')->nullable(); // Keep only one definition
+            $table->string('post_by_user')->nullable(); // Keep only one definition
             $table->string('user_id')->nullable(); // Keep only one definition
             $table->string('color')->nullable();
             $table->string('size')->nullable();

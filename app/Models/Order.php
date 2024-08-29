@@ -11,6 +11,7 @@ class Order extends Model
     protected $fillable = [
         'add_id',
         'user_id',
+        'post_by_user',
         'color',
         'size',
         'weight',

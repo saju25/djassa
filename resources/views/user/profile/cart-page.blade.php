@@ -135,6 +135,7 @@
                             <div class="row">
 
                                 <input type="hidden" name="add_id" value="{{ $product->id }}">
+                                <input type="hidden" name="post_by_user" value="{{ $product->user_id }}">
                                 <input type="hidden" name="color" value="{{ $postData['color'] ?? 'Any' }}">
                                 <input type="hidden" name="size" value="{{ $postData['size'] ?? 'Any' }}">
                                 <input type="hidden" name="weight" value="{{ $postData['weight'] ?? 'Any' }}">
@@ -241,7 +242,7 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 actionRow text-center">
                                     <div>
-                                        <input type="submit" class="btn btn-success get-rates" value="Proceed to Oder">
+                                       <input type="submit" class="btn btn-success get-rates" value="Proceed to Oder">
                                     </div>
                                 </div>
                             </div>
@@ -253,6 +254,8 @@
                 </div>
             </div>
         </form>
+
+
     </div>
     <!--End Body Content-->
 </x-app-layout>

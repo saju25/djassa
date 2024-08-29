@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="col-md-9 mt-3">
-                <h1>About Me</h1>
+                <h1>About The Shop</h1>
                 <div class="mx-4 mt-2">
                       <ul class="pro_na">
                             <li class="lvl1 parent">

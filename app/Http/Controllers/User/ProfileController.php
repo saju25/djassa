@@ -33,7 +33,7 @@ class ProfileController extends Controller
 
         // Fetch posts and orders
         $posts = Post::all();
-        $orders = Order::where('user_id', $user->id)->get();
+        $orders = Order::where('user_id', $user->id)->orWhere('post_by_user', $user->id)->get();
 
         // Transform posts into a keyed collection for quick lookup
         $postsById = $posts->keyBy('id');

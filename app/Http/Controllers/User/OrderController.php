@@ -17,6 +17,7 @@ class OrderController extends Controller
         // dd($request->all());
         $request->validate([
             'add_id' => 'nullable|string',
+            'post_by_user' => 'nullable|string',
             'color' => 'nullable|string',
             'size' => 'nullable|string',
             'weight' => 'nullable|string',
@@ -34,10 +35,11 @@ class OrderController extends Controller
         $product->save();
 
         // Create a new order
-
+        // dd($request->input('post_by_user'));
         $order = new Order();
         $order->user_id = $user->id;
         $order->add_id = $request->input('add_id');
+        $order->post_by_user = $request->input('post_by_user');
         $order->quantity = $request->input('quantity');
         $order->color = $request->input('color');
         $order->size = $request->input('size');

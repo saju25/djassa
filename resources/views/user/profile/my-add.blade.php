@@ -38,7 +38,7 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Product</th>
-                                <th>SKU</th>
+                                <th>Quantity</th>
                                 <th>Color</th>
                                 <th>Size</th>
                                 <th>Weight</th>

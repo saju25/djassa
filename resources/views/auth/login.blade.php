@@ -21,7 +21,7 @@
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label for="CustomerEmail">Email</label>
-                                        <input type="email" name="loginname" :value="old('loginname')" required>
+                                        <input type="email" name="loginname" :value="old('loginname')" placeholder="Email" required>
                                     </div>
                                     <x-input-error class="text-danger" :messages="$errors->get('loginname')"
                                         class="mt-2" />

@@ -32,9 +32,9 @@
 
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">SKU</label>
+                                    <label class="col-form-label">Quantity</label>
                                 </div>
-                                <input type="number" name="sku" class="form-control" placeholder="SKU">
+                                <input type="number" name="sku" class="form-control" placeholder="Quantity">
 
                                 @error('sku')
                                 <span class="text-danger">{{ $message }}</span>
