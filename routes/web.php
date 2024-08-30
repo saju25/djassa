@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Frontend\AddController as FrontendAddController;
 use App\Http\Controllers\Frontend\DeliveryController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -80,6 +81,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile-detail/my-add', [ProfileController::class, 'profileAdd'])->name('profile.add');
     Route::get('/profile-detail/my-order', [ProfileController::class, 'orderList'])->name('profile.order');
     Route::get('/profile-detail', [ProfileController::class, 'candidateDetails'])->name('profile.detail');
+//product rating
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 // NEW PROJECT ROUTE END
 

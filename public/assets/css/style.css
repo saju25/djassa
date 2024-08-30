@@ -211,6 +211,7 @@ ol,
 ul {
   padding: 0;
   margin: 0;
+
 }
 
 .list-items {
@@ -4175,19 +4176,19 @@ table {
   text-transform: uppercase;
 }
 
-.template-product .tabs-listing .product-tabs {
+.tabs-listing .product-tabs {
   border-bottom: 1px solid #e8e9eb;
   width: 100%;
   margin-bottom: 0;
 }
 
-.template-product .tabs-listing .product-tabs li {
+.tabs-listing .product-tabs li {
   float: none;
   display: inline-block;
   cursor: pointer;
 }
 
-.template-product .tabs-listing .product-tabs a {
+.tabs-listing .product-tabs a {
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
   letter-spacing: 1px;
@@ -4203,8 +4204,8 @@ table {
   text-decoration: none;
 }
 
-.template-product .product-tabs li.active a,
-.template-product .product-tabs li.active a:focus {
+.product-tabs li.active a,
+.product-tabs li.active a:focus {
   text-decoration: none;
   border: 0;
   color: #000;
@@ -7823,4 +7824,33 @@ tr:nth-child(even) {
 
 .pro_na li {
   list-style: none;
+}
+
+.stars {
+  display: inline-block;
+  font-size: 2em;
+  color: #ccc;
+  /* Default star color */
+  cursor: pointer;
+  direction: rtl;
+  /* Set direction to right-to-left */
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.stars input:checked~label,
+.stars label:hover,
+.stars label:hover~label {
+  color: gold;
+}
+
+.stars input:checked~label {
+  color: gold;
 }
