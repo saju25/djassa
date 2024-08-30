@@ -190,7 +190,7 @@
                     @foreach($latestAdd as $latestAdd)
 
                     <div class="col-md-3 col-sm-6">
-                        <div class="item ">
+                        <div class="item home_page_product">
                             <!-- start product image -->
                             <div class="product-image">
                                 <!-- start product image -->

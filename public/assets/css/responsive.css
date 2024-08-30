@@ -1467,6 +1467,9 @@
 }
 
 @media only screen and (max-width: 575px) {
+	.grid-products .home_page_product .product-image img {
+		height: 420px;
+	}
 
 	.search .search__form {
 		margin: 33px 20px;

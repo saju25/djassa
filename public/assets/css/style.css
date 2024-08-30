@@ -1822,7 +1822,11 @@ textarea:-ms-input-placeholder {
   -ms-transition: all ease-out 0.4s;
   -webkit-transition: all ease-out 0.4s;
   transition: all ease-out 0.4s;
-  height: 220px;
+  height: 250px;
+}
+
+.grid-products .home_page_product .product-image img {
+  height: 320px;
 }
 
 .grid-products .item .product-image .hover {
