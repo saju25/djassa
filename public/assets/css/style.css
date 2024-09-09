@@ -7854,3 +7854,31 @@ tr:nth-child(even) {
 .stars input:checked~label {
   color: gold;
 }
+
+#content-to-print {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.invoice_table {
+  border: none;
+}
+
+.invoice_table tr {
+  margin: 20px;
+}
+
+.invoice_table .tr_b {
+
+  border: 2px solid black;
+
+}
+
+.invoice_table tr {
+  background-color: white;
+}
+
+.s_pain {
+  background-color: yellow;
+  padding: 5px 10px;
+}

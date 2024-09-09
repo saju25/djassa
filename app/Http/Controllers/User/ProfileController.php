@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Post;
 use App\Models\SocialMedia;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -40,6 +41,16 @@ class ProfileController extends Controller
 
         // Pass data to view
         return view('user.profile.my-order', compact('user', 'orders', 'postsById'));
+    }
+    public function orderPrint($id, $s_id, $c_id)
+    {
+        $posts = Post::all();
+        $orders = Order::where('id', $id)->get();
+        $shop = User::where('id', $s_id)->first();
+        $customar = User::where('id', $c_id)->first();
+        $postsById = $posts->keyBy('id');
+
+        return view('user.profile.order-detail', compact('orders', 'postsById', 'shop', 'customar'));
     }
 
 }

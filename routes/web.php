@@ -76,7 +76,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/cart-page', [CartController::class, 'index'])->name('cart.page');
 //ORDER ROUTE
     Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
-    //candidate profile details
+    Route::post('/order/update/{id}', [OrderController::class, 'update'])->name('order.update');
+
+//ORDER print
+    Route::get('/print-order/{id}/{s_id}/{c_id}', [ProfileController::class, 'orderPrint'])->name('order.print');
+//candidate profile details
     Route::get('/candidate/profile/{id}', [HomeController::class, 'candidateProfile'])->name('candidate.profile.details');
     Route::get('/profile-detail/my-add', [ProfileController::class, 'profileAdd'])->name('profile.add');
     Route::get('/profile-detail/my-order', [ProfileController::class, 'orderList'])->name('profile.order');

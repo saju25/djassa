@@ -139,6 +139,7 @@
                                 <input type="hidden" name="color" value="{{ $postData['color'] ?? 'Any' }}">
                                 <input type="hidden" name="size" value="{{ $postData['size'] ?? 'Any' }}">
                                 <input type="hidden" name="weight" value="{{ $postData['weight'] ?? 'Any' }}">
+                                <input type="hidden" name="status" value="Painding">
                                 <input type="hidden" name="total_amount" value="{{$product->discounted_price*$postData['quantity']
                                                 }}">
                                 <div class="col-12 col-sm-12 col-md-4">

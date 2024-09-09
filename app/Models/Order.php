@@ -19,5 +19,6 @@ class Order extends Model
         'city',
         'number',
         'zip_code',
+        'status',
     ];
 }

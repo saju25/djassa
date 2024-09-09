@@ -48,8 +48,30 @@ class OrderController extends Controller
         $order->city = $request->input('city');
         $order->number = $request->input('number');
         $order->zip_code = $request->input('zip_code');
+        $order->status = $request->input('status');
         $order->save();
         // Redirect to a desired route with a success message
         return redirect()->route('home')->with('success', 'Order created successfully.');
     }
+
+    public function update(Request $request, $id)
+    {
+        // Retrieve the order by ID
+        $order = Order::find($id);
+
+        // Check if the order exists
+        if (!$order) {
+            toastr()->error('Order not found!');
+            return redirect()->back();
+        }
+
+        // Update the order's status
+        $order->status = $request->input('status');
+        $order->save();
+
+        // Show a success message and redirect
+        toastr()->success('Product updated successfully!');
+        return redirect()->route('profile.order');
+    }
+
 }
