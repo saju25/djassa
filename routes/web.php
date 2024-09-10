@@ -47,9 +47,6 @@ Route::get('/policy-and-confidentiality', [HomeController::class, 'policy'])->na
 Route::get('/test-success', [SubController::class, 'success']);
 
 Route::get('/test-fail', [SubController::class, 'fail']);
-
-Route::get('/withdraw-success', [SubController::class, 'withdraw_success']);
-
 //al candidates
 Route::get('/all-candidates', [HomeController::class, 'allCandidates'])->name('all.candidates');
 

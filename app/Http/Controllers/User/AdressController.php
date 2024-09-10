@@ -30,17 +30,7 @@ class AdressController extends Controller
             $photo->move(public_path($destinationPath), $fileNameToStore);
             $userinfo->photo = 'files/profile_photo/' . $fileNameToStore;
         }
-        $cover_photo = $request->file('cover_photo');
-        $slug = Str::slug($request->fullname, '-');
-
-        if ($cover_photo) {
-
-            $extension = $cover_photo->getClientOriginalExtension();
-            $fileNameToStore = $slug . '_' . time() . '.' . $extension; // Filename to store
-            $destinationPath = 'files/cover_photo';
-            $cover_photo->move(public_path($destinationPath), $fileNameToStore);
-            $userinfo->cover_photo = 'files/cover_photo/' . $fileNameToStore;
-        }
+        $userinfo->phone = $request->input('phone');
 
         $userinfo->save();
 

@@ -1,36 +1,14 @@
 <x-guest-layout>
-    @include('user.profile.component.header')
+      <div class="page section-header text-center ">
+        <div class="page-title">
+            <div class="wrapper">
+                <h1 class="page-width">My Order Page</h1>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-2 side_div">
-                <div>
-                    <div class="profile_img_div mt-2">
-                        <div class="candidate_pic " onmousemove="hiIcon()" onmouseout="viIcon()">
-                            <img class="img-fluid " src="{{asset($user->photo)}}" alt="Profile Picture">
-                            <i class="fa-solid fa-circle-plus in_fo_add"
-                                onclick="document.getElementById('getFile').click()">
-                            </i>
-                        </div>
-
-                        <div class="up_date_div" style="display:none">
-                            <form method="post" action="{{ route('user.update.info') }}" enctype="multipart/form-data">
-                                @csrf
-                                <input id="getFile" type="file" onchange="form.submit()" name="photo" />
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="sizebar">
-                    <ul>
-                        <li><a class="diactive" href="{{ route('profile.detail') }}">My Profile</a></li>
-                        <li><a class="diactive" href="{{route('profile.add')}}">My Add</a></li>
-                        <li><a class="active" href="{{route('profile.order')}}">MY Order</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="col-md-10">
+          <div class="col-md-12">
                 <h1>Order List</h1>
                 <div>
                     <table id="myTable" class="display">
@@ -138,7 +116,7 @@
                             </tr>
 
 
-                      <!-- Modal -->
+ <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

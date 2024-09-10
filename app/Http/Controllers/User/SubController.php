@@ -29,8 +29,16 @@ class SubController extends Controller
     {
         $user = Auth::user();
 
-        if ($request->amount > 2000) {
+        if ($request->amount > 2000 && $request->amount < 10000) {
             $user->sub_id = 1;
+            $user->sub_date = Carbon::now();
+        }
+        if ($request->amount > 10000 && $request->amount < 20000) {
+            $user->sub_id = 2;
+            $user->sub_date = Carbon::now();
+        }
+        if ($request->amount > 20000 && $request->amount < 30000) {
+            $user->sub_id = 3;
             $user->sub_date = Carbon::now();
         }
 

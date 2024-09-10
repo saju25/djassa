@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="sidebar_categories">
-                                        <li class="level1 sub-level">
+                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
                                                 <input type="checkbox" name="add_category" value="Mobiles"><span
                                                     class="px-3">Mobiles</span>

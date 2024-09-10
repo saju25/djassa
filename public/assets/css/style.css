@@ -7718,15 +7718,6 @@ input:checked+.slider:before {
 
 }
 
-.in_fo_add {
-  font-size: 25px;
-  position: absolute;
-  color: #3c9685;
-  z-index: 2;
-  border: 3px solid white;
-  border-radius: 50%;
-}
-
 .mobile_cart {
   display: none;
 }
@@ -7778,7 +7769,6 @@ input:checked+.slider:before {
   display: block;
   padding: 5px;
   border-radius: 10px 10px 10px 10px;
-  text-align: center;
   text-decoration: none;
   margin-bottom: 5px;
 
@@ -7816,6 +7806,7 @@ tr:nth-child(even) {
 
 .sub_tex {
   color: #7e0cba;
+  font-size: 16px;
 }
 
 .pro_na {
@@ -7881,4 +7872,26 @@ tr:nth-child(even) {
 .s_pain {
   background-color: yellow;
   padding: 5px 10px;
+}
+
+.btn-success {
+  background-color: #7e0cba;
+}
+
+.btn-success:hover {
+  background-color: #7e0cba;
+}
+
+.sub_f {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 20px 15px;
+}
+
+.pro_img_name_div {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.in_fo_add {
+  font-size: 30px;
+  color: #7e0cba;
 }
