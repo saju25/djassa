@@ -1,61 +1,89 @@
-   <footer id="footer">
-            <div class="site-footer">
-                <div class="container">
-                    <!--Footer Links-->
-                    <div class="footer-top">
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4">Quick Shop</h4>
-                                <ul>
-                                    <li><a href="#">Women</a></li>
-                                    <li><a href="#">Men</a></li>
-                                    <li><a href="#">Kids</a></li>
-                                    <li><a href="#">Sportswear</a></li>
-                                    <li><a href="#">Sale</a></li>
-                                </ul>
+<footer id="footer">
+    <div class="site-footer">
+        <div class="container">
+            <!--Footer Links-->
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                        <h4 class="h4">Quick Shop</h4>
+                        <form id="myForm2" action="{{ route('all.product') }}" method="GET">
+                            <div>
+                                <div class="p-2">
+                                    <div id="mb_btn2" class="category-btn" data-input-id="mb_ch2">
+                                        <div>Mobiles</div>
+                                        <input id="mb_ch2" type="checkbox" name="add_category" value="Mobiles" hidden>
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div id="ele_btn2" class="category-btn" data-input-id="ele_ch2">
+                                        <div>Electronics</div>
+                                        <input id="ele_ch2" type="checkbox" name="add_category" value="Electronics"
+                                            hidden>
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div id="me_btn2" class="category-btn" data-input-id="me_ch2">
+                                        <div>Men's Fashion & Grooming</div>
+                                        <input id="me_ch2" type="checkbox" name="add_category"
+                                            value="Men's Fashion & Grooming" hidden>
+                                    </div>
+                                </div>
+
+                                <div class="p-2">
+                                    <div id="wo_btn" class="category-btn" data-input-id="wo_ch2">
+                                        <div>Women's Fashion & Beauty</div>
+                                        <input id="wo_ch2" type="checkbox" name="add_category"
+                                            value="Women's Fashion & Beauty" hidden>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4">Informations</h4>
-                                <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Terms &amp; condition</a></li>
-                                    <li><a href="#">My Account</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4">Customer Services</h4>
-                                <ul>
-                                    <li><a href="#">Request Personal Data</a></li>
-                                    <li><a href="#">FAQ's</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Orders and Returns</a></li>
-                                    <li><a href="#">Support Center</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
-                                <h4 class="h4">Contact Us</h4>
-                                <ul class="addressFooter">
-                                    <li><i class="icon anm anm-map-marker-al"></i>
-                                        <p>55 Gallaxy Enque,<br>2568 steet, 23568 NY</p>
-                                    </li>
-                                    <li class="phone"><i class="icon anm anm-phone-s"></i>
-                                        <p>(440) 000 000 0000</p>
-                                    </li>
-                                    <li class="email"><i class="icon anm anm-envelope-l"></i>
-                                        <p>sales@yousite.com</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        </form>
+
                     </div>
-                    <!--End Footer Links-->
-                    <hr>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                        <h4 class="h4">Informations</h4>
+                        <ul>
+                            <li><a href="{{route('about.us')}}">About us</a></li>
+
+                            <li><a href="{{route('policy-and-confidentiality')}}">Privacy policy</a></li>
+                            <li><a href="{{route('all.product')}}">Shop</a></li>
+                            <li><a href="{{ route('profile.detail') }}">My Account</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                        <h4 class="h4">Customer Services</h4>
+                        <ul>
+                            <li><a href="#">Map</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="{{Route('user.sub')}}">Subscription</a></li>
+                            <li><a href="{{route('profile.order')}}">My Order</a></li>
+                            <li><a href="{{route('profile.add')}}">My Add</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
+                        <h4 class="h4">Contact Us</h4>
+                        <ul class="addressFooter">
+                            <li><i class="icon anm anm-map-marker-al"></i>
+                                <p>55 Gallaxy Enque,<br>2568 steet, 23568 NY</p>
+                            </li>
+                            <li class="phone"><i class="icon anm anm-phone-s"></i>
+                                <p>(440) 000 000 0000</p>
+                            </li>
+                            <li class="email"><i class="icon anm anm-envelope-l"></i>
+                                <p>sales@yousite.com</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!--End Footer-->
-        <!--Scoll Top-->
-        <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
-        <!--End Scoll Top-->
+            <!--End Footer Links-->
+            <hr>
+        </div>
+    </div>
+</footer>
+<!--End Footer-->
+<!--Scoll Top-->
+<span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+<!--End Scoll Top-->

@@ -39,10 +39,10 @@ Route::get('verify-account', [DashboardController::class, 'verifyaccount'])->nam
 Route::post('verifyotp', [DashboardController::class, 'useractivation'])->name('verifyotp');
 Route::get('/verify-otp/{user}', [DashboardController::class, 'verifyOtpByUser'])->name('otp-verify');
 Route::get('/resend-otp/{user}', [DashboardController::class, 'resendOtp'])->name('resend-otp');
+Route::get('/policy-and-confidentiality', [HomeController::class, 'policy'])->name('policy-and-confidentiality');
+Route::get('/about-us', [HomeController::class, 'about'])->name('about.us');
 
 // NEW PROJECT ROUTE END
-
-Route::get('/policy-and-confidentiality', [HomeController::class, 'policy'])->name('policy-and-confidentiality');
 
 Route::get('/test-success', [SubController::class, 'success']);
 

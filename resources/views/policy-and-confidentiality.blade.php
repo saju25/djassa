@@ -1,103 +1,180 @@
 <x-guest-layout>
-    <div class="container mb-5 mt-4">
-        <h2>Accord de Confidentialité et Modalités d&#39;Utilisation d&#39;Afreel</h2>
+
+    <div class="page section-header text-center ">
+        <div class="page-title">
+            <div class="wrapper">
+                <h1 class="page-width">Privacy policy</h1>
+            </div>
+        </div>
     </div>
-    <div class="container mb-5 mt-4">
-        <h5 class="mt-2">Partie 1: Contrat d&#39;Utilisateur</h5>
-        <h2 class="mt-4">MODALITÉS D&#39;UTILISATION</h2>
-        <h5 class="mt-4">En utilisant les services d&#39;Afreel, vous acceptez les modalités suivantes :</h5>
-        <ul class="mt-4">
-            <li>
-                <h6 class="p-3">
-                    Conditions du Contrat Direct: En utilisant Afreel, vous êtes lié par les conditions du
-                    contrat direct établies entre le client et le prestataire.
-                </h6>
-            </li>
-            <li>
-                <h6 class="p-3">
-                    Toutes les Conditions d&#39;Embauche: Vous devez respecter toutes les conditions
-                    d&#39;embauche établies par Afreel lors de l&#39;utilisation de la plateforme
-                </h6>
-            </li>
-            <li>
-                <h6 class="p-3">
-                    Instructions d&#39;Entiercement: Les instructions d&#39;entiercement, qu&#39;elles soient pour des
-                    contrats horaires, à prix fixe, ou autres, doivent être suivies conformément aux
-                    directives d&#39;Afreel.
-                </h6>
-            </li>
+    <div class="container">
+        <p>Politique de Confidentialité de Djassa Market
 
-        </ul>
-
-        <h2 class="mt-4">Partie 2: COLLECTE D&#39;INFORMATIONS</h2>
-        <h5 class="mt-4">Afreel s&#39;engage à protéger les utilisateurs en garantissant le paiement et l&#39;exécution
-            des
-            missions tout en respectant les normes en vigueur dans son domaine.</h5>
-
-        <h2 class="mt-4">Partie 3: UTILISATION DE L&#39;INFORMATION</h2>
-        <h5 class="mt-4">Afreel se désengage en cas de mauvaise moralité du demandeur ou du prestataire. Les
-            statistiques sur la plate-forme du prestataire sont considérées comme des gages de son
-            intégrité.</h5>
-
-        <h2 class="mt-4">Partie 4: CONSERVATION DES DONNÉES</h2>
-        <h5 class="mt-4">Afreel, une filiale de la startup Pi INTELLIGENCE, respecte les normes en vigueur en
-            matière de conservation des données et s&#39;engage à vérifier scrupuleusement le profil des
-            prestataires avant de les accepter sur le site.</h5>
-
-        <h2 class="mt-4">Partie 5: PARTAGE ET DIVULGATION D&#39;INFORMATIONS</h2>
-        <h5 class="mt-4">Afreel utilise Touch Pay comme solution de paiement en ligne et assure des transferts de
-            données transfrontaliers sécurisés conformément aux réglementations en vigueur.</h5>
-
-        <h2 class="mt-4">Partie 6: VOS CHOIX ET VOS DROITS</h2>
-        <h5 class="mt-4">Les utilisateurs ont le droit de choisir les options de partage d&#39;informations et de
-            consulter
-            leurs droits en matière de confidentialité sur Afreel.</h5>
-
-        <h2 class="mt-4">Partie 7: SÉCURITÉ</h2>
-        <h5 class="mt-4">Afreel met en œuvre des mesures de sécurité pour protéger les données des utilisateurs
-            contre tout accès non autorisé ou toute divulgation.</h5>
-
-        <h2 class="mt-4">Partie 8: LIENS VERS D&#39;AUTRES SITES</h2>
-        <h5 class="mt-4">Afreel peut contenir des liens vers d&#39;autres sites, et cette politique de confidentialité
-            ne
-            s&#39;applique pas à ces sites tiers.</h5>
-
-        <h2 class="mt-4">Partie 9: MODIFICATIONS APPORTÉES À CETTE POLITIQUE</h2>
-        <h5 class="mt-4">Afreel se réserve le droit de modifier cette politique de confidentialité et les modalités
-            d&#39;utilisation à tout moment. Les utilisateurs seront informés de ces modifications par le biais
-            de notifications sur le site.</h5>
-
-        <h2 class="mt-4">Partie 10: TRANSFERTS DE DONNÉES TRANSFRONTALIERS</h2>
-        <h5 class="mt-4">Afreel assure des transferts de données transfrontaliers sécurisés en conformité avec les
-            réglementations en vigueur.</h5>
-
-        <h2 class="mt-4">Partie 11: Contrat d&#39;Utilisateur (Suite)</h2>
-        <h2 class="mt-4">INSTRUCTIONS D&#39;ENTIERCEMENT À PRIX FIXE</h2>
-        <h5 class="mt-4">Afreel encourage l&#39;utilisation d&#39;instructions d&#39;entiercement à prix fixe pour
-            garantir des
-            transactions sûres et équitables entre les clients et les prestataires. Toutefois, les deux
-            parties ont la possibilité de s&#39;aligner sur un prix différent selon leur accord mutuel, sous
-            réserve de la confirmation et de l&#39;acceptation de cette modification par les deux parties.</h5>
-
-        <h2 class="mt-4">INSTRUCTIONS D&#39;ENTIERCEMENT DU CONTRAT DIRECT</h2>
-        <h5 class="mt-4">Les instructions d&#39;entiercement du contrat direct sont établies selon les conditions
-            convenues entre les parties et doivent être respectées par tous les utilisateurs d&#39;Afreel.</h5>
-
-        <h2 class="mt-4">TOUTES LES INSTRUCTIONS D&#39;ENTIERCEMENT D&#39;EMBAUCHE</h2>
-        <h5 class="mt-4">Afreel fournit des instructions d&#39;entiercement détaillées pour tous les types
-            d&#39;embauche sur
-            la plateforme, assurant ainsi la transparence et la sécurité des transactions.</h5>
-
-        <h2 class="mt-4">Partie 12: RÉVISION ET MODIFICATION</h2>
-        <h5 class="mt-4">Les utilisateurs sont invités à consulter régulièrement les conditions d&#39;utilisation et la
-            politique de confidentialité d&#39;Afreel, car celles-ci peuvent être révisées et modifiées
-            périodiquement.</h5>
-
-        <h2 class="mt-4">Partie 13: ACCEPTATION DES CONDITIONS</h2>
-        <h5 class="mt-4">En utilisant les services d&#39;Afreel, les utilisateurs acceptent pleinement et sans réserve
-            toutes
-            les conditions énoncées dans cet accord de confidentialité et modalités d&#39;utilisation.</h5>
-
+            Bienvenue sur Djassa Market. La protection de votre vie privée est une priorité pour nous. Cette politique
+            de
+            confidentialité décrit comment nous collectons, utilisons, protégeons, et partageons vos informations
+            personnelles
+            lorsque vous utilisez notre site. En utilisant Djassa Market, vous acceptez les pratiques décrites dans
+            cette politique.
+        </p>
     </div>
+    <div class="container">
 
+        <div>
+            <br>
+            <br>
+            <h2>1. Collecte de Données</h2>
+
+            <br>
+            <br> Données personnelles collectées : Pour vous inscrire et utiliser nos services, nous collectons des
+            informations
+            personnelles telles que votre nom, numéro de téléphone, et adresse email. Ces informations sont nécessaires
+            pour créer
+            et gérer votre compte, permettre l’accès aux services et vous contacter si nécessaire.
+
+            <br>
+            <br>Données de paiement : Nous collectons également des informations de paiement (détails des transactions,
+            mode de
+            paiement) pour gérer vos abonnements mensuels en tant qu'e-commerçant. Nous utilisons des prestataires de
+            services de
+            paiement sécurisés pour traiter ces transactions.
+
+            <br>
+            <br> Cookies et technologies de suivi :Djassa Market utilise des cookies et d'autres technologies similaires
+            pour :
+            <br>
+            <br>Vous offrir une expérience de navigation améliorée,
+            <br>
+            <br> Mémoriser vos préférences et vos réglages,
+            <br>
+            <br> Analyser l’utilisation de notre site pour l’améliorer constamment.
+            Vous pouvez choisir de désactiver les cookies dans les paramètres de votre navigateur, bien que cela puisse
+            affecter
+            certaines fonctionnalités de notre site.
+            <br>
+            <br>
+            <h2>2. Utilisation des Données</h2>
+
+            <br>
+            <br> Objectif de l'utilisation des données : Les données collectées sont utilisées pour :
+            <br>
+            <br> Vérifier votre identité et sécuriser votre compte,
+            <br>
+            <br> Gérer vos abonnements et transactions,
+            <br>
+            <br>Améliorer et personnaliser votre expérience utilisateur,
+            <br>
+            <br> Vous informer des mises à jour, des offres spéciales, et des nouvelles fonctionnalités,
+            <br>
+            <br> Répondre à vos questions ou demandes de support.
+            <br>
+            <br> Partage des données : Nous ne partageons vos informations personnelles avec aucun tiers sans votre
+            consentement, sauf
+            si la loi l’exige ou pour protéger nos droits et intérêts légitimes.
+            <br>
+            <br>
+            <h2>3. Protection des Données</h2>
+
+            <br>
+            <br> Mesures de sécurité : Nous prenons des mesures de sécurité appropriées pour protéger vos données
+            personnelles contre
+            tout accès, altération, divulgation ou destruction non autorisés. Cela inclut :
+            <br>
+            <br>L’utilisation de protocoles de chiffrement,
+            <br>
+            <br>Des contrôles d’accès stricts aux données,
+            <br>
+            <br> Des audits réguliers de sécurité pour identifier et corriger les vulnérabilités potentielles.
+
+            <br>
+            <br> Gestion des incidents de sécurité : En cas de violation de données, nous nous engageons à vous informer
+            dans les
+            meilleurs délais et à prendre toutes les mesures nécessaires pour minimiser les impacts potentiels. Les
+            responsables de
+            toute infraction seront poursuivis conformément à la loi en vigueur.
+
+            <br>
+            <br>
+            <h2>4. Droits des Utilisateurs</h2>
+
+            <br>
+            <br> Accès et modification des données : Vous avez le droit d'accéder à vos données personnelles, de les
+            modifier ou de les
+            supprimer. Vous pouvez gérer vos informations en vous connectant à votre compte ou en nous contactant
+            directement.
+            <br>
+            <br> Contrôle des données : Bien que nous ne proposions pas d’options spécifiques pour limiter la collecte
+            de
+            données, vous
+            pouvez gérer vos préférences en matière de cookies via les paramètres de votre navigateur.
+            <br>
+            <br>
+            <h2>5. Conservation des Données</h2>
+
+            <br>
+            <br> Durée de conservation : Nous conservons vos données personnelles aussi longtemps que votre compte est
+            actif ou que
+            nécessaire pour vous fournir nos services. Nous pouvons également conserver certaines données pour nous
+            conformer à nos
+            obligations légales, résoudre des litiges et faire appliquer nos accords.
+
+            <br>
+            <br> Critères de conservation : La durée de conservation des données est déterminée par la nature des
+            données
+            et leur
+            nécessité pour le fonctionnement du site ou pour des raisons légales.
+            <br>
+            <br>
+            <h2>6. Modifications de la Politique de Confidentialité</h2>
+            <br>
+            <br> Notification des changements : Nous pouvons mettre à jour cette politique de confidentialité de temps
+            en
+            temps. Nous
+            encourageons les utilisateurs à consulter régulièrement cette page pour prendre connaissance des éventuels
+            changements.
+            Un message pop-up vous notifiera de chaque mise à jour importante.
+            <br>
+            <br> Consentement aux modifications : Si vous continuez à utiliser Djassa Market après une modification de
+            la
+            politique,
+            vous acceptez implicitement les nouvelles conditions.
+            <br>
+            <br>
+            <h2>7. Responsabilité et Contact</h2>
+            <br>
+            <br> Responsable de la gestion des données : Le gestionnaire des données de Djassa Market est chargé de
+            veiller
+            à ce que
+            vos informations soient traitées de manière conforme et sécurisée.
+
+            <br>
+            <br> Contact : Pour toute question ou préoccupation concernant vos données personnelles, veuillez nous
+            contacter à travers
+            les coordonnées fournies sur notre site web.
+            <br>
+            <br>
+            <h2>8. Consentement des Utilisateurs</h2>
+            <br>
+            <br>
+            Obtention du consentement : En créant un compte et en utilisant Djassa Market, vous acceptez la collecte
+            et
+            l'utilisation de vos données personnelles conformément à cette politique de confidentialité.
+            <br>
+            <br>
+            Consentement des mineurs : L'utilisation de nos services est réservée aux personnes majeures. Les mineurs
+            doivent être
+            accompagnés par un adulte responsable pour accéder à nos services et doivent obtenir l'autorisation de leurs
+            tuteurs
+            légaux.
+            <br>
+
+            <h2>9. Droits supplémentaires selon la législation applicable</h2> <br>
+
+            En fonction de votre lieu de résidence, vous pourriez avoir des droits additionnels concernant vos données
+            personnelles.
+            Nous nous engageons à respecter les lois applicables dans votre juridiction, notamment le droit de demander
+            la
+            suppression de vos données, de limiter leur traitement, ou de retirer votre consentement.
+        </div>
+    </div>
 </x-guest-layout>

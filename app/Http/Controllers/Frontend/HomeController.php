@@ -74,5 +74,9 @@ class HomeController extends Controller
     {
         return view('policy-and-confidentiality');
     }
+    public function about()
+    {
+        return view('about-us');
+    }
 
 }

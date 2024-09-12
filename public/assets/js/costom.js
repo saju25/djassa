@@ -120,6 +120,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+document.querySelectorAll('.p-2').forEach(function (div) {
+       div.addEventListener('click', function () {
+              // Find the hidden checkbox associated with this div
+              var inputId = div.querySelector('.category-btn').getAttribute('data-input-id');
+              var inputElement = document.getElementById(inputId);
+
+              // Check the input
+              inputElement.checked = true;
+
+              // Submit the form
+              document.getElementById('myForm2').submit();
+       });
+});
+
+
+
+
+
 
 
 
