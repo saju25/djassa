@@ -18,8 +18,11 @@ class AddController extends Controller
         // Fetch related posts based on the category of the $add post
         $related_c_P = Post::where('add_category', $product->add_category)->get();
         $review = Comment::where('post_id', $id)->get();
-        //  dd($review);
+        $rationvalue = round($review->avg('rating'));
+        $reviewCount = $review->count();
+
+        // dd($reviewCount);
         // Return the view and pass both the specific post and related posts
-        return view('user.profile.add-detail', compact('product', 'related_c_P', 'review'));
+        return view('user.profile.add-detail', compact('product', 'related_c_P', 'review', 'rationvalue', 'reviewCount'));
     }
 }

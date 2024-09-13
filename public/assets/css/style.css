@@ -7898,3 +7898,10 @@ tr:nth-child(even) {
 #myForm2 .p-2 {
   cursor: pointer;
 }
+
+.admin_nv .nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

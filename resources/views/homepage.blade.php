@@ -189,6 +189,8 @@
                 <div class="row">
                     @foreach($latestAdd as $latestAdd)
 
+
+
                     <div class="col-md-3 col-sm-6">
                         <div class="item home_page_product">
                             <!-- start product image -->
@@ -249,13 +251,31 @@
                                         </div>
                                         <!-- End product price -->
 
-                                        <div class="product-review mb-3">
-                                            <i class="font-13 fa fa-star"></i>
-                                            <i class="font-13 fa fa-star"></i>
-                                            <i class="font-13 fa fa-star"></i>
-                                            <i class="font-13 fa fa-star-o"></i>
-                                            <i class="font-13 fa fa-star-o"></i>
-                                        </div>
+
+
+    @php
+                    $review = \App\Models\Comment::where('post_id', $latestAdd->id)->get();
+                    $rationvalue = round($review->avg('rating'));
+                    @endphp
+                                        @if ($rationvalue)
+                                         <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                          @for ($i = 0; $i < $rationvalue ; $i++)
+                                                   <i class="fa fa-star"></i>
+                                            @endfor
+                                           </a>
+                                    </div>
+                                        @else
+                                      <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+
+                                        </a>
+                                    </div>
+                                        @endif
+
                                     </div>
                                     <!-- End product details -->
                             </div>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\WebSocialLink;
+use Illuminate\Http\Request;
 
 class WebSocialLinkController extends Controller
 {
@@ -15,24 +15,21 @@ class WebSocialLinkController extends Controller
         return view('admin.website-social-links', compact('webSocialLinks'));
     }
 
-
     public function update(Request $request, $id)
     {
         WebSocialLink::whereId($id)->update([
-            'fb' => $request->fb,
-            'twitter' => $request->twitter,
-            'instagram' => $request->instagram,
-            'linkedin' => $request->linkedin,
-             'phone' => $request->phone,
-             'email' => $request->email,
+            'address' => $request->address,
+            'number' => $request->number,
+            'email' => $request->email,
         ]);
         toastr()->success('', 'Social links updated successfully!');
         return redirect()->back();
     }
 
     // user management
-    
-    public function userDelete($id) {
+
+    public function userDelete($id)
+    {
         User::whereId($id)->delete();
         toastr()->success('', 'User deleted successfully!');
         return redirect()->back();

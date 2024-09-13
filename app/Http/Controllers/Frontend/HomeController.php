@@ -16,8 +16,7 @@ class HomeController extends Controller
     {
         Artisan::call('subscriptions:update');
         Artisan::call('schedule:run');
-        $latestAdd = Post::take(6)->latest()->get();
-
+        $latestAdd = Post::take(12)->latest()->get();
         return view('homepage', compact('latestAdd'));
     }
 

@@ -37,8 +37,7 @@
                         {{auth()->user()->fullname}}
                     </li>
                     <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item  text-center" href="{{ route('profile.detail') }}">Profile</a>
-                        </li>
+
 
                         <li class="dropdown-item">
                             <form  method="POST" action="{{ route('logout') }}">
@@ -84,6 +83,8 @@
                     <ul id="siteNav" class="site-nav medium center hidearrow">
                         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-angle-down-l"></i></a>
                         </li>
+                         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Launch Yourseif On E-commerce!</b> <i class="anm anm-angle-down-l"></i></a>
+                        </li>
                          <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
                         <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b> <i class="anm anm-angle-down-l"></i></a>
@@ -114,6 +115,8 @@
     <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-plus-l"></i></a>
+        </li>
+         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Launch Yourseif On E-commerce!</b></a>
         </li>
          <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b></a>
         </li>

@@ -17,63 +17,29 @@
                                     @csrf
 
                                     <div class="m-3 row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div>
-                                                <label class="col-form-label">Facebook</label>
+                                                <label class="col-form-label">Address</label>
                                             </div>
-                                            <input type="text" name="fb" value="{{ $webSocialLinks->fb }}"
-                                                class="form-control" placeholder="Your facebook link..">
+                                           <textarea name="address" class="form-control" placeholder="Office Address..">{{ $webSocialLinks->address }}</textarea>
 
-                                            @error('fb')
+
+                                            @error('address')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div>
-                                                <label class="col-form-label">Twitter</label>
-                                            </div>
-                                            <input type="text" name="twitter" value="{{ $webSocialLinks->twitter }}"
-                                                class="form-control" placeholder="Your twitter link..">
 
-                                            @error('twitter')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
                                     </div>
 
-                                    <div class="m-3 row">
-                                        <div class="col-md-6">
-                                            <div>
-                                                <label class="col-form-label">Instagram</label>
-                                            </div>
-                                            <input type="text" name="instagram" value="{{ $webSocialLinks->instagram }}"
-                                                class="form-control" placeholder="Your instagram link..">
 
-                                            @error('instagram')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div>
-                                                <label class="col-form-label">Linkedin</label>
-                                            </div>
-                                            <input type="text" name="linkedin" value="{{ $webSocialLinks->linkedin }}"
-                                                class="form-control" placeholder="">
-
-                                            @error('linkedin')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
                                     <div class="m-3 row">
                                         <div class="col-md-6">
                                             <div>
                                                 <label class="col-form-label">Phone Number</label>
                                             </div>
-                                            <input type="number" name="phone"
-                                                value="{{ $webSocialLinks->phone }}" class="form-control"
+                                            <input type="number" name="number"
+                                                value="{{ $webSocialLinks->number }}" class="form-control"
                                                 placeholder="Company Phone Number">
 
                                             @error('phone')

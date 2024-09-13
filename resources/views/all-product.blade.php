@@ -891,98 +891,7 @@
                                 </div>
                             </div>
                             <!--Categories-->
-                            <!--Popular Products-->
-                            <div class="sidebar_widget">
-                                <div class="widget-title">
-                                    <h2>Popular Products</h2>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="list list-sidebar-products">
-                                        <div class="grid">
-                                            <div class="grid__item">
-                                                <div class="mini-list-item">
-                                                    <div class="mini-view_image">
-                                                        <a class="grid-view-item__link" href="#">
-                                                            <img class="grid-view-item__image"
-                                                                src="assets/images/product-images/mini-product-img.jpg"
-                                                                alt="" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="details"> <a class="grid-view-item__title" href="#">Cena
-                                                            Skirt</a>
-                                                        <div class="grid-view-item__meta"><span
-                                                                class="product-price__price"><span
-                                                                    class="money">$173.60</span></span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid__item">
-                                                <div class="mini-list-item">
-                                                    <div class="mini-view_image"> <a class="grid-view-item__link"
-                                                            href="#"><img class="grid-view-item__image"
-                                                                src="assets/images/product-images/mini-product-img1.jpg"
-                                                                alt="" /></a> </div>
-                                                    <div class="details"> <a class="grid-view-item__title"
-                                                            href="#">Block
-                                                            Button Up</a>
-                                                        <div class="grid-view-item__meta"><span
-                                                                class="product-price__price"><span
-                                                                    class="money">$378.00</span></span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid__item">
-                                                <div class="mini-list-item">
-                                                    <div class="mini-view_image"> <a class="grid-view-item__link"
-                                                            href="#"><img class="grid-view-item__image"
-                                                                src="assets/images/product-images/mini-product-img2.jpg"
-                                                                alt="" /></a> </div>
-                                                    <div class="details"> <a class="grid-view-item__title"
-                                                            href="#">Balda
-                                                            Button Pant</a>
-                                                        <div class="grid-view-item__meta"><span
-                                                                class="product-price__price"><span
-                                                                    class="money">$278.60</span></span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid__item">
-                                                <div class="mini-list-item">
-                                                    <div class="mini-view_image"> <a class="grid-view-item__link"
-                                                            href="#"><img class="grid-view-item__image"
-                                                                src="assets/images/product-images/mini-product-img3.jpg"
-                                                                alt="" /></a> </div>
-                                                    <div class="details"> <a class="grid-view-item__title"
-                                                            href="#">Border
-                                                            Dress in Black/Silver</a>
-                                                        <div class="grid-view-item__meta"><span
-                                                                class="product-price__price"><span
-                                                                    class="money">$228.00</span></span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Popular Products-->
-                            <!--Banner-->
-                            <div class="sidebar_widget static-banner">
-                                <img src="assets/images/side-banner-2.jpg" alt="" />
-                            </div>
-                            <!--Banner-->
-                            <!--Information-->
-                            <div class="sidebar_widget">
-                                <div class="widget-title">
-                                    <h2>Information</h2>
-                                </div>
-                                <div class="widget-content">
-                                    <p>Use this text to share information about your brand with your customers. Describe
-                                        a
-                                        product, share announcements, or welcome customers to your store.</p>
-                                </div>
-                            </div>
-                            <!--end Information-->
+
                         </div>
                     </div>
                     <!--End Sidebar-->
@@ -1049,14 +958,31 @@
                                                     }}</span>
                                             </div>
                                             <!-- End product price -->
+                     @php
+                    $review = \App\Models\Comment::where('post_id', $product->id)->get();
+                    $rationvalue = round($review->avg('rating'));
+                    @endphp
 
-                                            <div class="product-review">
-                                                <i class="font-13 fa fa-star"></i>
-                                                <i class="font-13 fa fa-star"></i>
-                                                <i class="font-13 fa fa-star"></i>
-                                                <i class="font-13 fa fa-star-o"></i>
-                                                <i class="font-13 fa fa-star-o"></i>
-                                            </div>
+
+                                         @if ($rationvalue)
+                                         <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                          @for ($i = 0; $i < $rationvalue ; $i++)
+                                                   <i class="fa fa-star"></i>
+                                            @endfor
+                                           </a>
+                                    </div>
+                                        @else
+                                      <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+
+                                        </a>
+                                    </div>
+                                        @endif
+
                                         </div>
                                         <!-- End product details -->
                                     </div>

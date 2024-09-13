@@ -73,11 +73,29 @@
                                     </div>
                                     <div class="product-sku">SKU: <span class="variant-sku">{{$product->sku}}</span>
                                     </div>
-                                    <div class="product-review"><a class="reviewLink" href="#tab2"><i
-                                                class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i
-                                                class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i
-                                                class="font-13 fa fa-star-o"></i><span class="spr-badge-caption">6
-                                                reviews</span></a></div>
+                                     <div class="spr-review">
+
+                                        @if ($rationvalue)
+                                         <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                          @for ($i = 0; $i < $rationvalue ; $i++)
+                                                   <i class="fa fa-star"></i>
+                                            @endfor
+                                            <span class="spr-badge-caption">{{$reviewCount}} reviews</span>
+                                               </a>
+                                    </div>
+                                        @else
+                                      <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+
+                                         <span class="spr-badge-caption">0 reviews</span>
+                                        </a>
+                                    </div>
+                                        @endif
+                                    </div>
+
                                 </div>
                                 <p class="product-single__price product-single__price-product-template">
                                     <span class="visually-hidden">Regular price</span>
@@ -422,13 +440,28 @@
                                             </div>
                                             <!-- End product price -->
 
-                                            <div class="product-review mb-3">
-                                                <i class="font-13 fa fa-star"></i>
-                                                <i class="font-13 fa fa-star"></i>
-                                                <i class="font-13 fa fa-star"></i>
-                                                <i class="font-13 fa fa-star-o"></i>
-                                                <i class="font-13 fa fa-star-o"></i>
-                                            </div>
+                                             @php
+                    $review = \App\Models\Comment::where('post_id', $rdlated_add->id)->get();
+                    $rationvalue = round($review->avg('rating'));
+                    @endphp
+                                        @if ($rationvalue)
+                                         <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                          @for ($i = 0; $i < $rationvalue ; $i++)
+                                                   <i class="fa fa-star"></i>
+                                            @endfor
+                                           </a>
+                                    </div>
+                                        @else
+                                      <div class="product-review">
+                                        <a class="reviewLink" href="#tab2">
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+
+                                        </a>
+                                    </div>
+                                        @endif
                                         </div>
                                         <!-- End product details -->
                                     </div>

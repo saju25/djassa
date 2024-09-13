@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('web_social_links', function (Blueprint $table) {
             $table->id();
-            $table->string('fb')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('instagram')->nullable();
+            $table->text('address')->nullable();
             $table->string('email')->nullable();
             $table->string('number')->nullable();
             $table->timestamps();
