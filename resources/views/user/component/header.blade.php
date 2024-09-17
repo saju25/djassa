@@ -83,7 +83,7 @@
                     <ul id="siteNav" class="site-nav medium center hidearrow">
                         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Launch Yourseif On E-commerce!</b> <i class="anm anm-angle-down-l"></i></a>
+                         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Your Shop!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
                          <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
@@ -116,7 +116,7 @@
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-plus-l"></i></a>
         </li>
-         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Launch Yourseif On E-commerce!</b></a>
+         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Your Shop!</b></a>
         </li>
          <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b></a>
         </li>

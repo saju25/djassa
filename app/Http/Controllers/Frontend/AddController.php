@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\User;
 
 class AddController extends Controller
 {
@@ -14,6 +15,7 @@ class AddController extends Controller
         $product = Post::where('id', $id)
             ->where('slug', $slug)
             ->firstOrFail();
+        $user_sub = User::where('id', $product->user_id)->first();
 
         // Fetch related posts based on the category of the $add post
         $related_c_P = Post::where('add_category', $product->add_category)->get();
@@ -23,6 +25,6 @@ class AddController extends Controller
 
         // dd($reviewCount);
         // Return the view and pass both the specific post and related posts
-        return view('user.profile.add-detail', compact('product', 'related_c_P', 'review', 'rationvalue', 'reviewCount'));
+        return view('user.profile.add-detail', compact('product', 'related_c_P', 'review', 'rationvalue', 'reviewCount', 'user_sub'));
     }
 }

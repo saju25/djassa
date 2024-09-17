@@ -1,6 +1,8 @@
 <x-app-layout>
 
-
+    @php
+    $user = auth()->user();
+    @endphp
     <!--Body Content-->
     <div id="page-content">
         <!--MainContent-->
@@ -73,26 +75,25 @@
                                     </div>
                                     <div class="product-sku">SKU: <span class="variant-sku">{{$product->sku}}</span>
                                     </div>
-                                     <div class="spr-review">
+                                    <div class="spr-review">
 
                                         @if ($rationvalue)
-                                         <div class="product-review">
-                                        <a class="reviewLink" href="#tab2">
-                                          @for ($i = 0; $i < $rationvalue ; $i++)
-                                                   <i class="fa fa-star"></i>
-                                            @endfor
-                                            <span class="spr-badge-caption">{{$reviewCount}} reviews</span>
-                                               </a>
-                                    </div>
+                                        <div class="product-review">
+                                            <a class="reviewLink" href="#tab2">
+                                                @for ($i = 0; $i < $rationvalue ; $i++) <i class="fa fa-star"></i>
+                                                    @endfor
+                                                    <span class="spr-badge-caption">{{$reviewCount}} reviews</span>
+                                            </a>
+                                        </div>
                                         @else
-                                      <div class="product-review">
-                                        <a class="reviewLink" href="#tab2">
-                                        <i class="font-13 fa fa-star-o"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
+                                        <div class="product-review">
+                                            <a class="reviewLink" href="#tab2">
+                                                <i class="font-13 fa fa-star-o"></i>
+                                                <i class="font-13 fa fa-star-o"></i>
 
-                                         <span class="spr-badge-caption">0 reviews</span>
-                                        </a>
-                                    </div>
+                                                <span class="spr-badge-caption">0 reviews</span>
+                                            </a>
+                                        </div>
                                         @endif
                                     </div>
 
@@ -231,6 +232,8 @@
 
 
                                     <div class="product-action clearfix">
+                                        @if ($user->id == $product->user_id )
+                                        @else
                                         <div class="product-form__item--quantity">
                                             <div class="wrapQtyBtn">
                                                 <div class="qtyField">
@@ -243,6 +246,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
+
                                         <div class="product-form__item--submit">
 
                                             <a target=”_blank”
@@ -253,14 +258,23 @@
                                             </a>
 
                                         </div>
+
                                         <div class="shopify-payment-button" data-shopify="payment-button">
                                             @if (empty($sku))
                                             <h3 style="cursor: none;" class="btn btn-success w-100 mt-2"> Out Of Stock
                                             </h3>
                                             @else
-                                            <button type="submit"
+
+                                            @if ($user->id == $product->user_id )
+                                            @else
+                                    @if(!empty($user_sub->sub_id))
+                                    <button type="submit"
                                                 class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy
-                                                it now</button>
+                                               it now</button>
+                                            @endif
+
+                                            @endif
+
                                             @endif
 
                                         </div>
@@ -276,7 +290,7 @@
                         </div>
                     </div>
                     <!--End-product-single-->
-                                      <!--Product Tabs-->
+                    <!--Product Tabs-->
                     <div class="tabs-listing">
                         <ul class="product-tabs">
                             <li rel="tab1"><a class="tablink">Product Details</a></li>
@@ -285,83 +299,100 @@
                         <div class="tab-container">
                             <div id="tab1" class="tab-content">
                                 <div class="product-description rte">
-                                                                   @php
+                                    @php
                                     $description = strip_tags($product->description);
                                     @endphp
 
                                     {{ ucwords($description) }}
-							   </div>
+                                </div>
                             </div>
 
                             <div id="tab2" class="tab-content">
                                 <div id="shopify-product-reviews">
                                     <div class="spr-container">
-                                       <div class="spr-content">
+                                        <div class="spr-content">
                                             <div class="spr-form clearfix">
-                                                <form action="{{ route('comments.store') }}" method="POST" id="new-review-form" class="new-review-form">
-                                                     @csrf
-                                                     <input class="form-control" type="text" name="post_id" value="{{$product->id}}" hidden>
+                                                <form action="{{ route('comments.store') }}" method="POST"
+                                                    id="new-review-form" class="new-review-form">
+                                                    @csrf
+                                                    <input class="form-control" type="text" name="post_id"
+                                                        value="{{$product->id}}" hidden>
                                                     <h3 class="spr-form-title">Rate this Product</h3>
                                                     <fieldset class="spr-form-contact">
 
                                                     </fieldset>
                                                     <fieldset class="spr-form-review">
-                                                      <div class="spr-form-review-rating">
-                                                          <div class="rating-container">
-                                                             <div class="stars">
-                                                                <input type="radio" id="star5" name="rating" value="5">
-                                                                <label for="star5" class="star">&#9733;</label>
-                                                                <input type="radio" id="star4" name="rating" value="4">
-                                                                <label for="star4" class="star">&#9733;</label>
-                                                                <input type="radio" id="star3" name="rating" value="3">
-                                                                <label for="star3" class="star">&#9733;</label>
-                                                                <input type="radio" id="star2" name="rating" value="2">
-                                                                <label for="star2" class="star">&#9733;</label>
-                                                                <input type="radio" id="star1" name="rating" value="1">
-                                                                <label for="star1" class="star">&#9733;</label>
+                                                        <div class="spr-form-review-rating">
+                                                            <div class="rating-container">
+                                                                <div class="stars">
+                                                                    <input type="radio" id="star5" name="rating"
+                                                                        value="5">
+                                                                    <label for="star5" class="star">&#9733;</label>
+                                                                    <input type="radio" id="star4" name="rating"
+                                                                        value="4">
+                                                                    <label for="star4" class="star">&#9733;</label>
+                                                                    <input type="radio" id="star3" name="rating"
+                                                                        value="3">
+                                                                    <label for="star3" class="star">&#9733;</label>
+                                                                    <input type="radio" id="star2" name="rating"
+                                                                        value="2">
+                                                                    <label for="star2" class="star">&#9733;</label>
+                                                                    <input type="radio" id="star1" name="rating"
+                                                                        value="1">
+                                                                    <label for="star1" class="star">&#9733;</label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                      </div>
-                                                       <div class="spr-form-review-body">
-                                                        <label class="spr-form-label" for="review_body_10508262282">Write Your Comments</label>
-                                                        <div class="spr-form-input">
-                                                          <textarea class="spr-form-input spr-form-input-textarea " id="review_body_10508262282" data-product-id="10508262282" name="comment" rows="10" placeholder="Write your comments here"></textarea>
+                                                        <div class="spr-form-review-body">
+                                                            <label class="spr-form-label"
+                                                                for="review_body_10508262282">Write Your
+                                                                Comments</label>
+                                                            <div class="spr-form-input">
+                                                                <textarea
+                                                                    class="spr-form-input spr-form-input-textarea "
+                                                                    id="review_body_10508262282"
+                                                                    data-product-id="10508262282" name="comment"
+                                                                    rows="10"
+                                                                    placeholder="Write your comments here"></textarea>
+                                                            </div>
                                                         </div>
-                                                      </div>
                                                     </fieldset>
                                                     <fieldset class="spr-form-actions">
-                                                        <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">
+                                                        <input type="submit"
+                                                            class="spr-button spr-button-primary button button-primary btn btn-primary"
+                                                            value="Submit Review">
                                                     </fieldset>
                                                 </form>
                                             </div>
                                             <div class="spr-reviews">
                                                 <div class="spr-review">
-                                             @forelse ($review as $reviews)
+                                                    @forelse ($review as $reviews)
                                                     <div class="spr-review-header">
-                                                        <span class="product-review spr-starratings spr-review-header-starratings">
-                                                        <span class="reviewLink">
+                                                        <span
+                                                            class="product-review spr-starratings spr-review-header-starratings">
+                                                            <span class="reviewLink">
                                                                 @for ($i = 0; $i < $reviews->rating ; $i++)
                                                                     <i class="fa fa-star"></i>
-                                                                @endfor
-                                                         </span>
-                                                    </span>
+                                                                    @endfor
+                                                            </span>
+                                                        </span>
                                                         <h3 class="spr-review-header-title">{{$reviews->comment }}</h3>
                                                         <span class="spr-review-header-byline"><strong>
-                                                            {{ $reviews->created_at->format('M d, Y') }}
+                                                                {{ $reviews->created_at->format('M d, Y') }}
 
-                                                        </strong></span>
+                                                            </strong></span>
                                                     </div>
-                                                @empty
+                                                    @empty
                                                     <div colspan="9">Not Found</div>
-                                                @endforelse
-                                               </div>
+                                                    @endforelse
+                                                </div>
 
                                             </div>
                                         </div>
-                                        </div>
                                     </div>
                                 </div>
-                          </div>
+                            </div>
+                        </div>
                     </div>
                     <!--End Product Tabs-->
 
@@ -440,28 +471,27 @@
                                             </div>
                                             <!-- End product price -->
 
-                                             @php
-                    $review = \App\Models\Comment::where('post_id', $rdlated_add->id)->get();
-                    $rationvalue = round($review->avg('rating'));
-                    @endphp
-                                        @if ($rationvalue)
-                                         <div class="product-review">
-                                        <a class="reviewLink" href="#tab2">
-                                          @for ($i = 0; $i < $rationvalue ; $i++)
-                                                   <i class="fa fa-star"></i>
-                                            @endfor
-                                           </a>
-                                    </div>
-                                        @else
-                                      <div class="product-review">
-                                        <a class="reviewLink" href="#tab2">
-                                        <i class="font-13 fa fa-star-o"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
+                                            @php
+                                            $review = \App\Models\Comment::where('post_id', $rdlated_add->id)->get();
+                                            $rationvalue = round($review->avg('rating'));
+                                            @endphp
+                                            @if ($rationvalue)
+                                            <div class="product-review">
+                                                <a class="reviewLink" href="#tab2">
+                                                    @for ($i = 0; $i < $rationvalue ; $i++) <i class="fa fa-star"></i>
+                                                        @endfor
+                                                </a>
+                                            </div>
+                                            @else
+                                            <div class="product-review">
+                                                <a class="reviewLink" href="#tab2">
+                                                    <i class="font-13 fa fa-star-o"></i>
+                                                    <i class="font-13 fa fa-star-o"></i>
+                                                    <i class="font-13 fa fa-star-o"></i>
 
-                                        </a>
-                                    </div>
-                                        @endif
+                                                </a>
+                                            </div>
+                                            @endif
                                         </div>
                                         <!-- End product details -->
                                     </div>
@@ -531,7 +561,7 @@
                 });
             });
 
-        //Product rating system
+            //Product rating system
 
         </script>
 

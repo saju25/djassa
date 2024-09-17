@@ -80,7 +80,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //candidate profile details
     Route::get('/candidate/profile/{id}', [HomeController::class, 'candidateProfile'])->name('candidate.profile.details');
     Route::get('/profile-detail/my-add', [ProfileController::class, 'profileAdd'])->name('profile.add');
+    Route::get('/profile-detail/stock-out', [ProfileController::class, 'stockOut'])->name('stock.add');
     Route::get('/profile-detail/my-order', [ProfileController::class, 'orderList'])->name('profile.order');
+    Route::get('/profile-detail/my-buying-product', [ProfileController::class, 'buyingOrder'])->name('profile.buying');
     Route::get('/profile-detail', [ProfileController::class, 'candidateDetails'])->name('profile.detail');
 //product rating
     Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');

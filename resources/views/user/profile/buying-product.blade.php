@@ -2,7 +2,7 @@
     <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">Order Receive</h1>
+                <h1 class="page-width">Buying Product</h1>
             </div>
         </div>
     </div>

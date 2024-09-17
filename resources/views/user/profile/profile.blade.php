@@ -151,7 +151,7 @@
                         <br>
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><a href="{{route('profile.add')}}">see</a></span>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.add')}}">see</a></span>
                         </li> <br>
                     </div>
                 </div>
@@ -160,22 +160,37 @@
 
         </div>
         <div class="row mt-4">
-
-            <div class="col-md-4">
+ <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1>MY Order</h1>
-                    <div class="mx-4 mt-2">
+                    <h1 class="mt-3">Order Receive</h1>
+                     <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><a href="{{route('profile.order')}}">see</a></span>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.order')}}">see</a></span>
                         </li> <br>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Our Delivers</h1>
-
+                    <h1 class="mt-3">Buying Product</h1>
+                     <div class="mx-4 mt-2">
+                        <li class="lvl1 parent list-unstyled">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.buying')}}">see</a></span>
+                        </li> <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="pro_img_name_div p-4 ">
+                    <h1 class="mt-3">Stock Out Product</h1>
+                      <div class="mx-4 mt-2">
+                        <li class="lvl1 parent list-unstyled">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('stock.add')}}">see</a></span>
+                        </li> <br>
+                    </div>
                 </div>
             </div>
         </div>
