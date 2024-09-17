@@ -340,10 +340,21 @@ button,
 select,
 textarea {
   background: transparent;
-  border: 1px solid #d7d7d7;
+  border: 1px solid #7e0cba;
   transition: all 0.4s ease-out 0s;
   -webkit-transition: all 0.4s ease-out 0s;
   color: #424242;
+}
+
+.form-control,
+.tagify,
+.dropify-wrapper,
+.spr-form-input {
+  border: 1px solid #7e0cba !important;
+}
+
+.ck.ck-editor__editable_inline {
+  border: 1px solid #7e0cba !important;
 }
 
 input:focus,
