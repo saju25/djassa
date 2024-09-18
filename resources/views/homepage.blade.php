@@ -13,7 +13,7 @@
                                     <h2 class="h1 mega-title slideshow__title">Shop Our New Collection</h2>
                                     <span class="mega-subtitle slideshow__subtitle">From Hight to low, classic or
                                         modern. We have you covered</span>
-                                    <a href="{{route('all.product')}}"> <span class="btn">Shop now</span></a>
+                                    <a href="{{route('all.product')}}"> <span class="btn">Achetez maintenant</span></a>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                                     <h2 class="h1 mega-title slideshow__title">Summer Bikini Collection</h2>
                                     <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
                                         only</span>
-                                    <span class="btn">Shop now</span>
+                                    <a href="{{route('all.product')}}"> <span class="btn">Achetez maintenant</span></a>
                                 </div>
                             </div>
                         </div>
@@ -42,8 +42,8 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="section-header text-center">
-                        <h2 class="h2">Category collection</h2>
-                        <p>Our most popular Category based on sales</p>
+                        <h2 class="h2">Collection de catégories</h2>
+                        <p>Notre catégorie la plus populaire en fonction des ventes</p>
                     </div>
                 </div>
             </div>
@@ -180,8 +180,8 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="section-header text-center">
-                        <h2 class="h2">Featured collection</h2>
-                        <p>Our most popular products based on sales</p>
+                        <h2 class="h2">Collection en vedette</h2>
+                        <p>Nos produits les plus populaires en fonction des ventes</p>
                     </div>
                 </div>
             </div>
@@ -224,8 +224,7 @@
                                             method="post">
                                             <a
                                                 href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
-                                                <button class="btn btn-success" type="button" tabindex="0">Buy
-                                                    Now</button>
+                                                <button class="btn btn-success" type="button" tabindex="0">Acheter maintenant</button>
                                             </a>
                                         </form>
 
@@ -243,10 +242,8 @@
                                         <!-- End product name -->
                                         <!-- product price -->
                                         <div class="product-price">
-                                            <span class="old-price"><i
-                                                class="fa-solid fa-dollar-sign px-2"></i>{{ $latestAdd-> best_price}}</span>
-                                            <span class="price"><i
-                                                class="fa-solid fa-dollar-sign px-2"></i>{{ $latestAdd-> discounted_price
+                                            <span class="old-price"><i class="fa-solid fa-franc-sign px-2"></i>{{ $latestAdd-> best_price}}</span>
+                                            <span class="price"><i class="fa-solid fa-franc-sign px-2"></i>{{ $latestAdd-> discounted_price
                                                 }}</span>
                                         </div>
                                         <!-- End product price -->

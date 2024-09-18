@@ -15,7 +15,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 col-sm-8 col-md-5 col-lg-4">
-                <p class="phone-no">In your need, Djassa is at your side</p>
+                <p class="phone-no">Djassa Market : Le marché qui vient à vous !</p>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
                 <div class="text-center">
@@ -26,8 +26,8 @@
                 <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                 @guest
                 <ul class="customer-links list-inline">
-                    <li><a href="{{route('login')}}">Login</a></li>
-                    <li><a href="{{route('register')}}">Create Account</a></li>
+                    <li><a href="{{route('login')}}">Se connecter</a></li>
+                    <li><a href="{{route('register')}}">Créer un compte</a></li>
                 </ul>
                 @endguest
                 @auth
@@ -81,13 +81,15 @@
                 <!--Desktop Menu-->
                 <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                     <ul id="siteNav" class="site-nav medium center hidearrow">
-                        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil<i class="anm anm-angle-down-l"></i></a>
                         </li>
-                         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Your Shop!</b> <i class="anm anm-angle-down-l"></i></a>
+                         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
+!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                         <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b> <i class="anm anm-angle-down-l"></i></a>
+                         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
+!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b> <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Postez une annonce!</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
 
 
@@ -112,15 +114,17 @@
 <!--End Header-->
 <!--Mobile Menu-->
 <div class="mobile-nav-wrapper" role="navigation">
-    <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
+    <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Fermer le menu</div>
     <ul id="MobileNav" class="mobile-nav">
-        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Home <i class="anm anm-plus-l"></i></a>
+        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil <i class="anm anm-plus-l"></i></a>
         </li>
-         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>Your Shop!</b></a>
+         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
+!</b></a>
         </li>
-         <li class="lvl1"><a href="{{route('all.product')}}"><b>Shop Now!</b></a>
+         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
+!</b></a>
         </li>
-       <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Post Your Add Now!</b></a>
+       <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Postez une annonce!</b></a>
         </li>
        </ul>
 </div>

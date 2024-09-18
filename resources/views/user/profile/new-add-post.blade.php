@@ -3,7 +3,7 @@
     <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">Add Product
+                <h1 class="page-width">Poster une annonce
                 </h1>
             </div>
         </div>
@@ -18,12 +18,12 @@
                         enctype="multipart/form-data">
                         @csrf
 
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Name</label>
+                                    <label class="col-form-label">Nom</label>
                                 </div>
-                                <input type="text" name="name" class="form-control" placeholder="Name">
+                                <input type="text" name="name" class="form-control" placeholder="Nom">
 
                                 @error('job_title')
                                 <span class="text-danger">{{ $message }}</span>
@@ -32,9 +32,9 @@
 
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Quantity</label>
+                                    <label class="col-form-label">Quantité</label>
                                 </div>
-                                <input type="number" name="sku" class="form-control" placeholder="Quantity">
+                                <input type="number" name="sku" class="form-control" placeholder="Quantité">
 
                                 @error('sku')
                                 <span class="text-danger">{{ $message }}</span>
@@ -42,14 +42,14 @@
                             </div>
 
                         </div>
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label class="col-form-label">Description</label>
+                                    <label class="col-form-label">paragraphe</label>
                                 </div>
                                 <div>
                                     <textarea id="editor" class="col-form-label w-100 p-3" name="description"
-                                        placeholder="Description">{{ old('job_description') }}</textarea>
+                                        placeholder="paragraphe">{{ old('job_description') }}</textarea>
 
                                     @error('description')
                                     <span class="text-danger">{{ $message }}</span>
@@ -58,12 +58,12 @@
                             </div>
                         </div>
 
-                        <div class=" row">
+                        <div class=" row mt-3">
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Best Price</label>
+                                    <label class="col-form-label">Prix</label>
                                 </div>
-                                <input type="number" name="best_price" class="form-control" placeholder="Best Price">
+                                <input type="number" name="best_price" class="form-control" placeholder="Prix">
 
                                 @error('best_price')
                                 <span class="text-danger">{{ $message }}</span>
@@ -72,7 +72,8 @@
 
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Discounted Price</label>
+                                    <label class="col-form-label">Dernier prix
+</label>
                                 </div>
                                 <input type="number" name="discounted_price" class="form-control"
                                     placeholder="Discounted Price">
@@ -83,18 +84,18 @@
                             </div>
 
                         </div>
-                        <div class=" row">
+                        <div class=" row mt-3">
 
                             <div class="col-md-6 ">
                                 <div>
-                                    <label class="col-form-label">Variants</label>
+                                    <label class="col-form-label">variantes</label>
                                 </div>
                                 <div class="">
 
                                     <div class="row mt-2 justify-content-center align-items-center">
                                         <div class="col-md-4 mt-2 d-flex">
                                             <div class="col-6">
-                                                <span class="p-2">Color</span></label>
+                                                <span class="p-2">couleur</span></label>
                                             </div>
                                             <div class="col-6">
                                                 <label class="switch">
@@ -114,7 +115,7 @@
                                     <div class="row mt-2 justify-content-center align-items-center">
                                         <div class="col-md-4 mt-2 d-flex">
                                             <div class="col-6">
-                                                <span class="p-2">Weight</span>
+                                                <span class="p-2">poids</span>
                                             </div>
                                             <div class="col-6">
                                                 <label class="switch">
@@ -134,7 +135,7 @@
                                     <div class="row mt-2 justify-content-center align-items-center">
                                         <div class="col-md-4 mt-2 d-flex">
                                             <div class="col-6">
-                                                <span class="p-2">Size</span>
+                                                <span class="p-2">Taille</span>
                                             </div>
                                             <div class="col-6">
                                                 <label class="switch">
@@ -152,7 +153,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Product Photo</label>
+                                    <label class="col-form-label">Photo du produit</label>
                                 </div>
                                 <div class="dropify_div">
                                     <input type="file" id="input-file-now" name="product_img[]" class="dropify"
@@ -168,11 +169,11 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row mt-3">
 
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Category</label>
+                                    <label class="col-form-label">Catégorie</label>
                                 </div>
                                 <select id="category" class="form-select w-100" name="add_cate">
                                     <option id="1" selected disabled>Select one</option>
@@ -205,14 +206,15 @@
                             </div>
 
                         </div>
-                        <div class=" row mb-3">
+                        <div class=" row mb-3 mt-3">
 
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">City</label>
+                                    <label class="col-form-label">Ville</label>
                                 </div>
                                 <select class="form-select w-100" name="city">
-                                    <option selected disabled>Select one</option>
+                                    <option selected disabled>Choosissez en un
+</option>
                                     <option value="Abidjan">Abidjan</option>
                                     <option value="Aboisso">Aboisso</option>
                                     <option value="Adiaké">Adiaké</option>
@@ -301,7 +303,7 @@
                             <div class="col-md-6">
 
                                 <div>
-                                    <label class="col-form-label">Phone Number</label>
+                                    <label class="col-form-label">Numéro de telephone </label>
                                 </div>
                                 <input type="number" name="number" class="form-control" placeholder="8865....">
 
@@ -312,9 +314,9 @@
 
                         </div>
 
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-12">
-                                <input class="w-100 btn btn-success" type="submit" value="Publish Your Add">
+                                <input class="w-100 btn btn-success" type="submit" value="Publier">
                             </div>
                         </div>
 

@@ -5,7 +5,8 @@
             <div class="footer-top">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        <h4 class="h4">Quick Shop</h4>
+                        <h4 class="h4">Achat rapide
+</h4>
                         <form id="myForm2" action="{{ route('all.product') }}" method="GET">
                             <div>
                                 <div class="p-2">
@@ -45,25 +46,21 @@
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                         <h4 class="h4">Informations</h4>
                         <ul>
-                            <li><a href="{{route('about.us')}}">About us</a></li>
+                            <li><a href="{{route('about.us')}}">A propos de nous</a></li>
 
-                            <li><a href="{{route('policy-and-confidentiality')}}">Privacy policy</a></li>
-                            <li><a href="{{route('all.product')}}">Shop</a></li>
-                            <li><a href="{{ route('profile.detail') }}">My Account</a></li>
+                            <li><a href="{{route('policy-and-confidentiality')}}">Politique de Confidentialité </a></li>
+                            <li><a href="{{route('all.product')}}">Boutiques</a></li>
+                            <li><a href="{{ route('profile.detail') }}">Mon compte</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        <h4 class="h4">Customer Services</h4>
+                        <h4 class="h4">Service Client</h4>
                         <ul>
-                            <li><a href="#">Map</a></li>
                             <li><a href="#">Contact Us</a></li>
-                            <li><a href="{{Route('user.sub')}}">Subscription</a></li>
-                            <li><a href="{{route('profile.order')}}">My Order</a></li>
-                            <li><a href="{{route('profile.add')}}">My Add</a></li>
-                        </ul>
+                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
-                        <h4 class="h4">Contact Us</h4>
+                        <h4 class="h4">Contactez-nous</h4>
                         <ul class="addressFooter">
                             @php
                     $webSocialLinks = \App\Models\WebSocialLink::first();
