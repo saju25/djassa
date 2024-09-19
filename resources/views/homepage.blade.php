@@ -5,8 +5,8 @@
             <div class="home-slideshow">
                 <div class="slide">
                     <div class="blur-up lazyload bg-size">
-                        <img class="blur-up lazyload bg-img"
-                            src="assets/images/banar1.png" title="Shop Our New Collection" />
+                        <img class="blur-up lazyload bg-img" src="assets/images/banar1.png"
+                            title="Shop Our New Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
@@ -21,8 +21,8 @@
                 </div>
                 <div class="slide">
                     <div class="blur-up lazyload bg-size">
-                        <img class="blur-up lazyload bg-img"
-                            src="assets/images/banar2.jpg" title="Summer Bikini Collection" />
+                        <img class="blur-up lazyload bg-img" src="assets/images/banar2.jpg"
+                            title="Summer Bikini Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
@@ -53,6 +53,7 @@
                         <div id="mb_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-mobile-screen"></i>
                             <div>Mobiles</div>
+                            <br>
                             <input id="mb_ch" type="checkbox" name="add_category" value="Mobiles" hidden>
                         </div>
                     </div>
@@ -60,48 +61,55 @@
                     <div class="col-md-3 p-3">
                         <div id="ele_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-shop"></i>
-                            <div>Electronics</div>
-                            <input id="ele_ch" type="checkbox" name="add_category" value="Electronics" hidden>
+                            <div>Électronique</div>
+                            <br>
+                            <input id="ele_ch" type="checkbox" name="add_category" value="Électronique" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="ve_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-car"></i>
-                            <div>Vehicles</div>
-                            <input id="ve_ch" type="checkbox" name="add_category" value="Vehicles" hidden>
+                            <div>Véhicules</div>
+                            <br>
+                            <input id="ve_ch" type="checkbox" name="add_category" value="Véhicules" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="pr_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-house-laptop"></i>
-                            <div>Property</div>
-                            <input id="pr_ch" type="checkbox" name="add_category" value="Property" hidden>
+                            <div>Immobilier</div>
+                            <br>
+                            <input id="pr_ch" type="checkbox" name="add_category" value="Immobilier" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="ho_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-people-pulling"></i>
-                            <div>Home & Living</div>
-                            <input id="ho_ch" type="checkbox" name="add_category" value="Home & Living" hidden>
+                            <div>Maison & Vie</div>
+                            <br>
+                            <input id="ho_ch" type="checkbox" name="add_category" value="Maison & Vie" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="pe_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-dog"></i>
-                            <div>Pets & Animals</div>
-                            <input id="pe_ch" type="checkbox" name="add_category" value="Pets & Animals" hidden>
+                            <div>Mode et Soins pour Hommes</div>
+                            <br>
+                            <input id="pe_ch" type="checkbox" name="add_category" value="Mode et Soins pour Hommes"
+                                hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="me_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-person-half-dress"></i>
-                            <div>Men's Fashion & Grooming</div>
-                            <input id="me_ch" type="checkbox" name="add_category" value="Men's Fashion & Grooming"
+                            <div>Mode et Beauté pour Femmes</div>
+                            <br>
+                            <input id="me_ch" type="checkbox" name="add_category" value="Mode et Beauté pour Femmes"
                                 hidden>
                         </div>
                     </div>
@@ -109,8 +117,8 @@
                     <div class="col-md-3 p-3">
                         <div id="wo_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-person-drowning"></i>
-                            <div>Women's Fashion & Beauty</div>
-                            <input id="wo_ch" type="checkbox" name="add_category" value="Women's Fashion & Beauty"
+                            <div>Animaux & Animaux de Compagnie</div>
+                            <input id="wo_ch" type="checkbox" name="add_category" value="Animaux & Animaux de Compagnie"
                                 hidden>
                         </div>
                     </div>
@@ -118,8 +126,9 @@
                     <div class="col-md-3 p-3">
                         <div id="hob_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-person-skiing"></i>
-                            <div>Hobbies, Sports & Kids</div>
-                            <input id="hob_ch" type="checkbox" name="add_category" value="Hobbies, Sports & Kids"
+                            <div>Loisirs, Sports & Enfants</div>
+                            <br>
+                            <input id="hob_ch" type="checkbox" name="add_category" value="Loisirs, Sports & Enfants"
                                 hidden>
                         </div>
                     </div>
@@ -127,48 +136,54 @@
                     <div class="col-md-3 p-3">
                         <div id="bus_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-briefcase"></i>
-                            <div>Business & Industry</div>
-                            <input id="bus_ch" type="checkbox" name="add_category" value="Business & Industry" hidden>
+                            <div>Affaires & Industrie</div>
+                            <br>
+                            <input id="bus_ch" type="checkbox" name="add_category" value="Affaires & Industrie" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="es_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-arrows-rotate"></i>
-                            <div>Essentials</div>
-                            <input id="es_ch" type="checkbox" name="add_category" value="Essentials" hidden>
+                            <div>Éducation</div>
+                            <br>
+                            <input id="es_ch" type="checkbox" name="add_category" value="Éducation" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="ed_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-book-open"></i>
-                            <div>Education</div>
-                            <input id="ed_ch" type="checkbox" name="add_category" value="Education" hidden>
+                            <div>Essentiels</div>
+                            <br>
+                            <input id="ed_ch" type="checkbox" name="add_category" value="Essentiels" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="ag_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-tractor"></i>
-                            <div>Agriculture</div>
-                            <input id="ag_ch" type="checkbox" name="add_category" value="Agriculture" hidden>
+                            <div>Services</div>
+                            <br>
+                            <input id="ag_ch" type="checkbox" name="add_category" value="Services" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="ser_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-gears"></i>
-                            <div>Services</div>
-                            <input id="ser_ch" type="checkbox" name="add_category" value="Services" hidden>
+                            <div>Agriculture</div>
+                            <br>
+                            <input id="ser_ch" type="checkbox" name="add_category" value="Agriculture" hidden>
                         </div>
                     </div>
 
                     <div class="col-md-3 p-3">
                         <div id="otr_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-binoculars"></i>
-                            <div>Other</div>
-                            <input id="otr_ch" type="checkbox" name="add_category" value="Other" hidden>
+                            <div>Autres</div>
+                            <br>
+                            <input id="otr_ch" type="checkbox" name="add_category" value="Autres" hidden>
                         </div>
                     </div>
                 </div>
@@ -209,80 +224,82 @@
 
                                     <img class="primary blur-up lazyload" src=" {{$array[0]}}" alt="image"
                                         title="product">
-                                        <!-- End image -->
-                                        <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" src=" {{$array[1]}}" alt="image"
-                                            title="product">
-                                            <!-- End hover image -->
-                                            @endif
+                                    <!-- End image -->
+                                    <!-- Hover image -->
+                                    <img class="hover blur-up lazyload" src=" {{$array[1]}}" alt="image"
+                                        title="product">
+                                    <!-- End hover image -->
+                                    @endif
 
-                                        </a>
-                                        <!-- end product image -->
+                                </a>
+                                <!-- end product image -->
 
-                                        <!-- Start product button -->
-                                        <form class="variants add" action="#" onclick="window.location.href='cart.html'"
-                                            method="post">
-                                            <a
-                                                href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
-                                                <button class="btn btn-success" type="button" tabindex="0">Acheter maintenant</button>
-                                            </a>
-                                        </form>
+                                <!-- Start product button -->
+                                <form class="variants add" action="#" onclick="window.location.href='cart.html'"
+                                    method="post">
+                                    <a
+                                        href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
+                                        <button class="btn btn-success" type="button" tabindex="0">Acheter
+                                            maintenant</button>
+                                    </a>
+                                </form>
 
-                                        <!-- end product button -->
-                                    </div>
-                                    <!--start product details -->
-                                    <div class="product-details text-center">
-                                        <!-- product name -->
-                                        <div class="product-name">
-                                            <a
-                                                href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
-                                                {{ ucwords(Str:: limit($latestAdd -> name, 25, '...')) }}
-                                            </a>
-                                        </div>
-                                        <!-- End product name -->
-                                        <!-- product price -->
-                                        <div class="product-price">
-                                            <span class="old-price"><i class="fa-solid fa-franc-sign px-2"></i>{{ $latestAdd-> best_price}}</span>
-                                            <span class="price"><i class="fa-solid fa-franc-sign px-2"></i>{{ $latestAdd-> discounted_price
-                                                }}</span>
-                                        </div>
-                                        <!-- End product price -->
-
-
-
-    @php
-                    $review = \App\Models\Comment::where('post_id', $latestAdd->id)->get();
-                    $rationvalue = round($review->avg('rating'));
-                    @endphp
-                                        @if ($rationvalue)
-                                         <div class="product-review">
-                                        <a class="reviewLink" href="#tab2">
-                                          @for ($i = 0; $i < $rationvalue ; $i++)
-                                                   <i class="fa fa-star"></i>
-                                            @endfor
-                                           </a>
-                                    </div>
-                                        @else
-                                      <div class="product-review">
-                                        <a class="reviewLink" href="#tab2">
-                                        <i class="font-13 fa fa-star-o"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
-
-                                        </a>
-                                    </div>
-                                        @endif
-
-                                    </div>
-                                    <!-- End product details -->
+                                <!-- end product button -->
                             </div>
-                        </div>
+                            <!--start product details -->
+                            <div class="product-details text-center">
+                                <!-- product name -->
+                                <div class="product-name">
+                                    <a
+                                        href="{{ route('add.details', ['id' => $latestAdd->id,'slug' => $latestAdd->slug]) }}">
+                                        {{ ucwords(Str:: limit($latestAdd -> name, 25, '...')) }}
+                                    </a>
+                                </div>
+                                <!-- End product name -->
+                                <!-- product price -->
+                                <div class="product-price">
+                                    <span class="old-price"><i class="fa-solid fa-franc-sign px-2"></i>{{ $latestAdd->
+                                        best_price}}</span>
+                                    <span class="price"><i class="fa-solid fa-franc-sign px-2"></i>{{ $latestAdd->
+                                        discounted_price
+                                        }}</span>
+                                </div>
+                                <!-- End product price -->
 
-                        @endforeach
+
+
+                                @php
+                                $review = \App\Models\Comment::where('post_id', $latestAdd->id)->get();
+                                $rationvalue = round($review->avg('rating'));
+                                @endphp
+                                @if ($rationvalue)
+                                <div class="product-review">
+                                    <a class="reviewLink" href="#tab2">
+                                        @for ($i = 0; $i < $rationvalue ; $i++) <i class="fa fa-star"></i>
+                                            @endfor
+                                    </a>
+                                </div>
+                                @else
+                                <div class="product-review">
+                                    <a class="reviewLink" href="#tab2">
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+                                        <i class="font-13 fa fa-star-o"></i>
+
+                                    </a>
+                                </div>
+                                @endif
+
+                            </div>
+                            <!-- End product details -->
+                        </div>
                     </div>
+
+                    @endforeach
                 </div>
             </div>
-
         </div>
+
+    </div>
 
 </x-guest-layout>

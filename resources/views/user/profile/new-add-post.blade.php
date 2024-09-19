@@ -176,22 +176,22 @@
                                     <label class="col-form-label">Catégorie</label>
                                 </div>
                                 <select id="category" class="form-select w-100" name="add_cate">
-                                    <option id="1" selected disabled>Select one</option>
+                                    <option id="1" selected disabled>Choosissez en un</option>
                                     <option id="2" value="Mobiles">Mobiles</option>
-                                    <option id="3" value="Electronics">Electronics</option>
-                                    <option id="4" value="Vehicles">Vehicles</option>
-                                    <option id="5" value="Property">Property</option>
-                                    <option id="6" value="Home & Living">Home & Living</option>
-                                    <option id="7" value="Men's Fashion & Grooming">Men's Fashion & Grooming</option>
-                                    <option id="8" value="Women's Fashion & Beauty">Women's Fashion & Beauty</option>
-                                    <option id="9" value="Pets & Animals">Pets & Animals</option>
-                                    <option id="10" value="Hobbies, Sports & Kids">Hobbies, Sports & Kids</option>
-                                    <option id="11" value="Business & Industry">Business & Industry</option>
-                                    <option id="12" value="Education">Education</option>
-                                    <option id="13" value="Essentials">Essentials</option>
+                                    <option id="3" value="Électronique">Électronique</option>
+                                    <option id="4" value="Véhicules">Véhicules</option>
+                                    <option id="5" value="Immobilier">Immobilier</option>
+                                    <option id="6" value="Maison & Vie">Maison & Vie</option>
+                                    <option id="7" value="Mode et Soins pour Hommes">Mode et Soins pour Hommes</option>
+                                    <option id="8" value="Mode et Beauté pour Femmes">Mode et Beauté pour Femmes</option>
+                                    <option id="9" value="Animaux & Animaux de Compagnie">Animaux & Animaux de Compagnie</option>
+                                    <option id="10" value="Loisirs, Sports & Enfants">Loisirs, Sports & Enfants</option>
+                                    <option id="11" value="Affaires & Industrie">Affaires & Industrie</option>
+                                    <option id="12" value="Éducation">Éducation</option>
+                                    <option id="13" value="Essentiels">Essentiels</option>
                                     <option id="14" value="Services">Services</option>
                                     <option id="15" value="Agriculture">Agriculture</option>
-                                    <option id="16" value="Other">Other</option>
+                                    <option id="16" value="Autres">Autres</option>
                                 </select>
 
                                 @error('add_cate')
@@ -389,215 +389,217 @@
 
                 if (val == 'Mobiles') {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Mobile Phones">Mobile Phones</option>
-                        <option value="Mobile Phone Accessories">Mobile Phone Accessories</option>
-                        <option value="Wearables">Wearables</option>
-                        <option value="SIM Cards">SIM Cards</option>
-                        <option value="Mobile Phone Services">Mobile Phone Services</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Téléphones portables">Téléphones portables</option>
+                        <option value="Accessoires pour téléphones portables">Accessoires pour téléphones portables</option>
+                        <option value="Mobiles">Mobiles</option>
+                        <option value="Objets connectés">Objets connectés</option>
+                        <option value="Cartes SIM">Cartes SIM</option>
+                        <option value="Services pour téléphones portables">Services pour téléphones portables</option>
+                        <option value="Autres">Autres</option>
                     </select>`;
 
                 }
-                if (val == 'Electronics') {
+                if (val == 'Électronique') {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Desktop Computers">Desktop Computers</option>
-                        <option value="Laptops">Laptops</option>
-                        <option value="Laptop & Computer Accessories">Laptop & Computer Accessories</option>
-                        <option value="Tablets & Accessories">Tablets & Accessories</option>
-                        <option value="TVs">TVs</option>
-                        <option value="TV & Video Accessories">TV & Video Accessories</option>
-                        <option value="Home Appliances">Home Appliances</option>
-                        <option value="Cameras, Camcorders & Accessories">Cameras, Camcorders & Accessories</option>
-                        <option value="ACs & Home Electronics">ACs & Home Electronics</option>
-                        <option value="Audio & Sound Systems">Audio & Sound Systems</option>
-                        <option value="Video Game Consoles & Accessories">Video Game Consoles & Accessories</option>
-                        <option value="Photocopiers">Photocopiers</option>
-                        <option value="Other Electronics">Other Electronics</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Ordinateurs de bureau">Ordinateurs de bureau</option>
+                        <option value="Ordinateurs portables & accessoires">Ordinateurs portables & accessoires</option>
+                        <option value="Tablettes & accessoires">Tablettes & accessoires</option>
+                        <option value="Téléviseurs">Téléviseurs</option>
+                        <option value="Accessoires TV & Vidéo">Accessoires TV & Vidéo</option>
+                        <option value="Électroménagers">Électroménagers</option>
+                        <option value="Appareils photo, caméscopes & accessoires">Appareils photo, caméscopes & accessoires</option>
+                        <option value="Climatiseurs & Électronique domestique">Climatiseurs & Électronique domestique</option>
+                        <option value="Systèmes audio & son">Systèmes audio & son</option>
+                        <option value="Ordinateurs">Ordinateurs</option>
+                        <option value="Consoles de jeux vidéo & accessoires">Consoles de jeux vidéo & accessoires</option>
+                        <option value="Photocopieurs">Photocopieurs</option>
+                        <option value="Autres articles électroniques">Autres articles électroniques</option>
                      </select>`;
 
                 }
-                if (val == 'Vehicles') {
+                if (val == 'Véhicules') {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Cars">Cars</option>
-                        <option value="Motorbikes">Motorbikes</option>
-                        <option value="Bicycles">Bicycles</option>
-                        <option value="Three Wheelers">Three Wheelers</option>
-                        <option value="Trucks">Trucks</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Voitures">Voitures</option>
+                        <option value="Motos">Motos</option>
+                        <option value="Vélos">Vélos</option>
+                        <option value="Tricycles">Tricycles</option>
+                        <option value="Camions">Camions</option>
                         <option value="Vans">Vans</option>
-                        <option value="Buses">Buses</option>
-                        <option value="Heavy Duty">Heavy Duty</option>
-                        <option value="Auto Parts & Accessories">Auto Parts & Accessories</option>
-                        <option value="Maintenance and Repair">Maintenance and Repair</option>
-                        <option value="Water Transport">Water Transport</option>
-                        <option value="Auto Services">Auto Services</option>
-                        <option value="Rentals">Rentals</option>
+                        <option value="Autobus">Autobus</option>
+                        <option value="Véhicules lourds">Véhicules lourds</option>
+                        <option value="Pièces détachées & accessoires automobiles">Pièces détachées & accessoires automobiles</option>
+                        <option value="Entretien et réparation">Entretien et réparation</option>
+                        <option value="Transport maritime">Transport maritime</option>
+                        <option value="Services automobiles">Services automobiles</option>
+                        <option value="Locations">Locations</option>
+                        </select>`;
+
+                }
+                if (val == 'Immobilier') {
+                    html = `
+                    <label>Sélectionnez une sous-catégorie</label>
+                    <select name='sub_cate' class='form-control'>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Terrains à vendre">Terrains à vendre</option>
+                        <option value="Appartements à vendre">Appartements à vendre</option>
+                        <option value="Maisons à vendre">Maisons à vendre</option>
+                        <option value="Propriétés commerciales à vendre">Propriétés commerciales à vendre</option>
+                       </select>`;
+
+                }
+                if (val == 'Maison & Vie') {
+                    html = `
+                    <label>Sélectionnez une sous-catégorie</label>
+                    <select name='sub_cate' class='form-control'>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Meubles de bureau & de magasin">Meubles de bureau & de magasin</option>
+                        <option value="Meubles pour enfants"> Meubles pour enfants</option>
+                        <option value="Articles ménagers">Articles ménagers</option>
+                        <option value="Produits pour salle de bain">Produits pour salle de bain</option>
+                        <option value="Portes">Portes</option>
+                        <option value="Textiles et décoration pour la maison">Textiles et décoration pour la maison</option>
+                         </select>`;
+
+                }
+                if (val == "Mode et Soins pour Hommes") {
+                    html = `
+                    <label>Sélectionnez une sous-catégorie</label>
+                    <select name='sub_cate' class='form-control'>
+                          <option id="1" selected disabled>Choosissez en un</option>
+                         <option value="Vestes & Manteaux">Vestes & Manteaux</option>
+                         <option value="Chemises & T-Shirts">Chemises & T-Shirts</option>
+                         <option value="Pantalons">Pantalons</option>
+                         <option value="Vêtements traditionnels">Vêtements traditionnels</option>
+                         <option value="Soins de beauté & du corps">Soins de beauté & du corps</option>
+                         <option value="Lunettes de vue & de soleil">Lunettes de vue & de soleil</option>
+                         <option value="Mode pour garçon">Mode pour garçon</option>
+                         <option value="Sacs & Accessoires">Sacs & Accessoires</option>
+                         <option value="Chaussures">Chaussures</option>
+                         <option value="Montres">Montres</option>
+                         <option value="Vente en gros - En vrac">Vente en gros - En vrac</option>
+                         <option value="Voitures">Voitures</option>
+                       </select>`;
+
+                }
+                if (val == "Mode et Beauté pour Femmes") {
+                    html = `
+                    <label>Sélectionnez une sous-catégorie</label>
+                    <select name='sub_cate' class='form-control'>
+                        <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Vêtements traditionnels">Vêtements traditionnels</option>
+                        <option value="Vêtements d'hiver">Vêtements d'hiver</option>
+                        <option value="Sacs & Accessoires">Sacs & Accessoires</option>
+                        <option value="Lingerie & Vêtements de nuit">Lingerie & Vêtements de nuit</option>
+                        <option value="Chaussures">Chaussures</option>
+                        <option value="Bijoux & Montres">Bijoux & Montres</option>
+                        <option value="Beauté & Soins personnels">Beauté & Soins personnels</option>
+                        <option value="Lunettes de vue & de soleil">Lunettes de vue & de soleil</option>
+                        <option value="Vente en gros - En vrac">Vente en gros - En vrac</option>
+                        <option value="Mode pour fille">Mode pour fille</option>
                      </select>`;
 
                 }
-                if (val == 'Property') {
+                if (val == "Animaux & Animaux de Compagnie") {
                     html = `
-                    <label>Select a subcategory</label>
-                    <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Land For Sale">Land For Sale</option>
-                        <option value="Apartments For Sale">Apartments For Sale</option>
-                        <option value="Houses For Sale">Houses For Sale</option>
-                        <option value="Houses For Sale">Houses For Sale</option>
-                        <option value="Commercial Properties For Sale">Commercial Properties For Sale</option>
-                    </select>`;
-
-                }
-                if (val == 'Home & Living') {
-                    html = `
-                    <label>Select a subcategory</label>
-                    <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Office & Shop Furniture">Office & Shop Furniture</option>
-                        <option value="Children's Furniture">Children's Furniture</option>
-                        <option value="Household Items">Household Items</option>
-                        <option value="Bathroom Products">Bathroom Products</option>
-                        <option value="Doors">Doors</option>
-                        <option value="Home Textiles & Decoration">Home Textiles & Decoration</option>
-                     </select>`;
-
-                }
-                if (val == "Men's Fashion & Grooming") {
-                    html = `
-                    <label>Select a subcategory</label>
-                    <select name='sub_cate' class='form-control'>
-                        <option value="Jacket & Coat">Jacket & Coat</option>
-                        <option value="Shirts & T-Shirts">Shirts & T-Shirts</option>
-                        <option value="Pants">Pants</option>
-                        <option value="Traditional Clothing">Traditional Clothing</option>
-                        <option value="Grooming & Bodycare">Grooming & Bodycare</option>
-                        <option value="Optical & Sunglasses">Optical & Sunglasses</option>
-                        <option value="Baby Boy's Fashion">Baby Boy's Fashion</option>
-                        <option value="Bags & Accessories">Bags & Accessories</option>
-                        <option value="Footwear">Footwear</option>
-                        <option value="Watches">Watches</option>
-                        <option value="Wholesale - Bulk">Wholesale - Bulk</option>
-                        <option value="Cars">Cars</option>
-                     </select>`;
-
-                }
-                if (val == "Women's Fashion & Beauty") {
-                    html = `
-                    <label>Select a subcategory</label>
-                    <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Traditional Wear">Traditional Wear</option>
-                        <option value="Winter Wear">Winter Wear</option>
-                        <option value="Bags & Accessories">Bags & Accessories</option>
-                        <option value="Footwear">Footwear</option>
-                        <option value="Lingerie & Sleepwear">Lingerie & Sleepwear</option>
-                        <option value="Jewellery & Watches">Jewellery & Watches</option>
-                        <option value="Beauty & Personal Care">Beauty & Personal Care</option>
-                        <option value="Optical & Sunglasses">Optical & Sunglasses</option>
-                        <option value="Wholesale - Bulk">Wholesale - Bulk</option>
-                        <option value="Baby Girl's Fashion">Baby Girl's Fashion</option>
-                     </select>`;
-
-                }
-                if (val == "Pets & Animals") {
-                    html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='client_type' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                        <option value="Pets">Pets</option>
-                        <option value="Farm Animals">Farm Animals</option>
-                        <option value="Pet & Animal Accessories">Pet & Animal Accessories</option>
-                        <option value="Pet & Animal food">Pet & Animal food</option>
-                        <option value="Other Pets & Animals">Other Pets & Animals</option>
-                        <option value="Cars">Cars</option>
-                     </select>`;
-
-                }
-                if (val == "Hobbies, Sports & Kids") {
-                    html = `
-                    <label>Select a subcategory</label>
-                    <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                       <option value="Musical Instruments">Musical Instruments</option>
-                       <option value="Sports">Sports</option>
-                       <option value="Fitness & Gym">Fitness & Gym</option>
-                       <option value="Music, Books & Movies">Music, Books & Movies</option>
-                       <option value="Children's Items">Children's Items</option>
-                       <option value="Other Hobby, Sport & Kids items">Other Hobby, Sport & Kids items</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                        <option value="Animaux de compagnie">Animaux de compagnie</option>
+                        <option value="Animaux de ferme">Animaux de ferme</option>
+                        <option value="Accessoires pour animaux">Accessoires pour animaux</option>
+                        <option value="Nourriture pour animaux">Nourriture pour animaux</option>
+                        <option value="Autres animaux & animaux de compagnie">Autres animaux & animaux de compagnie</option>
                       </select>`;
 
                 }
-                if (val == "Business & Industry") {
+                if (val == "Loisirs, Sports & Enfants") {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                      <option value="Office Supplies & Stationary">Office Supplies & Stationary</option>
-                      <option value="Safety & Security">Safety & Security</option>
-                      <option value="Industry Machinery & Tools">Industry Machinery & Tools</option>
-                      <option value="Raw Materials & Industrial Supplies">Raw Materials & Industrial Supplies</option>
-                      <option value="Licences, Titles & Tenders">Licences, Titles & Tenders</option>
-                      <option value="Medical Equipment & Supplies">Medical Equipment & Supplies</option>
-                      <option value="Other Business & Industry Items">Other Business & Industry Items</option>
-                    </select>`;
+                         <option id="1" selected disabled>Choosissez en un</option>
+                       <option value="Instruments de musique">Instruments de musique</option>
+                       <option value="Sports">Sports</option>
+                       <option value="Fitness & Gym">Fitness & Gym</option>
+                       <option value="Musique, Livres & Films">Musique, Livres & Films</option>
+                       <option value="Articles pour enfants">Articles pour enfants</option>
+                       <option value="Autres loisirs, sports & articles pour enfants">Autres loisirs, sports & articles pour enfants</option>
+                       </select>`;
 
                 }
-                if (val == "Education") {
+                if (val == "Affaires & Industrie") {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                      <option value="Textbooks">Textbooks</option>
-                      <option value="Tuition">Tuition</option>
-                      <option value="Courses">Courses</option>
-                      <option value="Study Abroad">Study Abroad</option>
-                      <option value="Other Education">Other Education</option>
-                     </select>`;
+                      <option id="1" selected disabled>Choosissez en un</option>
+                      <option value="Fournitures de bureau & papeterie">Fournitures de bureau & papeterie</option>
+                      <option value="Sécurité">Sécurité</option>
+                      <option value="Machines & outils industriels">Machines & outils industriels</option>
+                      <option value="Matières premières & fournitures industrielles">Matières premières & fournitures industrielles</option>
+                      <option value="Licences, titres & appels d'offres">Licences, titres & appels d'offres</option>
+                      <option value="Équipements médicaux & fournitures">Équipements médicaux & fournitures</option>
+                      <option value="Autres articles d'affaires & industriel">Autres articles d'affaires & industriel</option>
+                   </select>`;
 
                 }
-                if (val == "Essentials") {
+                if (val == "Éducation") {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
+                    <select name='sub_cate' class='form-control'>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                      <option value="Manuels scolaires">Manuels scolaires</option>
+                      <option value="Cours particuliers">Cours particuliers</option>
+                      <option value="Cours">Cours</option>
+                      <option value="Étudier à l'étranger">Étudier à l'étranger</option>
+                      <option value="Autres services éducatifs">Autres services éducatifs</option>
+                       </select>`;
+
+                }
+                if (val == "Essentiels") {
+                    html = `
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='client_type' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                     <option value="Baby Products">Baby Products</option>
-                     <option value="Healthcare">Healthcare</option>
-                     <option value="Household">Household</option>
-                     <option value="Other Essentials">Other Essentials</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                     <option value="Produits pour bébés">Produits pour bébés</option>
+                     <option value="Soins de santé">Soins de santé</option>
+                     <option value="Articles ménagers">Articles ménagers</option>
+                     <option value="Autres essentiels">Autres essentiels</option>
                      </select>`;
 
                 }
                 if (val == "Services") {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                     <option value="Building maintenance">Building maintenance</option>
-                     <option value="Domestic & Daycare Services">Domestic & Daycare Services</option>
-                     <option value="Fitness & Beauty Services">Fitness & Beauty Services</option>
-                     <option value="IT Services">IT Services</option>
-                     <option value="Matrimonials">Matrimonials</option>
-                     <option value="Media & Event Management Services">Media & Event Management Services</option>
-                     <option value="Professional Services">Professional Services</option>
-                     <option value="Servicing & Repair">Servicing & Repair</option>
-                     <option value="Tours & Travels">Tours & Travels</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option value="Entretien de bâtiments">Entretien de bâtiments</option>
+                         <option value="Services domestiques & de garde d'enfants">Services domestiques & de garde d'enfants</option>
+                         <option value="Services de fitness & de beauté">Services de fitness & de beauté</option>
+                         <option value="Services informatiques">Services informatiques</option>
+                         <option value="Rencontres matrimoniales">Rencontres matrimoniales</option>
+                         <option value="Services de gestion des médias & événements">Services de gestion des médias & événements</option>
+                         <option value="Services professionnels">Services professionnels</option>
+                         <option value="Entretien & réparation">Entretien & réparation</option>
+                         <option value="Tours & voyages">Tours & voyages</option>
                      </select>`;
 
                 }
                 if (val == "Agriculture") {
                     html = `
-                    <label>Select a subcategory</label>
+                    <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Select one</option>
-                    <option value="Crops, Seeds & Plants">Crops, Seeds & Plants</option>
-                    <option value="Farming Tools & Machinery">Farming Tools & Machinery</option>
-                    <option value="Other Agriculture">Other Agriculture</option>
+                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option value="Cultures, semences & plantes">Cultures, semences & plantes</option>
+                         <option value="Outils & machines agricoles">Outils & machines agricoles</option>
+                         <option value="Autres articles agricoles">Autres articles agricoles</option>
                     </select>`;
 
                 }

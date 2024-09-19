@@ -2197,7 +2197,7 @@ textarea:-ms-input-placeholder {
 }
 
 .variants.add button {
-  color: #000000;
+  color: #fff;
   background-color: #7e0cba;
   width: 100%;
   text-transform: uppercase;

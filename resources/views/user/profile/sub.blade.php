@@ -4,7 +4,7 @@
     <div class="page section-header text-center">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">Subscription Page</h1>
+                <h1 class="page-width">Page d'abonnement</h1>
             </div>
         </div>
     </div>
@@ -13,19 +13,21 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-4">
                 <div class="sub_f">
-                    <h1 class="btn-success text-center p-3">Essential</h1>
-                    <h3 > 2000F/month
-                        Ideal for small businesses just starting out and wanting to test the platform.
+                    <h1 class="btn-success text-center p-3">Essentiel</h1>
+                    <h3 > 2000 F/mois : Idéal pour les petites entreprises qui débutent et souhaitent tester la plateforme.
                     </h3>
                     <ul class="mx-4">
-                        <li>Online store creation</li>
-                        <li>Inventory management</li>
-                        <li>Access to a network of delivery services</li>
-                        <li>Order tracking</li>
-                        <li>Multiple payment options</li>
+                        <li>Création de boutique en ligne
+</li>
+                        <li>Gestion des stocks
+</li>
+                        <li>Accès à un réseau de services de livraison</li>
+                        <li>Suivi des commandes
+</li>
+                        <li>Multiples options de paiement</li>
                     </ul>
                     <div class="btn btn-success w-100 p-3 mt-3 cursor-pointer" href="#" onclick='calltouchpay1()'>
-                        subscription </div>
+                        Souscrire </div>
 
                 </div>
             </div>
@@ -33,35 +35,33 @@
             <div class="col-md-4">
                 <div class="sub_f">
  <h1 class="btn-success text-center p-3">Pro</h1>
-                    <h3 class=""> 10,000F for 6 months
-                        Perfect for growing businesses that need more stability, with an added bonus.
+                    <h3 class=""> 10 000 F pour 6 mois : Parfait pour les entreprises en croissance qui ont besoin de plus de stabilité, avec un bonus supplémentaire.
                     </h3>
                     <ul class="mx-4">
-                        <li>All benefits of the Essential plan</li>
-                        <li>+1 month free</li>
+                        <li>Tous les avantages du plan Essentiel</li>
+                        <li>+1 mois gratuit
+</li>
                         <br>
                         <br>
                     </ul>
                     <div class="btn btn-success w-100 p-3 mt-3 cursor-pointer" href="#" onclick='calltouchpay2()'>
-                        subscription </div>
+                        Souscrire </div>
 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="sub_f">
  <h1 class="btn-success text-center p-3">Premium</h1>
-                    <h3 class=""> 20,000F per year
-                        The best value for established businesses looking to maximize their online presence, with
-                        extra savings.
+                    <h3 class=""> 20 000 F par an : La meilleure offre pour les entreprises établies cherchant à maximiser leur présence en ligne, avec des économies supplémentaires.
                     </h3>
                     <ul class="mx-4">
-                        <li>All benefits of the Essential plan</li>
-                        <li>+2 months free</li>
+                        <li>Tous les avantages du plan Essentiel</li>
+                        <li>+2 mois gratuits</li>
                         <br>
                         <br>
                     </ul>
                     <div class="btn btn-success w-100 p-3 mt-3 cursor-pointer" href="#" onclick='calltouchpay3()'>
-                        subscription </div>
+                        Souscrire </div>
 
                 </div>
             </div>

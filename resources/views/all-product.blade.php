@@ -6,23 +6,23 @@
             <div class=" page section-header ">
                 <div class="container row flex-column justify-content-center align-items-center text-center pt-5 pb-5">
                     <div class="col-md-4">
-                        <h1 class="find_banner_title w-100">Shop</h1>
+                        <h1 class="find_banner_title w-100">Djassa</h1>
                     </div>
                     <div class="col-md-8 ">
                         <div class="row mt-3 search_div  justify-content-around m-3">
                             <div class="d-flex justify-content-center align-items-center col-md-5">
-                                <i class="fa-solid fa-magnifying-glass find_banner_form_icon"></i>
+                                <i class="fa-solid fa-magnifying-glass find_banner_form_icon mx-2"></i>
                                 <input name="keyword" class="form-control me-2" type="search"
-                                    value="{{ request('keyword') }}" placeholder="Product Name">
+                                    value="{{ request('keyword') }}" placeholder="Nom du produit">
                             </div>
                             <div class="d-flex justify-content-center align-items-center col-md-4 ">
-                                <i class="fa-solid fa-location-crosshairs find_banner_form_icon"></i>
+                                <i class="fa-solid fa-location-crosshairs find_banner_form_icon mx-2"></i>
                                 <input name="location" value="{{ request('location') }}" class="form-control me-2"
-                                    type="search" placeholder="Location">
+                                    type="search" placeholder="Adresse">
                             </div>
 
                             <div class="d-flex justify-content-center align-items-center col-md-3">
-                                <button class="btn btn-outline-success w-100" onclick="click()">Search</button>
+                                <button class="btn btn-outline-success w-100" onclick="click()">Rechercher</button>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                             <!--Categories-->
                             <div class="sidebar_widget categories filter-widget">
                                 <div class="widget-title">
-                                    <h2>Categories</h2>
+                                    <h2>Catégories</h2>
                                 </div>
                                 <div class="widget-content">
                                     <ul class="sidebar_categories">
@@ -55,16 +55,14 @@
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Mobile Phones"><span class="px-3">Mobile
-                                                            Phones</span>
+                                                            value="Téléphones portables"><span class="px-3">Téléphones portables</span>
                                                     </a>
                                                 </li>
 
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="add_category"
-                                                            value="Mobile Phone Accessories"><span class="px-3">Mobile
-                                                            Phone Accessories</span>
+                                                            value="Accessoires pour téléphones portables"><span class="px-3">Accessoires pour téléphones portables</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
@@ -75,21 +73,20 @@
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Wearables"><span
-                                                            class="px-3">Wearables</span>
+                                                        <input type="checkbox" name="sub_cate" value="Objets connectés"><span
+                                                            class="px-3">Objets connectés</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="SIM Cards"><span
-                                                            class="px-3">SIM Cards</span>
+                                                        <input type="checkbox" name="sub_cate" value="Cartes SIM"><span
+                                                            class="px-3">Cartes SIM</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Mobile Phone Services"><span class="px-3">Mobile
-                                                            Phone Services</span>
+                                                            value="Services pour téléphones portables"><span class="px-3">Services pour téléphones portables</span>
                                                     </a>
                                                 </li>
 
@@ -97,135 +94,124 @@
                                         </li>
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category" value="Electronics"><span
-                                                    class="px-3">Electronics</span>
+                                                <input type="checkbox" name="add_category" value="Électronique"><span
+                                                    class="px-3">Électronique</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Desktop Computers"><span class="px-3">Desktop
-                                                            Computers</span>
+                                                            value="Ordinateurs de bureau"><span class="px-3">Ordinateurs de bureau</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Laptop & Computer Accessories"><span
-                                                            class="px-3">Laptop & Computer Accessories</span>
+                                                            value="Ordinateurs portables & accessoires"><span class="px-3">Ordinateurs portables & accessoires</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Tablets & Accessories"><span class="px-3">Tablets &
-                                                            Accessories</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="TVs"><span
-                                                            class="px-3">TVs</span>
+                                                            value="Tablettes & accessoires"><span class="px-3">Tablettes & accessoires</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="TV & Video Accessories"><span class="px-3">TV & Video
-                                                            Accessories</span>
+                                                            value="Téléviseurs"><span class="px-3">Téléviseurs</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Home Appliances"><span class="px-3">Home
-                                                            Appliances</span>
+                                                            value="Accessoires TV & Vidéo"><span class="px-3">Accessoires TV & Vidéo</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Cameras, Camcorders & Accessories"><span
-                                                            class="px-3">Cameras, Camcorders & Accessories</span>
+                                                            value="Électroménagers"><span class="px-3">Électroménagers</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="ACs & Home Electronics"><span class="px-3">ACs & Home
-                                                            Electronics</span>
+                                                            value="Appareils photo, caméscopes & accessoires"><span class="px-3">Appareils photo, caméscopes & accessoires</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Audio & Sound Systems"><span class="px-3">Audio &
-                                                            Sound Systems</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Computers"><span
-                                                            class="px-3">Computers</span>
+                                                            value="Climatiseurs & Électronique domestique"><span class="px-3">Climatiseurs & Électronique domestique</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Video Game Consoles & Accessories"><span
-                                                            class="px-3">Video Game Consoles & Accessories</span>
+                                                            value="Systèmes audio & son"><span class="px-3">Systèmes audio & son</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Photocopiers"><span class="px-3">Photocopiers</span>
+                                                            value="Consoles de jeux vidéo & accessoires"><span class="px-3">Consoles de jeux vidéo & accessoires</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Other Electronics"><span class="px-3">Other
-                                                            Electronics</span>
+                                                            value="Ordinateurs"><span class="px-3">Ordinateurs</span>
                                                     </a>
                                                 </li>
-                                            </ul>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Photocopieurs"><span class="px-3">Photocopieurs</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Autres articles électroniques"><span class="px-3">Autres articles électroniques</span>
+                                                    </a>
+                                                </li>
+                                             </ul>
                                         </li>
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
                                                 <input type="checkbox" name="add_category" value="Vehicles"><span
-                                                    class="px-3">Vehicles</span>
+                                                    class="px-3">Véhicules</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Cars"><span
-                                                            class="px-3">Cars</span>
+                                                        <input type="checkbox" name="sub_cate" value="Voitures"><span
+                                                            class="px-3">Voitures</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Motorbikes"><span
-                                                            class="px-3">Motorbikes</span>
+                                                        <input type="checkbox" name="sub_cate" value="Motos"><span
+                                                            class="px-3">Motos</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Bicycles"><span
-                                                            class="px-3">Bicycles</span>
+                                                        <input type="checkbox" name="sub_cate" value="Vélos"><span
+                                                            class="px-3">Vélos</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Three Wheelers"><span class="px-3">Three
-                                                            Wheelers</span>
+                                                        <input type="checkbox" name="sub_cate" value="Tricycles"><span
+                                                            class="px-3">Tricycles</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Trucks"><span
-                                                            class="px-3">Trucks</span>
+                                                        <input type="checkbox" name="sub_cate" value="Camions"><span
+                                                            class="px-3">Camions</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
@@ -236,143 +222,306 @@
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Buses"><span
-                                                            class="px-3">Buses</span>
+                                                        <input type="checkbox" name="sub_cate" value="Autobus"><span
+                                                            class="px-3">Autobus</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Heavy Duty"><span
-                                                            class="px-3">Heavy Dut</span>
+                                                        <input type="checkbox" name="sub_cate" value="Véhicules lourds"><span
+                                                            class="px-3">Véhicules lourds</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Auto Parts & Accessories"><span class="px-3">Auto
-                                                            Parts &
-                                                            Accessorie</span>
+                                                        <input type="checkbox" name="sub_cate" value="Pièces détachées & accessoires automobiles"><span
+                                                            class="px-3">Pièces détachées & accessoires automobiles</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Maintenance and Repair"><span
-                                                            class="px-3">Maintenance and
-                                                            Repai</span>
+                                                        <input type="checkbox" name="sub_cate" value="Entretien et réparation"><span
+                                                            class="px-3">Entretien et réparation</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Water Transport"><span class="px-3">Water
-                                                            Transport</span>
+                                                        <input type="checkbox" name="sub_cate" value="Transport maritime"><span
+                                                            class="px-3">Transport maritime</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Auto Services"><span class="px-3">Auto
-                                                            Services</span>
+                                                        <input type="checkbox" name="sub_cate" value="Services automobiles"><span
+                                                            class="px-3">Services automobiles</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Rentals"><span
-                                                            class="px-3">Rentals</span>
-                                                    </a>
-                                                </li>
-
-
-                                            </ul>
-                                        </li>
-                                        <li class="level1 sub-level">
-                                            <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category" value="Property"><span
-                                                    class="px-3">Property</span>
-                                            </a>
-                                            <ul class="sublinks">
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Land For Sale"><span class="px-3">Land For
-                                                            Sale</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Apartments For Sale"><span class="px-3">Apartments
-                                                            For Sale</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Houses For Sale"><span class="px-3">Houses For
-                                                            Sale</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Houses For Sale"><span class="px-3">Houses For
-                                                            Sale</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Commercial Properties For Sale"><span
-                                                            class="px-3">Commercial Properties For Sale</span>
+                                                        <input type="checkbox" name="sub_cate" value="Locations"><span
+                                                            class="px-3">Locations</span>
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category" value="Home & Living"><span
-                                                    class="px-3">Home & Living</span>
+                                                <input type="checkbox" name="add_category" value="Immobilier"><span
+                                                    class="px-3">Immobilier</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Office & Shop Furniture"><span class="px-3">Office &
-                                                            Shop Furniture</span>
+                                                            value="Terrains à vendre"><span class="px-3">Terrains à vendre</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Children's Furniture"><span class="px-3">Children's
-                                                            Furniture</span>
+                                                            value="Appartements à vendre"><span class="px-3">Appartements à vendre</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Household Items"><span class="px-3">Household
-                                                            Items</span>
+                                                            value="Maisons à vendre"><span class="px-3">Maisons à vendre</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Bathroom Products"><span class="px-3">Bathroom
-                                                            Products</span>
+                                                            value="Propriétés commerciales à vendre"><span class="px-3">Propriétés commerciales à vendre</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="level1 sub-level">
+                                            <a href="#;" class="site-nav">
+                                                <input type="checkbox" name="add_category" value="Maison & Vie"><span
+                                                    class="px-3">Maison & Vie</span>
+                                            </a>
+                                            <ul class="sublinks">
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Meubles de bureau & de magasin"><span class="px-3">Meubles de bureau & de magasin</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Doors"><span
-                                                            class="px-3">Doors</span>
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Meubles pour enfants"><span class="px-3">Meubles pour enfants</span>
+                                                    </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Home Textiles & Decoration"><span class="px-3">Home
-                                                            Textiles & Decoration</span>
+                                                            value="Articles ménagers"><span class="px-3">Articles ménagers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Produits pour salle de bain"><span class="px-3">Produits pour salle de bain</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Portes"><span class="px-3">Portes</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Textiles et décoration pour la maison"><span class="px-3">Textiles et décoration pour la maison</span>
+                                                    </a>
+                                                </li>
+                                              </ul>
+                                        </li>
+                                        <li class="level1 sub-level">
+                                            <a href="#;" class="site-nav">
+                                                <input type="checkbox" name="add_category"
+                                                    value="Mode et Soins pour Hommes"><span class="px-3">Mode et Soins pour Hommes</span>
+                                            </a>
+                                            <ul class="sublinks">
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Vestes & Manteaux"><span class="px-3">Vestes & Manteaux</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Chemises & T-Shirts"><span class="px-3">Chemises & T-Shirts</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Pantalons"><span class="px-3">Pantalons</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Vêtements traditionnels"><span class="px-3">Vêtements traditionnels</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Soins de beauté & du corps"><span class="px-3">Soins de beauté & du corps</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Lunettes de vue & de soleil"><span class="px-3">Lunettes de vue & de soleil</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Mode pour garçon"><span class="px-3">Mode pour garçon</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Sacs & Accessoires"><span class="px-3">Sacs & Accessoires</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Chaussures"><span class="px-3">Chaussures</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Montres"><span class="px-3">Montres</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Vente en gros - En vrac"><span class="px-3">Vente en gros - En vrac</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Voitures"><span class="px-3">Voitures</span>
+                                                    </a>
+                                                </li>
+                                             </ul>
+                                        </li>
+                                        <li class="level1 sub-level">
+                                            <a href="#;" class="site-nav">
+                                                <input type="checkbox" name="add_category"
+                                                    value="Mode et Beauté pour Femmes"><span class="px-3">Mode et Beauté pour Femmes</span>
+                                            </a>
+                                            <ul class="sublinks">
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Vêtements traditionnels"><span class="px-3">Vêtements traditionnels</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Vêtements d'hiver"><span class="px-3">Vêtements d'hiver</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Sacs & Accessoires"><span class="px-3">Sacs & Accessoires</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Lingerie & Vêtements de nuit"><span class="px-3">Lingerie & Vêtements de nuit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Chaussures"><span class="px-3">Chaussures</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Bijoux & Montres"><span class="px-3">Bijoux & Montres</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Beauté & Soins personnels"><span class="px-3">Beauté & Soins personnels</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Lunettes de vue & de soleil"><span class="px-3">Lunettes de vue & de soleil</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Vente en gros - En vrac"><span class="px-3">Vente en gros - En vrac</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Mode pour fille"><span class="px-3">Mode pour fille</span>
+                                                    </a>
+                                                </li>
+                                             </ul>
+                                        </li>
+                                        <li class="level1 sub-level">
+                                            <a href="#;" class="site-nav">
+                                                <input type="checkbox" name="add_category" value="Animaux & Animaux de Compagnie"><span
+                                                    class="px-3">Animaux & Animaux de Compagnie</span>
+                                            </a>
+                                            <ul class="sublinks">
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate" value="Animaux de compagnie"><span
+                                                            class="px-3">Animaux de compagnie</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate" value="Animaux de ferme"><span
+                                                            class="px-3">Animaux de ferme</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate" value="Accessoires pour animaux"><span
+                                                            class="px-3">Accessoires pour animaux</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate" value="Nourriture pour animaux"><span
+                                                            class="px-3">Nourriture pour animaux</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate" value="Autres animaux & animaux de compagnie"><span
+                                                            class="px-3">Autres animaux & animaux de compagnie</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -380,98 +529,43 @@
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
                                                 <input type="checkbox" name="add_category"
-                                                    value="Men's Fashion & Grooming"><span class="px-3">Men's Fashion &
-                                                    Grooming</span>
+                                                    value="Loisirs, Sports & Enfants"><span class="px-3">Loisirs, Sports & Enfants</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Jacket & Coat"><span class="px-3">Jacket &
-                                                            Coat</span>
-                                                    </a>
+                                                            value="Instruments de musique"><span class="px-3">Instruments de musique</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Shirts & T-Shirts"><span class="px-3">Shirts &
-                                                            T-Shirts</span>
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Pants"><span
-                                                            class="px-3">Pants</span>
-                                                    </a>
+                                                            value="Fitness & Gym"><span class="px-3">Fitness & Gym</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Traditional Clothing"><span class="px-3">Traditional
-                                                            Clothing</span>
-                                                    </a>
+                                                            value="Musique, Livres & Films"><span class="px-3">Musique, Livres & Films</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Grooming & Bodycare"><span class="px-3">Grooming &
-                                                            Bodycare</span>
-                                                    </a>
+                                                            value="Music"><span class="px-3">Music</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Optical & Sunglasses"><span class="px-3">Optical &
-                                                            Sunglasses</span>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Baby Boy's Fashion"><span class="px-3">Baby Boy's
-                                                            Fashion</span>
-                                                    </a>
+                                                            value="Articles pour enfants"><span class="px-3">Articles pour enfants</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Bags & Accessories"><span class="px-3">Bags &
-                                                            Accessories</span>
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Footwear"><span
-                                                            class="px-3">Footwear</span>
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Watches"><span
-                                                            class="px-3">Watches</span>
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Wholesale - Bulk"><span class="px-3">Wholesale -
-                                                            Bulk</span>
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Cars"><span
-                                                            class="px-3">Cars</span>
-                                                    </a>
+                                                            value="Autres loisirs, sports & articles pour enfants"><span class="px-3">Autres loisirs, sports & articles pour enfants</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -479,306 +573,126 @@
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
                                                 <input type="checkbox" name="add_category"
-                                                    value="Women's Fashion & Beauty"><span class="px-3">Women's Fashion
-                                                    & Beauty</span>
+                                                    value="Affaires & Industrie"><span class="px-3">Affaires & Industrie</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Traditional Wear"><span class="px-3">Traditional
-                                                            Wear</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Winter Wear"><span
-                                                            class="px-3">Winter Wear</span>
+                                                            value="Fournitures de bureau & papeterie"><span
+                                                            class="px-3">Fournitures de bureau & papeterie</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Bags & Accessories"><span class="px-3">Bags &
-                                                            Accessories</span>
+                                                            value="Sécurité"><span
+                                                            class="px-3">Sécurité</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Lingerie & Sleepwear"><span class="px-3">Lingerie &
-                                                            Sleepwear</span>
-                                                    </a>
-                                                </li>
-
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Footwear"><span
-                                                            class="px-3">Footwear</span>
+                                                            value="Machines & outils industriels"><span
+                                                            class="px-3">Machines & outils industriels</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Jewellery & Watches"><span class="px-3">Jewellery &
-                                                            Watches</span>
+                                                            value="Matières premières & fournitures industrielles"><span
+                                                            class="px-3">Matières premières & fournitures industrielles</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Beauty & Personal Care"><span class="px-3">Beauty &
-                                                            Personal Care</span>
+                                                            value="Licences, titres & appels d'offres"><span
+                                                            class="px-3">Licences, titres & appels d'offres</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Optical & Sunglasses"><span class="px-3">Optical &
-                                                            Sunglasses</span>
+                                                            value="Équipements médicaux & fournitures"><span
+                                                            class="px-3">Équipements médicaux & fournitures</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Wholesale - Bulk"><span class="px-3">Wholesale -
-                                                            Bulk</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Baby Girl's Fashion"><span class="px-3">Baby Girl's
-                                                            Fashion</span>
+                                                            value="Autres articles d'affaires & industriel"><span
+                                                            class="px-3">Autres articles d'affaires & industriel</span>
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category" value="Pets & Animals"><span
-                                                    class="px-3">Pets & Animals</span>
+                                                <input type="checkbox" name="add_category" value="Éducation"><span
+                                                    class="px-3">Éducation</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Pets"><span
-                                                            class="px-3">Pets</span>
+                                                        <input type="checkbox" name="sub_cate" value="Manuels scolaires"><span
+                                                            class="px-3">Manuels scolaires</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Farm Animals"><span class="px-3">Farm Animals</span>
+                                                        <input type="checkbox" name="sub_cate" value="Cours particuliers"><span
+                                                            class="px-3">Cours particuliers</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Pet & Animal Accessories"><span class="px-3">Pet &
-                                                            Animal Accessories</span>
+                                                        <input type="checkbox" name="sub_cate" value="Cours"><span
+                                                            class="px-3">Cours</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Pet & Animal food"><span class="px-3">Pet & Animal
-                                                            food</span>
+                                                        <input type="checkbox" name="sub_cate" value="Étudier à l'étranger"><span
+                                                            class="px-3">Étudier à l'étranger</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Other Pets & Animals"><span class="px-3">Other Pets &
-                                                            Animals</span>
+                                                        <input type="checkbox" name="sub_cate" value="Autres services éducatifs"><span
+                                                            class="px-3">Autres services éducatifs</span>
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="level1 sub-level">
                                             <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category"
-                                                    value="Hobbies, Sports & Kids"><span class="px-3">Hobbies, Sports &
-                                                    Kids</span>
+                                                <input type="checkbox" name="add_category" value="Essentiels"><span
+                                                    class="px-3">Essentiels</span>
                                             </a>
                                             <ul class="sublinks">
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Musical Instruments"><span class="px-3">Musical
-                                                            Instruments</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Sports"><span
-                                                            class="px-3">Sports</span>
+                                                            value="Produits pour bébés"><span class="px-3">Produits pour bébés</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Fitness & Gym"><span class="px-3">Fitness &
-                                                            Gym</span>
+                                                            value="Soins de santé"><span class="px-3">Soins de santé</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Music, Books & Movies"><span class="px-3">Music,
-                                                            Books & Movies</span>
+                                                            value="Articles ménagers"><span class="px-3">Articles ménagers</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Children's Items"><span class="px-3">Children's
-                                                            Items</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Other Hobby, Sport & Kids items"><span
-                                                            class="px-3">Other Hobby, Sport & Kids items</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="level1 sub-level">
-                                            <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category"
-                                                    value="Business & Industry"><span class="px-3">Business &
-                                                    Industry</span>
-                                            </a>
-                                            <ul class="sublinks">
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Office Supplies & Stationary"><span
-                                                            class="px-3">Office Supplies & Stationary</span>
-
-                                                    </a> </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Safety & Security"><span class="px-3">Safety &
-                                                            Security</span>
-                                                    </a> </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Industry Machinery & Tools"><span
-                                                            class="px-3">Industry Machinery & Tools</span>
-
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Raw Materials & Industrial Supplies"><span
-                                                            class="px-3">Raw Materials & Industrial Supplies</span>
-                                                    </a> </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Licences, Titles & Tenders"><span
-                                                            class="px-3">Licences, Titles & Tenders</span>
-
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Medical Equipment & Supplies"><span
-                                                            class="px-3">Medical Equipment & Supplies</span>
-
-                                                    </a>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Other Business & Industry Items"><span
-                                                            class="px-3">Other Business & Industry Items</span>
-                                                    </a> </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="level1 sub-level">
-                                            <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category" value="Education"><span
-                                                    class="px-3">Education</span>
-                                            </a>
-                                            <ul class="sublinks">
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Textbooks"><span
-                                                            class="px-3">Textbooks</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Tuition"><span
-                                                            class="px-3">Tuition</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Courses"><span
-                                                            class="px-3">Courses</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Study Abroad"><span class="px-3">Study Abroad</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Other Education"><span class="px-3">Other
-                                                            Education</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="level1 sub-level">
-                                            <a href="#;" class="site-nav">
-                                                <input type="checkbox" name="add_category" value="Essentials"><span
-                                                    class="px-3">Essentials</span>
-                                            </a>
-                                            <ul class="sublinks">
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Baby Products"><span class="px-3">Baby
-                                                            Products</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Healthcare"><span
-                                                            class="px-3">Healthcare</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="Household"><span
-                                                            class="px-3">Household</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate"
-                                                            value="Other Essentials"><span class="px-3">Other
-                                                            Essentials</span>
+                                                            value="Autres essentiels"><span class="px-3">Autres essentiels</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -792,62 +706,55 @@
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Building maintenance"><span class="px-3">Building
-                                                            maintenance</span>
+                                                            value="Entretien de bâtiments"><span class="px-3">Entretien de bâtiments</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Domestic & Daycare Services"><span
-                                                            class="px-3">Domestic & Daycare Services</span>
+                                                            value="Services domestiques & de garde d'enfants"><span class="px-3">Services domestiques & de garde d'enfants</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Fitness & Beauty Services"><span class="px-3">Fitness
-                                                            & Beauty Services</span>
-                                                    </a>
-                                                </li>
-                                                <li class="level2">
-                                                    <a href="#;" class="site-nav">
-                                                        <input type="checkbox" name="sub_cate" value="IT Services"><span
-                                                            class="px-3">IT Services</span>
+                                                            value="Services de fitness & de beauté"><span class="px-3">Services de fitness & de beauté</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Matrimonials"><span class="px-3">Matrimonials</span>
+                                                            value="Services informatiques"><span class="px-3">Services informatiques</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Media & Event Management Services"><span
-                                                            class="px-3">Media & Event Management Services</span>
+                                                            value="Rencontres matrimoniales"><span class="px-3">Rencontres matrimoniales</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Professional Services"><span
-                                                            class="px-3">Professional Services</span>
+                                                            value="Services de gestion des médias & événements"><span class="px-3">Services de gestion des médias & événements</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Servicing & Repair"><span class="px-3">Servicing &
-                                                            Repair</span>
+                                                            value="Services professionnels"><span class="px-3">Services professionnels</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Tours & Travels"><span class="px-3">Tours &
-                                                            Travels</span>
+                                                            value="Entretien & réparation"><span class="px-3">Entretien & réparation</span>
+                                                    </a>
+                                                </li>
+                                                <li class="level2">
+                                                    <a href="#;" class="site-nav">
+                                                        <input type="checkbox" name="sub_cate"
+                                                            value="Tours & voyages"><span class="px-3">Tours & voyages</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -861,25 +768,22 @@
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Crops, Seeds & Plants"><span class="px-3">Crops,
-                                                            Seeds & Plants</span>
+                                                            value="Cultures, semences & plantes"><span class="px-3">Cultures, semences & plantes</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Farming Tools & Machinery"><span class="px-3">Farming
-                                                            Tools & Machinery</span>
+                                                            value="Outils & machines agricoles"><span class="px-3">Outils & machines agricoles</span>
                                                     </a>
                                                 </li>
                                                 <li class="level2">
                                                     <a href="#;" class="site-nav">
                                                         <input type="checkbox" name="sub_cate"
-                                                            value="Other Agriculture"><span class="px-3">Other
-                                                            Agriculture</span>
+                                                            value="Autres articles agricoles"><span class="px-3">Autres articles agricoles</span>
                                                     </a>
                                                 </li>
-                                            </ul>
+                                              </ul>
                                         </li>
                                         <li class="level1 sub-level"><a href="#;" class="site-nav">
                                                 <input type="checkbox" name="add_category" value="Other"><span
@@ -930,8 +834,7 @@
                                             <div class="variants add">
                                                 <a
                                                     href="{{ route('add.details', ['id' => $product->id,'slug' => $product->slug]) }}">
-                                                    <button class="btn btn-success" type="button" tabindex="0">Buy
-                                                        Now</button>
+                                                    <button class="btn btn-success" type="button" tabindex="0">Acheter maintenant</button>
                                                 </a>
                                             </div>
                                         </div>
@@ -951,10 +854,9 @@
                                             <!-- End product name -->
                                             <!-- product price -->
                                             <div class="product-price">
-                                                <span class="old-price"><i
-                                                        class="fa-solid fa-dollar-sign px-2"></i>{{$product->best_price}}</span>
-                                                <span class="price"><i
-                                                        class="fa-solid fa-dollar-sign px-2"></i>{{$product->discounted_price
+                                                <span class="old-price">
+                                                    <i class="fa-solid fa-franc-sign px-2"></i>{{$product->best_price}}</span>
+                                                <span class="price"><i class="fa-solid fa-franc-sign px-2"></i>{{$product->discounted_price
                                                     }}</span>
                                             </div>
                                             <!-- End product price -->
