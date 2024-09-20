@@ -7,7 +7,7 @@
             <div class="page section-header text-center">
                 <div class="page-title">
                     <div class="wrapper">
-                        <h1 class="page-width">Your cart</h1>
+                        <h1 class="page-width">Votre panier</h1>
                     </div>
                 </div>
             </div>
@@ -23,11 +23,10 @@
                         <table class="cart_product_table">
                             <thead class="cart__row cart__header">
                                 <tr>
-                                    <th colspan="2" class="text-center">Product</th>
-                                    <th class="text-center">Price</th>
-                                    <th class="text-center">Quantity</th>
-                                    <th class="text-right">Total</th>
-                                    <th class="action">&nbsp;</th>
+                                    <th colspan="2" class="text-center">Produit</th>
+                                    <th>Prix</th>
+                                    <th>Quantité</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             @if ($product)
@@ -51,19 +50,19 @@
                                         </div>
 
                                         <div class="cart__meta-text">
-                                            Color: {{ $postData['color'] ?? 'Any' }}
+                                            <span class="">couleur:</span> {{ $postData['color'] ?? 'Any' }}
                                             <br>
-                                            Size: {{ $postData['size'] ?? 'Any' }}
+                                            <span class="header">taille:</span> {{ $postData['size'] ?? 'Any' }}
                                             <br>
-                                            Weight : {{ $postData['weight'] ?? 'Any' }}
+                                            <span class="header">poids:</span> {{ $postData['weight'] ?? 'Any' }}
                                             <br>
                                         </div>
                                     </td>
                                     <td class="cart__price-wrapper cart-flex-item">
                                         <span class="money">{{$product->discounted_price }}</span>
                                     </td>
-                                    <td class="cart__update-wrapper cart-flex-item text-right">
-                                        <div class="cart__qty text-center">
+                                    <td class=" cart-flex-item ">
+                                        <div class="cart__qty">
                                             <div class="qtyField">
 
                                                 <input class="cart__qty-input qty" type="text" name="quantity" id="qty"
@@ -72,7 +71,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right small--hide cart-price">
+                                    <td class=" small--hide cart-price">
                                         <div><span class="money">{{$product->discounted_price*$postData['quantity']
                                                 }}.00</span></div>
                                     </td>
@@ -126,12 +125,10 @@
                                     }}</span>
                             </div>
                         </div>
-                        <div class="currencymsg">We processes all orders in USD. While the content of your cart is
-                            currently displayed in USD, the checkout will use USD at the most current exchange rate.
-                        </div>
+
                         <hr>
                         <div id="shipping-calculator" class="mb-4">
-                            <h5 class="small--text-center">Get shipping estimates</h5>
+                            <h5 class="small--text-center">Obtenir des estimations d'expédition</h5>
                             <div class="row">
 
                                 <input type="hidden" name="add_id" value="{{ $product->id }}">
@@ -144,9 +141,9 @@
                                                 }}">
                                 <div class="col-12 col-sm-12 col-md-4">
                                     <div class="form-group">
-                                        <label for="address_country">City</label>
+                                        <label for="address_country">Ville</label>
                                         <select id="address_country" name="city" required>
-                                            <option selected disabled>Select one</option>
+                                            <option selected disabled>Sélectionnez-en un</option>
                                             <option value="Abidjan">Abidjan</option>
                                             <option value="Aboisso">Aboisso</option>
                                             <option value="Adiaké">Adiaké</option>
@@ -231,19 +228,21 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-4">
                                     <div class="form-group">
-                                        <label>Phone Number</label>
+                                        <label>Numéro de téléphone</label>
                                         <input type="number" name="number" placeholder="8855..." required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-4">
                                     <div class="form-group">
-                                        <label for="address_zip">Postal/Zip Code</label>
-                                        <input type="text" id="zip_code" name="zip_code" required>
+                                        <label for="address_zip">Code postal</label>
+                                        <input type="text" id="zip_code" name="zip_code" placeholder="Code postal"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 actionRow text-center">
                                     <div>
-                                       <input type="submit" class="btn btn-success get-rates" value="Proceed to Oder">
+                                        <input type="submit" class="btn btn-success get-rates"
+                                            value="Procéder à la commande">
                                     </div>
                                 </div>
                             </div>

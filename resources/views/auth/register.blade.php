@@ -3,7 +3,7 @@
     	<!--Page Title-->
     	<div class="page section-header text-center">
 			<div class="page-title">
-        		<div class="wrapper"><h1 class="page-width">Create an Account</h1></div>
+        		<div class="wrapper"><h1 class="page-width">Créer un compte</h1></div>
       		</div>
 		</div>
         <!--End Page Title-->
@@ -17,8 +17,8 @@
                           <div class="row">
 	                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="form-group">
-                                    <label for="FirstName">Full Name</label>
-                                    <input type="text"  name="fullname" placeholder="" id="FirstName" autofocus="">
+                                    <label for="FirstName">Nom et prénom</label>
+                                    <input type="text"  name="fullname" placeholder="Nom et prénom" id="FirstName" autofocus="">
                                 </div>
                                    @error('fullname')
                             <span class="text-danger">{{ $message }}</span>
@@ -27,7 +27,7 @@
                               <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="form-group">
                                     <label for="CustomerEmail">Email</label>
-                                    <input type="email" name="email" placeholder="" id="CustomerEmail" class="" autocorrect="off" autocapitalize="off" autofocus="">
+                                    <input type="email" name="email" placeholder="Email" id="CustomerEmail" class="" autocorrect="off" autocapitalize="off" autofocus="">
                                 </div>
                                      @error('email')
                             <span class="text-danger">{{ $message }}</span>
@@ -35,8 +35,8 @@
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="form-group">
-                                    <label for="CustomerPassword">Password</label>
-                                    <input type="password" value="" name="password" placeholder="" id="CustomerPassword" class="">
+                                    <label for="CustomerPassword">Mot de passe</label>
+                                    <input type="password" value="" name="password" placeholder="Mot de passe" id="CustomerPassword" class="">
                                 </div>
                                      @error('password')
                             <span class="text-danger">{{ $message }}</span>
@@ -45,7 +45,7 @@
                           </div>
                           <div class="row">
                             <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
-                                <input type="submit" class="btn mb-3" value="Create">
+                                <input type="submit" class="btn mb-3" value="Créer">
                             </div>
                          </div>
                      </form>
@@ -53,7 +53,7 @@
                             <a class="d-flex align-items-center justify-content-center btn mb-3 p-2"
                                 href="{{ url('/login/google') }}" class="d-flex social-pd">
                                 <span><i class="fa-brands fa-google"></i></span>
-                                <span class="mx-3">Create an account with google</span>
+                                <span class="mx-3">Créer un compte avec Google</span>
                             </a>
                         </div>
                     </div>

@@ -28,7 +28,7 @@
 
             <div class="col-md-4">
                 <div class="pro_img_name_div p-4 ">
-                    <h1>About The Shop</h1>
+                    <h1>A propos de ma boutique</h1>
                     <div class="mx-4 mt-2">
                         <ul class="pro_na">
                             <li class="lvl1 parent">
@@ -56,7 +56,7 @@
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Subscription Model</h1>
+                    <h1 class="mt-3">Abonnement</h1>
                     <div class="mx-4 mt-2">
                         <div class="">
                             @php
@@ -84,7 +84,8 @@
                                 <br>
                                 <li class="lvl1 parent megamenu">
                                     <a href="{{Route('user.sub')}}">
-                                        Please <span class="sub_tex">subscribe</span> to permit seller.
+
+                                         Veuillez vous <span class="sub_tex">abonner</span>  au vendeur de permis.
 
                                     </a>
                                 </li>
@@ -98,9 +99,7 @@
                                 <br>
                                 <li class="lvl1 parent megamenu">
                                     <a href="{{Route('user.sub')}}">
-                                        <span class="sub_tex">Your Essential Subscription({{ $remainingDays }} Days
-                                            Left!)</span>
-
+                                        <span class="sub_tex">Votre abonnement essentiel({{ $remainingDays }}jours restants !)</span>
                                     </a>
                                 </li>
                             </ul>
@@ -113,8 +112,7 @@
                                 <br>
                                 <li class="lvl1 parent megamenu">
                                     <a href="{{Route('user.sub')}}">
-                                        <span class="sub_tex">Your Pro Subscription ({{ $remainingDays }} days
-                                            left!)</span>
+                                        <span class="sub_tex">Votre abonnement Pro ({{ $remainingDays }} jours restants !)</span>
 
                                     </a>
                                 </li>
@@ -127,8 +125,7 @@
                                 <br>
                                 <li class="lvl1 parent megamenu">
                                     <a href="{{Route('user.sub')}}">
-                                        <span class="sub_tex">Your Premium Subscription({{ $remainingDaysp }} days
-                                            left!)</span>
+                                        <span class="sub_tex">Votre abonnement Premium ({{ $remainingDaysp }}jours restants !)</span>
 
                                     </a>
                                 </li>
@@ -144,14 +141,14 @@
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Your adds</h1>
+                    <h1 class="mt-3"> Mes annonces voir</h1>
                     <div class="mx-4 mt-2">
                         <br>
                         <br>
                         <br>
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.add')}}">see</a></span>
+                            <span class="sub_tex"><ir class="sub_tex" href="{{route('profile.add')}}">voir</ir></span>
                         </li> <br>
                     </div>
                 </div>
@@ -162,33 +159,33 @@
         <div class="row mt-4">
  <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Order Receive</h1>
+                    <h1 class="mt-3">Commandez Recevoir</h1>
                      <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.order')}}">see</a></span>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.order')}}">voir</a></span>
                         </li> <br>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Buying Product</h1>
+                    <h1 class="mt-3">Achat de produit</h1>
                      <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.buying')}}">see</a></span>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.buying')}}">voir</a></span>
                         </li> <br>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Stock Out Product</h1>
+                    <h1 class="mt-3">Produit en rupture de stock</h1>
                       <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><a class="sub_tex" href="{{route('stock.add')}}">see</a></span>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('stock.add')}}">voir</a></span>
                         </li> <br>
                     </div>
                 </div>
@@ -202,7 +199,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Order Status</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Mes infos</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -214,15 +211,21 @@
                     <div class="modal-body">
                         <div class="col-md-12">
                             <div>
-                                <label class="col-form-label">Profile Picture</label>
+                                <label class="col-form-label">Photo de profil</label>
                             </div>
                             <input class="w-100 h-100" type="file" name="photo" />
                         </div>
                         <div class="col-md-12">
                             <div>
-                                <label class="col-form-label">Phone Number</label>
+                                <label class="col-form-label">modifier nom de la boutique</label>
                             </div>
-                            <input id="getFile" type="text" name="phone" />
+                            <input  type="text" name="fullname" />
+                        </div>
+                        <div class="col-md-12">
+                            <div>
+                                <label class="col-form-label">Numéro de téléphone</label>
+                            </div>
+                            <input id="getFile" type="text" name="phone" placeholder="Numéro de téléphone" />
                         </div>
 
 

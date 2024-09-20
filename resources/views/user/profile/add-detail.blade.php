@@ -10,8 +10,8 @@
             <!--Breadcrumb-->
             <div class="bredcrumbWrap">
                 <div class="container breadcrumbs">
-                    <a href="{{route('home')}}" title="Back to the home page">Home</a><span
-                        aria-hidden="true">›</span><span>Product</span>
+                    <a href="{{route('home')}}" title="Back to the home page">Accueil</a><span
+                        aria-hidden="true">›</span><span>Produit</span>
                 </div>
             </div>
             <!--End Breadcrumb-->
@@ -43,8 +43,8 @@
                                         <img class="blur-up lazyload zoompro" data-zoom-image="{{ $array[0]}}" alt=""
                                             src="{{ $array[0]}}" />
                                     </div>
-                                    <div class="product-labels"><span class="lbl on-sale">Sale</span><span
-                                            class="lbl pr-label1">new</span></div>
+                                    <div class="product-labels"><span class="lbl on-sale">Nouveau</span><span
+                                            class="lbl pr-label1">En vente</span></div>
                                 </div>
                                 <div class="lightboximages">
                                     @foreach($array as $image)
@@ -68,9 +68,9 @@
                                         @endphp
 
                                         @if (empty($sku))
-                                        <span class="outstock">Unavailable</span>
+                                        <span class="outstock">En rupture de stock</span>
                                         @else
-                                        <span class="instock">In Stock</span>
+                                        <span class="instock">En stock</span>
                                         @endif
                                     </div>
                                     <div class="product-sku">SKU: <span class="variant-sku">{{$product->sku}}</span>
@@ -82,7 +82,7 @@
                                             <a class="reviewLink" href="#tab2">
                                                 @for ($i = 0; $i < $rationvalue ; $i++) <i class="fa fa-star"></i>
                                                     @endfor
-                                                    <span class="spr-badge-caption">{{$reviewCount}} reviews</span>
+                                                    <span class="spr-badge-caption">{{$reviewCount}} Avis</span>
                                             </a>
                                         </div>
                                         @else
@@ -91,7 +91,7 @@
                                                 <i class="font-13 fa fa-star-o"></i>
                                                 <i class="font-13 fa fa-star-o"></i>
 
-                                                <span class="spr-badge-caption">0 reviews</span>
+                                                <span class="spr-badge-caption">0 Avis</span>
                                             </a>
                                         </div>
                                         @endif
@@ -99,13 +99,13 @@
 
                                 </div>
                                 <p class="product-single__price product-single__price-product-template">
-                                    <span class="visually-hidden">Regular price</span>
-                                    <s id="ComparePrice-product-template"><span class="money">${{$product->best_price
+                                    <span class="visually-hidden">Prix</span>
+                                    <s id="ComparePrice-product-template"><span class="money"><i class="fa-solid fa-franc-sign px-2"></i>{{$product->best_price
                                             }}</span></s>
                                     <span
                                         class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
                                         <span id="ProductPrice-product-template"><span
-                                                class="money">${{$product->discounted_price }}</span></span>
+                                                class="money"><i class="fa-solid fa-franc-sign px-2"></i>{{$product->discounted_price }}</span></span>
                                     </span>
                                     @php
                                     $save= $product->best_price - $product->discounted_price;
@@ -113,9 +113,9 @@
 
                                     @endphp
                                     <span class="discount-badge"> <span class="devider">|</span>&nbsp;
-                                        <span>You Save</span>
+                                        <span>Vous économise</span>
                                         <span id="SaveAmount-product-template" class="product-single__save-amount">
-                                            <span class="money">${{ $save}}</span>
+                                            <span class="money"><i class="fa-solid fa-franc-sign px-2"></i>{{ $save}}</span>
                                         </span>
 
                                         <span class="off">(<span>{{ number_format($percentage, 2) }}</span>%)</span>
@@ -130,8 +130,7 @@
 
                                     {{ ucwords($limitedDescription) }}
                                 </div>
-                                <div id="quantity_message">Hurry! Only <span class="items">{{$product->sku}}</span> left
-                                    in stock.</div>
+                                <div id="quantity_message">faites vite! il ne reste que<span class="items px-2">{{$product->sku}}</span> en stock.</div>
                                 <form method="post" action="{{route('cart.page')}}" id="product_form_10508262282"
                                     accept-charset="UTF-8"
                                     class="product-form product-form-product-template hidedropdown"
@@ -146,7 +145,7 @@
                                     @if ( $colorsArray)
                                     <div class="swatch clearfix swatch-0 option1" data-option-index="0">
                                         <div class="product-form__item">
-                                            <label class="header">Color:</label>
+                                            <label class="header">couleur:</label>
                                             @foreach($colorsArray as $index => $colorArray)
                                             @php
                                             $colorValue = $colorArray['value'];
@@ -176,7 +175,7 @@
                                     @if ($weightsArray)
                                     <div class="swatch clearfix swatch-1 option2" data-option-index="1">
                                         <div class="product-form__item">
-                                            <label class="header">Weight:</label>
+                                            <label class="header">poids:</label>
                                             @foreach ($weightsArray as $index => $weightArray)
                                             @php
                                             $weightValue = $weightArray['value'];
@@ -208,7 +207,7 @@
                                     @if ($sizesArray)
                                     <div class="swatch clearfix swatch-1 option2" data-option-index="1">
                                         <div class="product-form__item">
-                                            <label class="header">Size:</label>
+                                            <label class="header">taille:</label>
                                             @foreach ($sizesArray as $index => $sizeArray)
                                             @php
                                             $sizeValue = $sizeArray['value'];
@@ -253,7 +252,7 @@
                                             <a target=”_blank”
                                                 href="https://wa.me/+225{{ $product->number }}?text=urlencodedtext">
                                                 <button type="button" name="add" class="btn product-form__cart-submit">
-                                                    <span>Contact Us</span>
+                                                    <span>Contactez nous</span>
                                                 </button>
                                             </a>
 
@@ -261,7 +260,7 @@
 
                                         <div class="shopify-payment-button" data-shopify="payment-button">
                                             @if (empty($sku))
-                                            <h3 style="cursor: none;" class="btn btn-success w-100 mt-2"> Out Of Stock
+                                            <h3 style="cursor: none;" class="btn btn-success w-100 mt-2"> En rupture de stock
                                             </h3>
                                             @else
 
@@ -269,8 +268,7 @@
                                             @else
                                     @if(!empty($user_sub->sub_id))
                                     <button type="submit"
-                                                class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy
-                                               it now</button>
+                                                class="shopify-payment-button__button shopify-payment-button__button--unbranded">Achetez-le maintenant</button>
                                             @endif
 
                                             @endif
@@ -293,8 +291,8 @@
                     <!--Product Tabs-->
                     <div class="tabs-listing">
                         <ul class="product-tabs">
-                            <li rel="tab1"><a class="tablink">Product Details</a></li>
-                            <li rel="tab2"><a class="tablink">Product Reviews</a></li>
+                            <li rel="tab1"><a class="tablink">Détails du produit</a></li>
+                            <li rel="tab2"><a class="tablink">Avis sur le produit</a></li>
                         </ul>
                         <div class="tab-container">
                             <div id="tab1" class="tab-content">
@@ -317,7 +315,7 @@
                                                     @csrf
                                                     <input class="form-control" type="text" name="post_id"
                                                         value="{{$product->id}}" hidden>
-                                                    <h3 class="spr-form-title">Rate this Product</h3>
+                                                    <h3 class="spr-form-title">Évaluer ce produit</h3>
                                                     <fieldset class="spr-form-contact">
 
                                                     </fieldset>
@@ -345,22 +343,21 @@
                                                         </div>
                                                         <div class="spr-form-review-body">
                                                             <label class="spr-form-label"
-                                                                for="review_body_10508262282">Write Your
-                                                                Comments</label>
+                                                                for="review_body_10508262282">Écrivez vos commentaires</label>
                                                             <div class="spr-form-input">
                                                                 <textarea
                                                                     class="spr-form-input spr-form-input-textarea "
                                                                     id="review_body_10508262282"
                                                                     data-product-id="10508262282" name="comment"
                                                                     rows="10"
-                                                                    placeholder="Write your comments here"></textarea>
+                                                                    placeholder="Écrivez vos commentaires ici"></textarea>
                                                             </div>
                                                         </div>
                                                     </fieldset>
                                                     <fieldset class="spr-form-actions">
                                                         <input type="submit"
                                                             class="spr-button spr-button-primary button button-primary btn btn-primary"
-                                                            value="Submit Review">
+                                                            value="Soumettre un avis">
                                                     </fieldset>
                                                 </form>
                                             </div>
@@ -383,7 +380,7 @@
                                                             </strong></span>
                                                     </div>
                                                     @empty
-                                                    <div colspan="9">Not Found</div>
+                                                    <div colspan="9">Non trouvé</div>
                                                     @endforelse
                                                 </div>
 
@@ -399,13 +396,12 @@
                     <!--Related Product Slider-->
                     <div class="related-product grid-products">
                         <header class="section-header">
-                            <h2 class="section-header__title text-center h2"><span>Related Products</span></h2>
-                            <p class="sub-heading">You can stop autoplay, increase/decrease aniamtion speed and number
-                                of grid to show and products from store admin.</p>
+                            <h2 class="section-header__title text-center h2"><span>Produits similaires</span></h2>
+                            <p class="sub-heading">Profitez de vos achats avec nos produits associés.</p>
                         </header>
                         <div class="productPageSlider">
                             @if($related_c_P->isEmpty())
-                            <p>No related posts found.</p>
+                            <p>Aucun article associé trouvé.</p>
                             @else
                             @foreach($related_c_P as $rdlated_add)
                             <ul>
@@ -444,8 +440,7 @@
                                                 onclick="window.location.href='cart.html'" method="post">
                                                 <a
                                                     href="{{ route('add.details', ['id' => $rdlated_add->id,'slug' => $rdlated_add->slug]) }}">
-                                                    <button class="btn btn-success" type="button" tabindex="0">Buy
-                                                        Now</button>
+                                                    <button class="btn btn-success" type="button" tabindex="0">Acheter maintenant</button>
                                                 </a>
                                             </form>
 
@@ -464,9 +459,9 @@
                                             <!-- product price -->
                                             <div class="product-price">
                                                 <span class="old-price"><i
-                                                        class="fa-solid fa-dollar-sign px-2"></i>{{$rdlated_add->best_price}}</span>
+                                                        class="fa-solid fa-franc-sign px-2"></i>{{$rdlated_add->best_price}}</span>
                                                 <span class="price"><i
-                                                        class="fa-solid fa-dollar-sign px-2"></i>{{$rdlated_add->discounted_price
+                                                        class="fa-solid fa-franc-sign px-2"></i>{{$rdlated_add->discounted_price
                                                     }}</span>
                                             </div>
                                             <!-- End product price -->

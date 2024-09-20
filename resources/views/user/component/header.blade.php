@@ -46,7 +46,7 @@
                                 <x-dropdown-link class="dropdown-item  text-center" :href="route('logout')"
                                     onclick="event.preventDefault();
                                                                                                                                                                                                                             this.closest('form').submit();">
-                                    Log Out
+                                    Se déconnecter
                                 </x-dropdown-link>
                             </form>
 
