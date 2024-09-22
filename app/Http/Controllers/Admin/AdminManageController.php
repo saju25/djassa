@@ -129,14 +129,27 @@ class AdminManageController extends Controller
 
     }
 
-    public function bannerDelet($id)
+    public function bannerDelete($id)
     {
+        // Find the banner by ID
+        $banner = Banner::findOrFail($id);
 
-        $banner = Banner::find($id);
+        // Check if the banner has an associated photo
+        if ($banner->photo) {
+            // Get the file path and delete the file from storage
+            $filePath = public_path('storage/' . $banner->photo);
+
+            // Check if the file exists before attempting to delete
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        // Delete the banner from the database
         $banner->delete();
 
-        toastr()->success('', 'Banner deleted successfully!');
-        return redirect()->route('admin.banner-in');
+        // Redirect back with a success message
+        return redirect()->route('admin.banner-in')->with('success', 'Banner deleted successfully!');
     }
 
 }

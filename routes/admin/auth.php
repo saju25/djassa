@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminManageController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProfileController;
-use App\Http\Controllers\Admin\RefundMonyController;
 use App\Http\Controllers\Admin\WebSocialLinkController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,18 +17,6 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-
-    //Payment request routes
-
-    Route::get('payment-request', [PaymentController::class, 'payment_index'])->name('payment.index');
-    Route::get('payment-approve/{id}', [PaymentController::class, 'payment_approve'])->name('payment.approve');
-
-    Route::get('withdraw-request', [PaymentController::class, 'withdraw_index'])->name('withdraw.index');
-    Route::get('withdraw-approve/{id}', [PaymentController::class, 'withdraw_approve'])->name('withdraw.approve');
-
-    //refund request
-    Route::get('refund-request', [RefundMonyController::class, 'refund_index'])->name('refund.request');
-    Route::get('refund-approve/{id}', [RefundMonyController::class, 'refund_approve'])->name('refund.approve');
 
     Route::get('website-social-links', [WebSocialLinkController::class, 'index'])->name('website.social.links');
     Route::post('website-social-links/update/{id}', [WebSocialLinkController::class, 'update'])->name('update.social.links');
@@ -60,7 +46,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::get('banner-information', [AdminManageController::class, 'bannerView'])->name('banner-in');
     Route::get('banner-in-add', [AdminManageController::class, 'bannerCreatView'])->name('banner-in-view');
     Route::post('banner-store', [AdminManageController::class, 'bannerStore'])->name('banner.store');
-    Route::get('bannerdelete/{id}', [AdminManageController::class, 'bannerDelet'])->name('detel.banner');
+    Route::get('banner-delete/{id}', [AdminManageController::class, 'bannerDelete'])->name('detel.banner');
 
     //change passwords
     Route::get('admin-store', [AdminManageController::class, 'changePassword'])->name('change.password.index');
