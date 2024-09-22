@@ -12,6 +12,7 @@ class Order extends Model
         'add_id',
         'user_id',
         'post_by_user',
+        'quantity',
         'color',
         'size',
         'weight',
@@ -19,6 +20,7 @@ class Order extends Model
         'city',
         'number',
         'zip_code',
+        'dcompany',
         'status',
     ];
 }

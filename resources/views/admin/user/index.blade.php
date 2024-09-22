@@ -1,8 +1,7 @@
 <x-admin-app-layout>
 
     <div id="layoutSidenav">
-       @include('admin.component.sidebar')
-        <div id="layoutSidenav_content">
+  <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">User Manage</h1>
@@ -21,7 +20,7 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                
+
                                 <tbody>
                                     @foreach ($users as $key => $user)
                                         <tr>

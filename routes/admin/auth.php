@@ -35,6 +35,11 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::get('website-social-links', [WebSocialLinkController::class, 'index'])->name('website.social.links');
     Route::post('website-social-links/update/{id}', [WebSocialLinkController::class, 'update'])->name('update.social.links');
 
+    Route::get('delivery-company-info', [WebSocialLinkController::class, 'delInfoIndex'])->name('delivery-company-info');
+    Route::get('delivery-company', [WebSocialLinkController::class, 'deliveryIndex'])->name('delivery-company');
+    Route::post('delivery-company-store', [WebSocialLinkController::class, 'deliveryStore'])->name('delivery-company-store');
+    Route::get('delivery-company-delete/{id}', [WebSocialLinkController::class, 'deliveryDestroy'])->name('delivery-company-delete');
+
     // admin user management
     Route::get('user-delete/{id}', [WebSocialLinkController::class, 'userDelete'])->name('user.delete');
 
@@ -47,9 +52,15 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
 
     //admin manages
     Route::get('admin-manages', [AdminManageController::class, 'index'])->name('manages');
+
     Route::get('admin-create', [AdminManageController::class, 'create'])->name('create.admin');
     Route::get('admin-delete/{id}', [AdminManageController::class, 'destroy'])->name('delete.admin');
     Route::post('admin-store', [AdminManageController::class, 'store'])->name('store');
+
+    Route::get('banner-information', [AdminManageController::class, 'bannerView'])->name('banner-in');
+    Route::get('banner-in-add', [AdminManageController::class, 'bannerCreatView'])->name('banner-in-view');
+    Route::post('banner-store', [AdminManageController::class, 'bannerStore'])->name('banner.store');
+    Route::get('bannerdelete/{id}', [AdminManageController::class, 'bannerDelet'])->name('detel.banner');
 
     //change passwords
     Route::get('admin-store', [AdminManageController::class, 'changePassword'])->name('change.password.index');

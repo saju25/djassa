@@ -3,38 +3,28 @@
         <!--Home slider-->
         <div class="slideshow slideshow-wrapper pb-section sliderFull">
             <div class="home-slideshow">
+
+                @forelse ($banners as $banner)
                 <div class="slide">
                     <div class="blur-up lazyload bg-size">
-                        <img class="blur-up lazyload bg-img" src="assets/images/banar1.png"
+                        <img class="blur-up lazyload bg-img" src="{{asset('storage')}}/{{ $banner->photo }}"
                             title="Shop Our New Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title">Shop Our New Collection</h2>
-                                    <span class="mega-subtitle slideshow__subtitle">From Hight to low, classic or
-                                        modern. We have you covered</span>
-                                    <a href="{{route('all.product')}}"> <span class="btn">Achetez maintenant</span></a>
+                                    <h2 class="h1 mega-title slideshow__title">{{$banner->title}}</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">{{$banner->sub_title}}</span>
+                                    <a href="{{$banner->link}}"> <span class="btn">Achetez maintenant</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="slide">
-                    <div class="blur-up lazyload bg-size">
-                        <img class="blur-up lazyload bg-img" src="assets/images/banar2.jpg"
-                            title="Summer Bikini Collection" />
-                        <div class="slideshow__text-wrap slideshow__overlay classic bottom">
-                            <div class="slideshow__text-content bottom">
-                                <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title">Summer Bikini Collection</h2>
-                                    <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
-                                        only</span>
-                                    <a href="{{route('all.product')}}"> <span class="btn">Achetez maintenant</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                <!-- Display this if the $items collection is empty -->
+                <p>No items found.</p>
+                @endforelse
+
             </div>
         </div>
 
@@ -185,6 +175,15 @@
                             <br>
                             <input id="otr_ch" type="checkbox" name="add_category" value="Autres" hidden>
                         </div>
+                    </div>
+                    <div class="col-md-3 p-3">
+                        <a href="{{route('all.product')}}" class="text-decoration-none">
+                            <div id="otr_btn" class="text-center home_cat p-2">
+                                <i class="fa-solid fa-caret-up"></i>
+                                <div>toute</div>
+                                <br>
+                            </div>
+                        </a>
                     </div>
                 </div>
 

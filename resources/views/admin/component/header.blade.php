@@ -1,27 +1,30 @@
-<div class="container">
-    <nav class="sb-topnav navbar navbar-expand d-flex shadow bg-light">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand " href="{{ url('/') }}">
-            <img class="img-fluid p-3" src="{{ asset('user') }}/img/logo-preview.png" alt="">
-        </a>
+<nav class="admin_nav navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="{{route('home')}}">
+        <img src="{{asset('assets')}}/images/logo.png" alt="Belle Multipurpose Html Template"
+            title="Belle Multipurpose Html Template" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 d-flex justify-content-end w-100">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto w-100 justify-content-between">
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user fa-fw"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <form method="post" action="{{ route('admin.logout') }}">
-                        @csrf
+       </ul>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user fa-fw"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <form method="post" action="{{ route('admin.logout') }}">
+                    @csrf
 
-                        <a class="dropdown-item" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
-                                        this.closest('form').submit();">Logout</a>
-                    </form>
-                </div>
+                    <a class="dropdown-item" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
+                                                    this.closest('form').submit();">Logout</a>
+                </form>
             </div>
-        </ul>
-    </nav>
-</div>
+        </div>
+    </div>
+</nav>

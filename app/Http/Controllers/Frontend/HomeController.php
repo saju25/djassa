@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Post;
 use App\Models\SocialMedia;
 use App\Models\User;
@@ -17,7 +18,8 @@ class HomeController extends Controller
         Artisan::call('subscriptions:update');
         Artisan::call('schedule:run');
         $latestAdd = Post::take(12)->latest()->get();
-        return view('homepage', compact('latestAdd'));
+        $banners = Banner::get();
+        return view('homepage', compact('latestAdd', 'banners'));
     }
 
     //candidate profile details

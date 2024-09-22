@@ -2,14 +2,11 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Frontend\AddController as FrontendAddController;
-use App\Http\Controllers\Frontend\DeliveryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\User\AdressController;
 use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\DashboardController;
-use App\Http\Controllers\User\HireController;
-use App\Http\Controllers\User\JobAplicationController;
 use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\User\PostController;
 use App\Http\Controllers\User\ProfileController;
@@ -89,57 +86,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // NEW PROJECT ROUTE END
 
-    //Withdraw
-
-    Route::get('withdraw', [DashboardController::class, 'withdraw'])->name('user.withdraw');
-
-    Route::post('withdraw', [DashboardController::class, 'withdraw_submit'])->name('user.withdraw');
-
-    //job aplication
-    Route::get('/job-applicationa/{slug}={id}', [JobAplicationController::class, 'jobAplication'])->name('job.aplication');
-    Route::post('/store/job-application', [JobAplicationController::class, 'storeJobAplication'])->name('store.applied.job');
-
-    //applied job list route
-    Route::get('/show-job-application-list/{slug}={id}', [JobAplicationController::class, 'showJobApplicationList'])->name('show.job.application.list');
-    Route::get('/application-details/{id}', [JobAplicationController::class, 'applicationDetails'])->name('application.details');
-
-    //download applicant file
-    Route::get('/download-applicant-file/{id}', [JobAplicationController::class, 'downloadApplicantFile'])->name('download.applicant.file');
-
-    //download delivery attachment
-    Route::get('/download-delivery-attachment/{id}', [DeliveryController::class, 'downloadDeliveryAttachment'])->name('download.delivery.order.attachment');
-
     //user dashboard
     Route::get('/user/deshboard', [DashboardController::class, 'userDashboard'])->name('user.dashboard');
 
     //user Sub
     Route::get('/user/subscription-page', [SubController::class, 'index'])->name('user.sub');
     Route::get('/user/sub/{id}', [SubController::class, 'sub'])->name('user.subs');
-
-    //order route
-    Route::get('/hire-person/{id}', [HireController::class, 'store'])->name('hire.person');
-    Route::get('/direct-hire-person/{id}', [HireController::class, 'direcHireCandidate'])->name('direct.hire.person');
-
-    //seller job order details
-    Route::get('/seller/job-order-details/{id}', [JobAplicationController::class, 'sellerJobOrderDetails'])->name('seller.job.order.details');
-
-    //accept order
-    Route::get('/accept-order/{id}', [JobAplicationController::class, 'acceptOrder'])->name('accept-order');
-
-    //complete job list
-    Route::get('/complete-job-list', [JobAplicationController::class, 'completeJobs'])->name('complete.jobs');
-
-    //job order cancel
-    Route::get('/order-cancel/{id}', [HireController::class, 'orderCancel'])->name('order.cancel');
-
-    //seller job order details
-    Route::get('/seller/job-order-complete/{id}', [JobAplicationController::class, 'sellerJobOrderComplete'])->name('seller.job.order.complete');
-
-    // order delivery
-    Route::post('/order-delivery', [DeliveryController::class, 'orderDelivery'])->name('order.delivery');
-
-    //refund money
-    Route::post('/refund-money', [HomeController::class, 'refundMoney'])->name('user.refund');
 
     //social account update
     Route::post('/update/social-media', [SocialMediaController::class, 'update'])->name('social.account.update');

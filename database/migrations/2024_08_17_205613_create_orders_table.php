@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('add_id')->nullable(); // Keep only one definition
             $table->string('post_by_user')->nullable(); // Keep only one definition
             $table->string('user_id')->nullable(); // Keep only one definition
+            $table->string('quantity')->nullable();
             $table->string('color')->nullable();
             $table->string('size')->nullable();
             $table->text('weight')->nullable();
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('number')->nullable();
             $table->string('zip_code')->nullable();
+            $table->string('dcompany')->nullable();
             $table->string('status')->nullable();
 
             $table->timestamps();

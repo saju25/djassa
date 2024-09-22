@@ -2,119 +2,105 @@
      <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">Stock Out Product</h1>
+                <h1 class="page-width">Produit en rupture de stock</h1>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row mt-3">
              <div class="col-md-12">
-                <h1>Add List</h1>
+                <h1>Liste des produits en rupture de stock</h1>
                 <div>
-                    <table id="myTable" class="display">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Color</th>
-                                <th>Size</th>
-                                <th>Weight</th>
-                                <th>Best Price</th>
-                                <th>Discounted Price</th>
-                                <th>Action</th>
+                  <table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>ID du produit</th>
+            <th>Produit</th>
+            <th>Quantité</th> <!-- I assume this was meant for the SKU -->
+            <th>Couleur</th>
+            <th>Taille</th>
+            <th>Poids</th>
+            <th>Prix</th>
+            <th>Dernier prix</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($posts as $post)
+        <tr>
+            <td>{{ $post->id }}</td>
+            <td>
+                <a href="{{ route('add.details', ['id' => $post->id,'slug' => $post->slug]) }}">
+                    @php
+                    $imgs = $post->img_path;
+                    $array = json_decode($imgs, true);
+                    @endphp
+                    <img class="data_table_img" src="{{ $array[0] }}" alt="">
+                    {{ ucwords(Str::limit($post->name, 15, '...')) }}
+                </a>
+            </td>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($posts as $post)
-                            <tr>
-                                <td>{{ $post->id }}</td>
-                                <td>
-                                    <a href="{{ route('add.details', ['id' => $post->id,'slug' => $post->slug]) }}">
-                                        @php
-                                        $imgs = $post->img_path;
-                                        $array = json_decode( $imgs, true);
-                                        @endphp
-                                        <img class="data_table_img" src="{{  $array[0] }}" alt="">
-                                        {{ ucwords(Str::limit($post->name, 15, '...')) }}
-                                    </a>
+            <!-- Display SKU under Quantity Column -->
+            <td>{{ $post->sku }}</td>
 
+            <!-- Display Colors -->
+            <td>
+                @php
+                $colorsArray = json_decode($post->color, true);
+                @endphp
+                @if ($colorsArray)
+                @foreach($colorsArray as $index => $colorArray)
+                {{ $colorArray['value'] }}
+                @endforeach
+                @endif
+            </td>
 
-                                </td>
-<td>
-    {{$post->sku}}
-</td>
-                                <td>
-                                    @php
-                                    $colorsArray = json_decode($post->color, true);
-                                    @endphp
-                                    @if ( $colorsArray)
-                                    @foreach($colorsArray as $index => $colorArray)
-                                    @php
-                                    $colorValue = $colorArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($colorValue);
-                                    @endphp
-                                    {{ $colorValue }}
+            <!-- Display Sizes -->
+            <td>
+                @php
+                $sizesArray = json_decode($post->size, true);
+                @endphp
+                @if ($sizesArray)
+                @foreach($sizesArray as $index => $sizeArray)
+                {{ $sizeArray['value'] }}
+                @endforeach
+                @endif
+            </td>
 
-                                    @endforeach
-                                    @endif
+            <!-- Display Weights -->
+            <td>
+                @php
+                $weightsArray = json_decode($post->weight, true);
+                @endphp
+                @if ($weightsArray)
+                @foreach($weightsArray as $index => $weightArray)
+                {{ $weightArray['value'] }}
+                @endforeach
+                @endif
+            </td>
 
-                                </td>
-                                <td>
-                                    @php
-                                    $sizesArray = json_decode($post->size, true);
-                                    @endphp
-                                    @if ( $sizesArray)
-                                    @foreach($sizesArray as $index => $sizeArray)
-                                    @php
-                                    $sizeValue = $sizeArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($sizeValue);
-                                    @endphp
-                                    {{ $sizeValue }}
+            <!-- Prices -->
+            <td>{{ $post->best_price }}</td>
+            <td>{{ $post->discounted_price }}</td>
 
-                                    @endforeach
-                                    @endif
-                                </td>
-                                <td>
-                                    @php
-                                    $weightsArray = json_decode($post->weight, true);
-                                    @endphp
-                                    @if ( $weightsArray)
-                                    @foreach($weightsArray as $index => $weightArray)
-                                    @php
-                                    $weightValue = $weightArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($weightValue);
-                                    @endphp
-                                    {{ $weightValue }}
+            <!-- Action buttons -->
+            <td>
+                <a class="btn btn-success" href="{{ route('show.update', ['id' => $post->id]) }}">Edit</a>
+                <form action="{{ route('product.delete', ['id' => $post->id]) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @empty
+        <tr>
+            <td colspan="9">Not Found</td>
+        </tr>
+        @endforelse
+    </tbody>
+</table>
 
-                                    @endforeach
-                                    @endif
-                                </td>
-                                <td>{{ $post->best_price }}</td>
-                                <td>{{ $post->discounted_price }}</td>
-                                <td>
-                                    <a class="btn btn-success" href="{{ route('show.update', ['id' => $post->id]) }}">Edit</a>
-
-                                </td>
-                                <td>
-                                  <form action="{{ route('product.delete', ['id' => $post->id]) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="9">Not Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

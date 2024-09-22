@@ -139,7 +139,7 @@
                                 <input type="hidden" name="status" value="Painding">
                                 <input type="hidden" name="total_amount" value="{{$product->discounted_price*$postData['quantity']
                                                 }}">
-                                <div class="col-12 col-sm-12 col-md-4">
+                                <div class="col-12 col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <label for="address_country">Ville</label>
                                         <select id="address_country" name="city" required>
@@ -226,17 +226,30 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-4">
+                                <div class="col-12 col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <label>Numéro de téléphone</label>
                                         <input type="number" name="number" placeholder="8855..." required>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-4">
+                                <div class="col-12 col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <label for="address_zip">Code postal</label>
                                         <input type="text" id="zip_code" name="zip_code" placeholder="Code postal"
                                             required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Entreprise de livraison</label>
+                                         <select id="" name="dcompany" required>
+                                            <option selected disabled>Sélectionnez-en un</option>
+                                               @forelse ($delivery as $deliver)
+                                                   <option value="{{$deliver->name}}">{{$deliver->name}}</option>
+                                              @empty
+                                               <option value="Any One">Any One</option>
+                                              @endforelse
+                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 actionRow text-center">

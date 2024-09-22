@@ -24,6 +24,7 @@ class OrderController extends Controller
             'city' => 'nullable|string',
             'number' => 'nullable|string',
             'zip_code' => 'nullable|string',
+            'dcompany' => 'nullable|string',
         ]);
         $user = Auth::user();
 
@@ -48,6 +49,7 @@ class OrderController extends Controller
         $order->city = $request->input('city');
         $order->number = $request->input('number');
         $order->zip_code = $request->input('zip_code');
+        $order->dcompany = $request->input('dcompany');
         $order->status = $request->input('status');
         $order->save();
         // Redirect to a desired route with a success message

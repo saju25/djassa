@@ -1,5 +1,5 @@
 <x-guest-layout>
-     <div class="page section-header text-center ">
+    <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
                 <h1 class="page-width">My Add Page</h1>
@@ -8,22 +8,22 @@
     </div>
     <div class="container">
         <div class="row mt-3">
-             <div class="col-md-12">
-                <h1>Add List</h1>
+            <div class="col-md-12">
+                <h1>Publicité Liste de produits</h1>
                 <div>
+
                     <table id="myTable" class="display">
                         <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Color</th>
-                                <th>Size</th>
-                                <th>Weight</th>
-                                <th>Best Price</th>
-                                <th>Discounted Price</th>
-                                <th>Action</th>
-
+                                <th>Numéro de commande</th>
+                                <th>Produit</th>
+                                <th>Quantité</th>
+                                <th>Couleur</th>
+                                <th>Taille</th>
+                                <th>Poids</th>
+                                <th>Prix</th>
+                                <th>Dernier prix</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,47 +34,30 @@
                                     <a href="{{ route('add.details', ['id' => $post->id,'slug' => $post->slug]) }}">
                                         @php
                                         $imgs = $post->img_path;
-                                        $array = json_decode( $imgs, true);
+                                        $array = json_decode($imgs, true);
                                         @endphp
-                                        <img class="data_table_img" src="{{  $array[0] }}" alt="">
+                                        <img class="data_table_img" src="{{ $array[0] }}" alt="">
                                         {{ ucwords(Str::limit($post->name, 15, '...')) }}
                                     </a>
-
-
                                 </td>
-<td>
-    {{$post->sku}}
-</td>
+                                <td>{{ $post->sku }}</td>
                                 <td>
                                     @php
                                     $colorsArray = json_decode($post->color, true);
                                     @endphp
-                                    @if ( $colorsArray)
+                                    @if ($colorsArray)
                                     @foreach($colorsArray as $index => $colorArray)
-                                    @php
-                                    $colorValue = $colorArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($colorValue);
-                                    @endphp
-                                    {{ $colorValue }}
-
+                                    {{ $colorArray['value'] }}
                                     @endforeach
                                     @endif
-
                                 </td>
                                 <td>
                                     @php
                                     $sizesArray = json_decode($post->size, true);
                                     @endphp
-                                    @if ( $sizesArray)
+                                    @if ($sizesArray)
                                     @foreach($sizesArray as $index => $sizeArray)
-                                    @php
-                                    $sizeValue = $sizeArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($sizeValue);
-                                    @endphp
-                                    {{ $sizeValue }}
-
+                                    {{ $sizeArray['value'] }}
                                     @endforeach
                                     @endif
                                 </td>
@@ -82,30 +65,28 @@
                                     @php
                                     $weightsArray = json_decode($post->weight, true);
                                     @endphp
-                                    @if ( $weightsArray)
+                                    @if ($weightsArray)
                                     @foreach($weightsArray as $index => $weightArray)
-                                    @php
-                                    $weightValue = $weightArray['value'];
-                                    // Generate a unique ID for each swatch
-                                    $swatchId = "swatch-{$index}-" . strtolower($weightValue);
-                                    @endphp
-                                    {{ $weightValue }}
-
+                                    {{ $weightArray['value'] }}
                                     @endforeach
                                     @endif
                                 </td>
                                 <td>{{ $post->best_price }}</td>
                                 <td>{{ $post->discounted_price }}</td>
-                                <td>
-                                    <a class="btn btn-success" href="{{ route('show.update', ['id' => $post->id]) }}">Edit</a>
-
-                                </td>
-                                <td>
-                                  <form action="{{ route('product.delete', ['id' => $post->id]) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+                                <td class="d-flex">
+                                    <!-- Combine Edit and Delete actions in the same <td> -->
+                                    <div>
+                                        <a class="btn btn-success"
+                                            href="{{ route('show.update', ['id' => $post->id]) }}">Edit</a>
+                                    </div>
+                                    <div>
+                                        <form class="m-2" action="{{ route('product.delete', ['id' => $post->id]) }}"
+                                            method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @empty
@@ -115,6 +96,7 @@
                             @endforelse
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
@@ -122,7 +104,6 @@
     </div>
 
     @push('styles')
-    <!-- Dropify CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
     @endpush
     @push('script')

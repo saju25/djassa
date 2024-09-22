@@ -1,8 +1,11 @@
 <x-admin-app-layout>
-
-    <div id="layoutSidenav">
-        @include('admin.component.sidebar')
-        <div id="layoutSidenav_content">
+        <div class="row">
+        <div class="col-md-3 shadow-lg">
+            @include('admin.component.sidebar')
+        </div>
+        <div class="col-md-9">
+                <div id="layoutSidenav">
+       <div id="layoutSidenav_content">
             <main class="mt-3">
                 <div class="container mb-3">
                     <div class="row mt-5">
@@ -75,4 +78,7 @@
 
     </div>
     </div>
+        </div>
+    </div>
+
 </x-admin-app-layout>

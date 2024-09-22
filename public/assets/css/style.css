@@ -7915,3 +7915,35 @@ tr:nth-child(even) {
   justify-content: center;
   align-items: center;
 }
+
+.admin_nav {
+  background-color: #7e0cba;
+}
+
+.admin_nav a img {
+  width: 150px;
+}
+
+.admin_nav .collapse .navbar-nav li a {
+  color: white;
+}
+
+.sb-sidenav {
+  height: 100vh;
+}
+
+.link_admin {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.link_admin:hover .link_admin a {
+  background-color: #7e0cba;
+  color: white;
+}
+
+table.dataTable th.dt-type-numeric,
+table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-numeric,
+table.dataTable td.dt-type-date {
+  text-align: left !important;
+}

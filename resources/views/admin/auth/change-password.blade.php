@@ -1,12 +1,15 @@
 <x-admin-app-layout>
-
-    <div id="layoutSidenav">
-       @include('admin.component.sidebar')
-        <div id="layoutSidenav_content">
+        <div class="row">
+        <div  class="col-md-3 shadow-lg">
+            @include('admin.component.sidebar')
+        </div>
+        <div class="col-md-9">
+                <div id="layoutSidenav">
+   <div id="layoutSidenav_content">
             <main class="mt-3">
                 <div class="container mb-3">
-                    <div class="row mt-5 justify-content-center">
-                        <div class="col-md-6">
+                    <div class="row mt-5 ">
+                        <div class="">
                             <div class="recent_activities card p-3">
 
                                 <h3 class="d-flex align-content-center "><i class="fa-regular fa-file bc mx-2"></i>Change Password</h3>
@@ -35,9 +38,9 @@
                                             @error('password')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                        </div> 
+                                        </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div>
                                                 <label class="col-form-label">New Password</label>
                                             </div>
@@ -46,7 +49,7 @@
                                             @error('password_confirmation')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
-                                        </div> 
+                                        </div>
                                     </div>
 
 
@@ -66,4 +69,7 @@
 
         </div>
     </div>
+        </div>
+    </div>
+
 </x-admin-app-layout>

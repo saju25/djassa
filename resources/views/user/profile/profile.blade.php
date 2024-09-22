@@ -148,7 +148,7 @@
                         <br>
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <span class="sub_tex"><ir class="sub_tex" href="{{route('profile.add')}}">voir</ir></span>
+                            <span class="sub_tex"><a class="sub_tex" href="{{route('profile.add')}}">voir</a></span>
                         </li> <br>
                     </div>
                 </div>

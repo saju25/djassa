@@ -10,40 +10,47 @@
                         <div class="container-fluid px-4">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h1 class="mt-4">Admin Manage</h1>
                                 </div>
                                 <div class="col-md-5 d-flex justify-content-end">
-                                    <a href="{{ route('admin.create.admin') }}" class="btn btn-success mt-4">Create
-                                        Admin+</a>
+                                    <a href="{{ route('admin.banner-in-view') }}" class="btn btn-success mt-4">Add Banner Information+</a>
                                 </div>
                             </div>
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-table me-1"></i>
-                                    Admin Manage
+                                   Banner Information
                                 </div>
                                 <div class="card-body">
-                                    <table id="myTable" class="display">
+                                    <table id="datatablesSimple" class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sl</th>
-                                                <th>Admin Email</th>
+                                                <th>Photo</th>
+                                                <th>Title</th>
+                                                <th>Sub Title</th>
+                                                <th>Link</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
-                                            @foreach ($admins as $key => $user)
-                                            <tr>
-                                                <td>{{ ++$key }}</td>
-
-                                                <td>{{ $user->email }}</td>
-                                                <td colspan="2">
-                                                    <a href="{{ route('admin.delete.admin', $user->id) }}"
-                                                        class="btn btn-danger">Delete </a>
+                                        @forelse ($banners as $banner)
+                                         <tr>
+                                                <td>{{ $banner->id }}</td>
+                                                <td>
+                                                    <img height="50" width="50" class="img-fluid" src="{{asset('storage')}}/{{ $banner->photo }}" alt="">
                                                 </td>
+
+
+
+                                                <td>{{ucwords(Str:: limit($banner->title , 25, '...')) }}</td>
+                                                <td >{{ucwords(Str:: limit($banner->sub_title, 25, '...'))}} </td>
+                                                <td >{{ucwords(Str:: limit($banner->link, 25, '...'))}} </td>
+                                                <td ><a href="{{route('admin.detel.banner',$banner->id)}}" class="btn btn-danger text-light">Delete</a></td>
                                             </tr>
-                                            @endforeach
+                                           @empty
+                                            <p>No items found.</p>
+                                        @endforelse
                                         </tbody>
                                     </table>
                                 </div>
@@ -53,25 +60,8 @@
 
                 </div>
             </div>
-
-
         </div>
     </div>
 
-    @push('styles')
-    <!-- Dropify CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
-    @endpush
-    @push('script')
-    <script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#myTable').DataTable();
-        });
-        $.fn.dataTable.ext.errMode = 'throw';
-
-    </script>
-
-    @endpush
 
 </x-admin-app-layout>
