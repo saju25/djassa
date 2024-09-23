@@ -42,7 +42,7 @@ class HomeController extends Controller
         $location = $request->location;
         $add_category = $request->add_category;
         $sub_cate = $request->sub_cate;
-        $per_page = $request->per_page ?: 15;
+        $per_page = $request->per_page ?: 16;
         // dd($add_category);
 
         $products = Post::query()->with('user')->latest('id');
@@ -87,7 +87,7 @@ class HomeController extends Controller
     {
         $keywords = $request->keyword;
         $name = $request->name;
-        $per_page = $request->per_page ?: 15;
+        $per_page = $request->per_page ?: 16;
 
         // Start with the query builder, not the collection
         $comIns = CompanyInFo::query();
