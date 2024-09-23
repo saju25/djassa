@@ -7961,3 +7961,8 @@ table.dataTable td.dt-type-date {
 .pro_phot .col-md-12 .in_phot {
   padding: 10px !important;
 }
+
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable,
+.ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
+  padding: 0px 20px;
+}
