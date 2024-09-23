@@ -20,7 +20,9 @@
 </head>
 
 <body>
-
+ <div id="pre-loader">
+        <img width="50" height="50" src="{{ asset('assets') }}/images/tilelogo60.png" alt="Loading..." />
+    </div>
     <section>
         {{ $slot }}
     </section>

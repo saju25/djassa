@@ -176,7 +176,7 @@
                                     <label class="col-form-label">Catégorie</label>
                                 </div>
                                 <select id="category" class="form-select w-100" name="add_cate">
-                                    <option id="1" selected disabled>Choosissez en un</option>
+                                    <option id="1" selected disabled>Choisissez en une</option>
                                     <option id="2" value="Mobiles">Mobiles</option>
                                     <option id="3" value="Électronique">Électronique</option>
                                     <option id="4" value="Véhicules">Véhicules</option>
@@ -213,7 +213,7 @@
                                     <label class="col-form-label">Ville</label>
                                 </div>
                                 <select class="form-select w-100" name="city">
-                                    <option selected disabled>Choosissez en un
+                                    <option selected disabled>Choisissez en une
 </option>
                                     <option value="Abidjan">Abidjan</option>
                                     <option value="Aboisso">Aboisso</option>
@@ -305,7 +305,7 @@
                                 <div>
                                     <label class="col-form-label">Numéro de telephone </label>
                                 </div>
-                                <input type="number" name="number" class="form-control" placeholder="8865....">
+                                <input type="number" name="number" class="form-control" placeholder="078865....">
 
                                 @error('location')
                                 <span class="text-danger">{{ $message }}</span>

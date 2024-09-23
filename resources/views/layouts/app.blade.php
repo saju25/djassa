@@ -22,8 +22,8 @@
 </head>
 
 <body class="template-index belle template-index-belle">
-    <div id="pre-loader">
-        <img src="{{ asset('assets') }}/images/loader.gif" alt="Loading..." />
+   <div id="pre-loader">
+        <img width="50" height="50" src="{{ asset('assets') }}/images/tilelogo60.png" alt="Loading..." />
     </div>
 
     <!-- navbar section start  -->

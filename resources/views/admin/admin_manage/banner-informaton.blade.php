@@ -46,6 +46,7 @@
                                                 <td>{{ucwords(Str:: limit($banner->title , 25, '...')) }}</td>
                                                 <td >{{ucwords(Str:: limit($banner->sub_title, 25, '...'))}} </td>
                                                 <td >{{ucwords(Str:: limit($banner->link, 25, '...'))}} </td>
+                                                <td ><a href="{{route('admin.edit.banner',$banner->id)}}" class="btn btn-danger text-light">Edit</a></td>
                                                 <td ><a href="{{route('admin.detel.banner',$banner->id)}}" class="btn btn-danger text-light">Delete</a></td>
                                             </tr>
                                            @empty

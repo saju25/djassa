@@ -2,7 +2,7 @@
     <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">Profile Page</h1>
+                <h1 class="page-width">Mon profil</h1>
             </div>
         </div>
     </div>
@@ -141,7 +141,7 @@
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3"> Mes annonces voir</h1>
+                    <h1 class="mt-3">Voir mes annonces</h1>
                     <div class="mx-4 mt-2">
                         <br>
                         <br>
@@ -159,7 +159,7 @@
         <div class="row mt-4">
  <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Commandez Recevoir</h1>
+                    <h1 class="mt-3">Commandes reçues</h1>
                      <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -170,7 +170,7 @@
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Achat de produit</h1>
+                    <h1 class="mt-3">Produits à acheter</h1>
                      <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -181,7 +181,7 @@
             </div>
             <div class="col-md-4 ">
                 <div class="pro_img_name_div p-4 ">
-                    <h1 class="mt-3">Produit en rupture de stock</h1>
+                    <h1 class="mt-3">Produits en rupture de stock</h1>
                       <div class="mx-4 mt-2">
                         <li class="lvl1 parent list-unstyled">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -231,8 +231,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </div>
                 </form>
             </div>

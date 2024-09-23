@@ -77,21 +77,21 @@
                                     <!-- Combine Edit and Delete actions in the same <td> -->
                                     <div>
                                         <a class="btn btn-success"
-                                            href="{{ route('show.update', ['id' => $post->id]) }}">Edit</a>
+                                            href="{{ route('show.update', ['id' => $post->id]) }}">Modifier</a>
                                     </div>
                                     <div>
                                         <form class="m-2" action="{{ route('product.delete', ['id' => $post->id]) }}"
                                             method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Supprimer</button>
                                         </form>
                                     </div>
                                 </td>
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="9">Not Found</td>
+                                <td colspan="9">Non trouvé</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -110,7 +110,13 @@
     <script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                "language": {
+                             "search": "Rechercher:",
+                            "lengthMenu": " _MENU_ Entrées par page",
+                             "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées"  // Customize the text here
+                        }
+            });
         });
         $.fn.dataTable.ext.errMode = 'throw';
 

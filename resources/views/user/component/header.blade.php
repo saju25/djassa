@@ -36,11 +36,11 @@
                         aria-haspopup="true" aria-expanded="false">
                         {{auth()->user()->fullname}}
                     </li>
-                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
 
                         <li class="dropdown-item">
-                            <form  method="POST" action="{{ route('logout') }}">
+                            <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
                                 <x-dropdown-link class="dropdown-item  text-center" :href="route('logout')"
@@ -81,15 +81,17 @@
                 <!--Desktop Menu-->
                 <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                     <ul id="siteNav" class="site-nav medium center hidearrow">
-                        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil<i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil<i
+                                    class="anm anm-angle-down-l"></i></a>
                         </li>
-                         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
-!</b> <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
+                                    !</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
-!</b> <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
+                                    !</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Postez une annonce!</b> <i class="anm anm-angle-down-l"></i></a>
+                        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Postez une annonce!</b> <i
+                                    class="anm anm-angle-down-l"></i></a>
                         </li>
 
 
@@ -118,14 +120,14 @@
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil <i class="anm anm-plus-l"></i></a>
         </li>
-         <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
-!</b></a>
+        <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
+                    !</b></a>
         </li>
-         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
-!</b></a>
+        <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
+                    !</b></a>
         </li>
-       <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Postez une annonce!</b></a>
+        <li class="lvl1"><a href="{{route('user.add.post')}}"><b>Postez une annonce!</b></a>
         </li>
-       </ul>
+    </ul>
 </div>
 <!--End Mobile Menu-->

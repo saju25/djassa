@@ -73,7 +73,7 @@
                                         <span class="instock">En stock</span>
                                         @endif
                                     </div>
-                                    <div class="product-sku">SKU: <span class="variant-sku">{{$product->sku}}</span>
+                                    <div class="product-sku">Quantité: <span class="variant-sku">{{$product->sku}}</span>
                                     </div>
                                     <div class="spr-review">
 
@@ -113,7 +113,7 @@
 
                                     @endphp
                                     <span class="discount-badge"> <span class="devider">|</span>&nbsp;
-                                        <span>Vous économise</span>
+                                        <span>Vous économisez</span>
                                         <span id="SaveAmount-product-template" class="product-single__save-amount">
                                             <span class="money"><i class="fa-solid fa-franc-sign px-2"></i>{{ $save}}</span>
                                         </span>
@@ -279,11 +279,9 @@
                                     </div>
                                     <!-- End Product Action -->
                                 </form>
-                                <p class="shippingMsg"><i class="fa fa-truck" aria-hidden="true"></i> ESTIMATED DELIVERY
-                                    WITHIN <b id="fromDate">7 DAY</b>.</p>
-                                <div class="userViewMsg" data-user="20" data-time="11000"><i class="fa fa-users"
-                                        aria-hidden="true"></i> <strong class="uersView">14</strong> PEOPLE ARE LOOKING
-                                    FOR THIS PRODUCT</div>
+                                <p class="shippingMsg text-uppercase"><i class="fa fa-truck px-2" aria-hidden="true"></i>livraison estimée en <b id="fromDate">3 jours</b>.</p>
+                                <div class="userViewMsg text-uppercase" data-user="20" data-time="11000"><i class="fa fa-users px-2"
+                                        aria-hidden="true"></i> <strong class="uersView">14</strong> personnes ont vu ce produit</div>
                             </div>
                         </div>
                     </div>

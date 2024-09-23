@@ -26,7 +26,7 @@
                 maxFileSizePreview: "5M",
                 allowedFormats: ["portrait", "square", "landscape"],
                 allowedFileExtensions: ["*"],
-                messages: { default: "Drag and drop a file here or click", replace: "Drag and drop or click to replace", remove: "Remove", error: "Ooops, something wrong appended." },
+                messages: { default: "Glissez et déposez un fichier ici ou cliquez", replace: "Glissez et déposez un fichier ici ou cliquez", remove: "Retirer", error: "Ooops, something wrong appended." },
                 error: {
                     fileSize: "The file size is too big ({{ value }} max).",
                     minWidth: "The image width is too small ({{ value }}}px min).",

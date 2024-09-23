@@ -19,8 +19,7 @@
             <th>Quantité</th>
             <th>Montant total</th>
             <th>Statut</th>
-            <th>Action</th> <!-- Action column for printing orders -->
-        </tr>
+         </tr>
     </thead>
     <tbody>
         @forelse ($orders as $order)
@@ -57,53 +56,9 @@
                 </button>
             </td>
             @endif
-
-            <!-- Action Column (Only for users who are not the owner) -->
-            <td>
-                @if ($user->id != $order->user_id)
-                <a class="btn btn-success" href="{{ route('order.print', ['id' => $order->id, 's_id' => $order->post_by_user, 'c_id' => $order->user_id]) }}">
-                    Imprimer
-                </a>
-                @endif
-            </td>
         </tr>
 
-        <!-- Modal for Status Update -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Mettre à jour le statut de la commande</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="productForm" action="{{ route('order.update', ['id' => $order->id]) }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect01" name="status" required>
-                                        <option value="" disabled selected>Choisir...</option>
-                                        <option value="Pending">En attente</option>
-                                        <option value="Order Accept">Commande acceptée</option>
-                                        <option value="On The Way">En route</option>
-                                        <option value="Delivered">Livré</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+
         @empty
         <tr>
             <td colspan="6">Aucune commande trouvée</td> <!-- Adjusted colspan for consistency -->
@@ -128,7 +83,13 @@
     <script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                  "language": {
+                             "search": "Rechercher:",
+                            "lengthMenu": " _MENU_ Entrées par page",
+                             "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées"  // Customize the text here
+                        }
+            });
         });
         $.fn.dataTable.ext.errMode = 'throw';
 

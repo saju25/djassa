@@ -46,6 +46,8 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::get('banner-information', [AdminManageController::class, 'bannerView'])->name('banner-in');
     Route::get('banner-in-add', [AdminManageController::class, 'bannerCreatView'])->name('banner-in-view');
     Route::post('banner-store', [AdminManageController::class, 'bannerStore'])->name('banner.store');
+    Route::get('banner-edit/{id}', [AdminManageController::class, 'bannerEdit'])->name('edit.banner');
+    Route::post('banner-edit-submit/{id}', [AdminManageController::class, 'bannerUpdate'])->name('submit.edit.banner');
     Route::get('banner-delete/{id}', [AdminManageController::class, 'bannerDelete'])->name('detel.banner');
 
     //change passwords

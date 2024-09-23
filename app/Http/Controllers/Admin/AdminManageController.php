@@ -8,6 +8,7 @@ use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AdminManageController extends Controller
 {
@@ -127,6 +128,54 @@ class AdminManageController extends Controller
 // Redirect back with success message
         return redirect()->route('admin.banner-in')->with('success', 'Banner created successfully!');
 
+    }
+
+    public function bannerEdit($id)
+    {
+        // Find the banner by ID
+        $banner = Banner::findOrFail($id);
+
+        // Return the edit view with the banner data
+        return view('admin.admin_manage.banner-edit', compact('banner'));
+    }
+
+    public function bannerUpdate(Request $request, $id)
+    {
+        // Validate the incoming request
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'sub_title' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link' => 'nullable|url',
+        ]);
+
+        // Find the banner by ID
+        $banner = Banner::findOrFail($id);
+
+        // Update the banner's attributes
+        $banner->title = $validatedData['title'];
+        $banner->sub_title = $validatedData['sub_title'];
+        $banner->link = $validatedData['link'];
+
+        // Handle file upload for the banner photo
+        if ($request->hasFile('photo')) {
+            // Delete the old photo if necessary (optional)
+            if ($banner->photo) {
+                Storage::disk('public')->delete($banner->photo);
+            }
+
+            // Upload the new photo
+            $file = $request->file('photo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('banners', $fileName, 'public');
+            $banner->photo = $filePath; // Update the photo path
+        }
+
+        // Save the updated banner
+        $banner->save();
+
+        // Redirect back with success message
+        return redirect()->route('admin.banner-in')->with('success', 'Banner updated successfully!');
     }
 
     public function bannerDelete($id)

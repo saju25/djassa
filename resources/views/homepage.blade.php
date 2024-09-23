@@ -180,7 +180,7 @@
                         <a href="{{route('all.product')}}" class="text-decoration-none">
                             <div id="otr_btn" class="text-center home_cat p-2">
                                 <i class="fa-solid fa-caret-up"></i>
-                                <div>toute</div>
+                                <div>Toutes les catégories</div>
                                 <br>
                             </div>
                         </a>

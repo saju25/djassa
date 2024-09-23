@@ -7947,3 +7947,13 @@ table.dataTable td.dt-type-numeric,
 table.dataTable td.dt-type-date {
   text-align: left !important;
 }
+
+.dropdown-menu {
+  background-color: #000;
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #000 !important;
+  color: red;
+}
