@@ -2,12 +2,20 @@
     <nav class="sb-sidenav accordion" id="sidenavAccordion">
         <div class="sb-sidenav-menu h-100 mt-4">
             <div class="admin_nv h-100 d-flex flex-column justify-content-between">
-                <div class="link_admin">
+                            <div class="link_admin">
                     <a class="nav-link" href="{{ route('admin.dashboard') }}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-user"></i></div>
                         Djassa User
                     </a>
                 </div>
+
+            <div class="link_admin">
+                    <a class="nav-link" href="{{ route('admin.company.index') }}">
+                        <div class="sb-nav-link-icon"><i class="fa-regular fa-user"></i></div>
+                        Company Informatin
+                    </a>
+                </div>
+
                 <div class="link_admin">
                     <a class="nav-link" href="{{ route('admin.website.social.links') }}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-address-card"></i></div>

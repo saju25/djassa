@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\CompanyInFo;
 use App\Models\Post;
 use App\Models\SocialMedia;
 use App\Models\User;
@@ -81,6 +82,24 @@ class HomeController extends Controller
     public function about()
     {
         return view('about-us');
+    }
+    public function frontView(Request $request)
+    {
+        $keywords = $request->keyword;
+        $name = $request->name;
+        $per_page = $request->per_page ?: 15;
+
+        // Start with the query builder, not the collection
+        $comIns = CompanyInFo::query();
+
+        if ($keywords) {
+            $comIns->where('name', 'like', '%' . $keywords . '%');
+        }
+
+        // Paginate before fetching results
+        $comIns = $comIns->paginate($per_page);
+
+        return view('compay-information', compact('comIns'));
     }
 
 }

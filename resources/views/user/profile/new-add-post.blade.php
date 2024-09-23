@@ -45,7 +45,7 @@
                         <div class="row mt-3">
                             <div class="col-md-12">
                                 <div>
-                                    <label class="col-form-label">paragraphe</label>
+                                    <label class="col-form-label">Description du produit</label>
                                 </div>
                                 <div>
                                     <textarea id="editor" class="col-form-label w-100 p-3" name="description"

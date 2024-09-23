@@ -1,5 +1,7 @@
-<nav class="admin_nav navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="{{route('home')}}">
+<div class="">
+    <nav class="admin_nav navbar navbar-expand-lg navbar-light ">
+<div class="container">
+        <a class="navbar-brand" href="{{route('home')}}">
         <img src="{{asset('assets')}}/images/logo.png" alt="Belle Multipurpose Html Template"
             title="Belle Multipurpose Html Template" />
     </a>
@@ -17,7 +19,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user fa-fw"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu bg-light" aria-labelledby="dropdownMenuButton">
                 <form method="post" action="{{ route('admin.logout') }}">
                     @csrf
 
@@ -27,4 +29,6 @@
             </div>
         </div>
     </div>
+</div>
 </nav>
+</div>

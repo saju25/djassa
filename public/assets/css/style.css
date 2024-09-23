@@ -7966,3 +7966,7 @@ table.dataTable td.dt-type-date {
 .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
   padding: 0px 20px;
 }
+
+.rest_page {
+  margin-top: 100px;
+}

@@ -143,7 +143,7 @@
                                     <div class="form-group">
                                         <label for="address_country">Ville</label>
                                         <select id="address_country" name="city" required>
-                                            <option selected disabled>Sélectionnez-en un</option>
+                                            <option selected disabled>Choisissez en une</option>
                                             <option value="Abidjan">Abidjan</option>
                                             <option value="Aboisso">Aboisso</option>
                                             <option value="Adiaké">Adiaké</option>
@@ -243,7 +243,7 @@
                                     <div class="form-group">
                                         <label for="">Entreprise de livraison</label>
                                          <select id="" name="dcompany" required>
-                                            <option selected disabled>Sélectionnez-en un</option>
+                                            <option selected disabled>Sélectionnez-en une</option>
                                                @forelse ($delivery as $deliver)
                                                    <option value="{{$deliver->name}}">{{$deliver->name}}</option>
                                               @empty

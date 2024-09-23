@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\View\View;
-use App\Models\SocialMedia;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\CompanyInFo;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
@@ -59,5 +60,97 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/admin/login');
+    }
+
+    public function indexCom()
+    {
+        $comIns = CompanyInFo::get();
+        return view('admin.admin_manage.company', compact('comIns'));
+    }
+    public function formViewCom()
+    {
+        return view('admin.admin_manage.company-info-add');
+    }
+    public function inStoreCom(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|numeric|digits_between:10,15|unique:company_in_fos,phone',
+            'email' => 'required|email|max:255|unique:company_in_fos,email',
+            'location' => 'required|string|max:255',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Photo validation
+        ]);
+        $photoPath = null;
+        if ($request->hasFile('photo')) {
+            // Store the photo in the 'public/photos' directory
+            $photoPath = $request->file('photo')->store('photos', 'public');
+        }
+        CompanyInFo::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'location' => $request->location,
+            'photo' => $photoPath,
+        ]);
+        return redirect()->route('admin.company.index')->with('success', 'Company added successfully!');
+
+    }
+    public function comInDestroy($id)
+    {
+        // Find the delivery company by its ID
+        $company = CompanyInFo::findOrFail($id);
+
+        // Delete the associated photo from storage if it exists
+        if ($company->photo && Storage::disk('public')->exists($company->photo)) {
+            Storage::disk('public')->delete($company->photo);
+        }
+
+        // Delete the delivery company record from the database
+        $company->delete();
+
+        // Redirect or return a response
+        return redirect()->route('admin.delivery-company-info')->with('success', 'Company deleted successfully!');
+    }
+
+    public function comInUpdateView($id)
+    {
+        $comIns = CompanyInFo::findOrFail($id);
+        return view('admin.admin_manage.company-info-edit', compact('comIns'));
+    }
+    public function comInUpdate(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|numeric|digits_between:10,15|unique:company_in_fos,phone,' . $id,
+            'email' => 'required|email|max:255|unique:company_in_fos,email,' . $id,
+            'location' => 'required|string|max:255',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Photo is optional during update
+        ]);
+
+// Find the company info by its ID
+        $companyInfo = CompanyInFo::findOrFail($id);
+
+// Handle photo upload and updating
+        $photoPath = $companyInfo->photo; // Keep the old photo path by default
+        if ($request->hasFile('photo')) {
+            // Delete the old photo if it exists
+            if ($companyInfo->photo) {
+                Storage::disk('public')->delete($companyInfo->photo);
+            }
+            // Store the new photo in the 'public/photos' directory
+            $photoPath = $request->file('photo')->store('photos', 'public');
+        }
+
+// Update the company info with the new data
+        $companyInfo->update([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'location' => $request->location,
+            'photo' => $photoPath,
+        ]);
+        return redirect()->route('admin.company.index')->with('Company information updated successfully!');
+
     }
 }

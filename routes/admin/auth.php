@@ -53,4 +53,10 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     //change passwords
     Route::get('admin-store', [AdminManageController::class, 'changePassword'])->name('change.password.index');
     Route::post('password-change', [AdminManageController::class, 'passwordChange'])->name('password.change');
+    Route::get('compay-table', [ProfileController::class, 'indexCom'])->name('company.index');
+    Route::get('compay-form', [ProfileController::class, 'formViewCom'])->name('company.form');
+    Route::post('compay-store', [ProfileController::class, 'inStoreCom'])->name('comIn.store');
+    Route::get('compay-update/{id}', [ProfileController::class, 'comInUpdateView'])->name('comIn.update');
+    Route::post('compay-update/{id}', [ProfileController::class, 'comInUpdate'])->name('comIn.update');
+    Route::get('compay-delete/{id}', [ProfileController::class, 'comInDestroy'])->name('comIn.delete');
 });

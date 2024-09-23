@@ -21,8 +21,7 @@
                                     class="form-control me-2" type="search" placeholder="Adresse" style="display: none;"
                                     oninput="syncInputToSelect()">
                                 <select id="citySelect" class="form-select w-100" onchange="handleSelectChange()">
-                                    <option selected disabled>Choosissez en un
-                                    </option>
+                                    <option selected disabled>Choisissez en une</option>
                                     <option value="Abidjan">Abidjan</option>
                                     <option value="Aboisso">Aboisso</option>
                                     <option value="Adiaké">Adiaké</option>

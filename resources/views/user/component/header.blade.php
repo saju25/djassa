@@ -87,7 +87,7 @@
                         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil<i
                                     class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1"><a href="#"><b>lancez vous dans le e-commerce
+                        <li class="lvl1"><a href="{{route('about.compay')}}"><b>lancez vous dans le e-commerce
                                     !</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
                         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
@@ -123,7 +123,7 @@
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil <i class="anm anm-plus-l"></i></a>
         </li>
-        <li class="lvl1"><a href="#"><b>lancez vous dans le e-commerce
+        <li class="lvl1"><a href="{{route('about.compay')}}"><b>lancez vous dans le e-commerce
                     !</b></a>
         </li>
         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant

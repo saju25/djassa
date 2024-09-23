@@ -38,6 +38,7 @@ Route::get('/verify-otp/{user}', [DashboardController::class, 'verifyOtpByUser']
 Route::get('/resend-otp/{user}', [DashboardController::class, 'resendOtp'])->name('resend-otp');
 Route::get('/policy-and-confidentiality', [HomeController::class, 'policy'])->name('policy-and-confidentiality');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about.us');
+Route::get('/about-all-company', [HomeController::class, 'frontView'])->name('about.compay');
 
 // NEW PROJECT ROUTE END
 

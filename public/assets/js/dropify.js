@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 !(function (e, i) {
     "function" == typeof define && define.amd ? define(["jquery"], i) : "object" == typeof exports ? (module.exports = i(require("jquery"))) : (e.Dropify = i(e.jQuery));
 })(this, function (e) {
