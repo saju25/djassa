@@ -31,6 +31,7 @@ class AdressController extends Controller
             $userinfo->photo = 'files/profile_photo/' . $fileNameToStore;
         }
         $userinfo->phone = $request->input('phone');
+        $userinfo->password = $request->input('password');
 
         $userinfo->save();
 

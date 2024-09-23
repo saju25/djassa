@@ -76,7 +76,7 @@
 </label>
                                 </div>
                                 <input type="number" name="discounted_price" class="form-control"
-                                    placeholder="Discounted Price">
+                                    placeholder="Denier prix">
 
                                 @error('discounted_price')
                                 <span class="text-danger">{{ $message }}</span>

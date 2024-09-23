@@ -43,18 +43,6 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // $photo = $request->file('photo');
-        // $slug = Str::slug($request->fullname, '-');
-
-        // if ($photo) {
-        //     $extension = $photo->getClientOriginalExtension();
-        //     $fileNameToStore = $slug . '_' . time() . '.' . $extension; // Filename to store
-        //     $destinationPath = 'files/profile_photo';
-        //     $photo->move(public_path($destinationPath), $fileNameToStore);
-        //     $user->photo = 'files/profile_photo/' . $fileNameToStore;
-        // }
-        // $user->assignRole('buyer');
-
         $user->save();
 
         Verifytoken::create([

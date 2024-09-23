@@ -9,16 +9,19 @@ use App\Models\SocialMedia;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     // for home page
     public function index()
     {
+        $user = Auth::user();
         Artisan::call('subscriptions:update');
         Artisan::call('schedule:run');
         $latestAdd = Post::take(12)->latest()->get();
         $banners = Banner::get();
+
         return view('homepage', compact('latestAdd', 'banners'));
     }
 

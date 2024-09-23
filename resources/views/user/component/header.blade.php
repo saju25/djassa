@@ -39,6 +39,9 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
 
+                        <li class="dropdown-item text-center">
+                            <a href="{{route('profile.detail')}}">Mon profil</a>
+                        </li>
                         <li class="dropdown-item">
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -84,7 +87,7 @@
                         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil<i
                                     class="anm anm-angle-down-l"></i></a>
                         </li>
-                        <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
+                        <li class="lvl1"><a href="#"><b>lancez vous dans le e-commerce
                                     !</b> <i class="anm anm-angle-down-l"></i></a>
                         </li>
                         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant
@@ -120,7 +123,7 @@
     <ul id="MobileNav" class="mobile-nav">
         <li class="lvl1 parent megamenu"><a href="{{route('home')}}">Accueil <i class="anm anm-plus-l"></i></a>
         </li>
-        <li class="lvl1"><a href="{{route('profile.detail')}}"><b>lancez vous dans le e-commerce
+        <li class="lvl1"><a href="#"><b>lancez vous dans le e-commerce
                     !</b></a>
         </li>
         <li class="lvl1"><a href="{{route('all.product')}}"><b>Achetez maintenant

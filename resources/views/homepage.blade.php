@@ -150,7 +150,14 @@
                         </div>
                     </div>
 
-
+                    <div class="col-md-3 p-3">
+                        <div id="ag_btn" class="text-center home_cat p-2">
+                            <i class="fa-solid fa-tractor"></i>
+                            <div>Services</div>
+                            <br>
+                            <input id="ag_ch" type="checkbox" name="add_category" value="Services" hidden>
+                        </div>
+                    </div>
 
                     <div class="col-md-3 p-3">
                         <div id="ser_btn" class="text-center home_cat p-2">
@@ -160,14 +167,7 @@
                             <input id="ser_ch" type="checkbox" name="add_category" value="Agriculture" hidden>
                         </div>
                     </div>
-                    <div class="col-md-3 p-3">
-                        <div id="ag_btn" class="text-center home_cat p-2">
-                            <i class="fa-solid fa-tractor"></i>
-                            <div>Services</div>
-                            <br>
-                            <input id="ag_ch" type="checkbox" name="add_category" value="Services" hidden>
-                        </div>
-                    </div>
+
                     <div class="col-md-3 p-3">
                         <div id="otr_btn" class="text-center home_cat p-2">
                             <i class="fa-solid fa-binoculars"></i>
