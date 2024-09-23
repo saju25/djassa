@@ -54,7 +54,6 @@
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                         <h4 class="h4">Service Client</h4>
                         <ul>
-                            <li><a href="#">Contactez-nous</a></li>
                             <li><a href="{{route('all.product')}}">Boutiques</a></li>
                             <li><a href="{{ route('profile.detail') }}">Mon compte</a></li>
                         </ul>

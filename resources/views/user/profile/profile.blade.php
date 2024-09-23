@@ -208,18 +208,18 @@
                 <form id="productForm" action="{{ route('user.update.info') }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
-                    <div class="modal-body">
+                    <div class="modal-body pro_phot">
                         <div class="col-md-12">
                             <div>
                                 <label class="col-form-label">Photo de profil</label>
                             </div>
-                            <input class="w-100 h-100" type="file" name="photo" />
+                            <input class="w-100 h-100 in_phot" type="file" name="photo" />
                         </div>
                         <div class="col-md-12">
                             <div>
                                 <label class="col-form-label">modifier nom de la boutique</label>
                             </div>
-                            <input  type="text" name="fullname" />
+                            <input  type="text" name="fullname" placeholder="modifier nom de la boutique" />
                         </div>
                         <div class="col-md-12">
                             <div>
