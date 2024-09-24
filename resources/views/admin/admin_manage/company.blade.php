@@ -21,7 +21,7 @@
                                    Banner Information
                                 </div>
                                 <div class="card-body">
-                                    <table id="datatablesSimple" class="table table-striped">
+                                    <table id="#myTable1" class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sl</th>
@@ -30,6 +30,7 @@
                                                 <th>Email Title</th>
                                                 <th>Phone</th>
                                                 <th>Location</th>
+                                                <th>About</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -44,10 +45,11 @@
 
 
 
-                                                <td>{{ucwords(Str:: limit($comIn->name , 25, '...')) }}</td>
-                                                <td >{{ucwords(Str:: limit($comIn->email , 25, '...'))}} </td>
-                                                <td >{{ucwords(Str:: limit($comIn->phone, 25, '...'))}} </td>
-                                                <td >{{ucwords(Str:: limit($comIn->location, 25, '...'))}} </td>
+                                                <td>{{ucwords(Str:: limit($comIn->name , 10, '...')) }}</td>
+                                                <td >{{ucwords(Str:: limit($comIn->email , 10, '...'))}} </td>
+                                                <td >{{ucwords(Str:: limit($comIn->phone, 10, '...'))}} </td>
+                                                <td >{{ucwords(Str:: limit($comIn->location, 10, '...'))}} </td>
+                                                <td >{{ucwords(Str:: limit($comIn->details, 10, '...'))}} </td>
                                                 <td ><a href="{{route('admin.comIn.update',$comIn->id)}}" class="btn btn-danger text-light">Edit</a></td>
                                                 <td ><a href="{{route('admin.comIn.delete',$comIn->id)}}" class="btn btn-danger text-light">Delete</a></td>
                                             </tr>
@@ -66,5 +68,20 @@
         </div>
     </div>
 
+ @push('styles')
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
+    @endpush
+    @push('script')
+    <script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable1').DataTable({
 
+            });
+        });
+        $.fn.dataTable.ext.errMode = 'throw';
+
+    </script>
+
+    @endpush
 </x-admin-app-layout>

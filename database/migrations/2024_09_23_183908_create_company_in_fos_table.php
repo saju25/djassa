@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->string('location');
             $table->string('photo');
+            $table->string('details');
             $table->timestamps();
 
         });

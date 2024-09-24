@@ -14,5 +14,6 @@ class CompanyInFo extends Model
         'phone',
         'location',
         'photo',
+        'details',
     ];
 }

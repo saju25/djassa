@@ -37,8 +37,12 @@
                                 <div class="card" style="width: 18rem;">
                                     <img height="150" class="card-img-top"
                                         src="{{asset('storage')}}/{{ $comIn->photo }}" alt="Card image cap">
+
                                     <div class="card-body">
                                         <h5 class="card-title">{{$comIn->name}}</h5>
+                                        <div class="mt-3 mb-3">
+                                            <p>{{$comIn->details}}</p>
+                                        </div>
                                         <ul class="pro_na">
                                             <li class="lvl1 mt-2">
                                                 <a href="mailto:{{$comIn->email}}">

@@ -63,8 +63,8 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="m-3 row">
-                                        <div class="col-md-12">
+                                      <div class="m-3 row">
+                                        <div class="col-md-6">
                                             <div>
                                                 <label class="col-form-label">Compay Logo</label>
                                             </div>
@@ -72,6 +72,17 @@
                                                 placeholder="Company E-mail">
 
                                             @error('photo')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div>
+                                                <label class="col-form-label">Compay Details</label>
+                                            </div>
+                                            <input type="text" name="details" class="form-control"
+                                                placeholder="About Your Company"  value="{{$comIns->details}}">
+
+                                            @error('details')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>

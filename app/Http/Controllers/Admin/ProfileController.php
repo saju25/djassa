@@ -91,6 +91,7 @@ class ProfileController extends Controller
             'phone' => $request->phone,
             'email' => $request->email,
             'location' => $request->location,
+            'details' => $request->details,
             'photo' => $photoPath,
         ]);
         return redirect()->route('admin.company.index')->with('success', 'Company added successfully!');
@@ -120,18 +121,20 @@ class ProfileController extends Controller
     }
     public function comInUpdate(Request $request, $id)
     {
+        // Validate the request data, including the 'details' field
         $request->validate([
             'name' => 'required|string|max:255',
             'phone' => 'required|numeric|digits_between:10,15|unique:company_in_fos,phone,' . $id,
             'email' => 'required|email|max:255|unique:company_in_fos,email,' . $id,
             'location' => 'required|string|max:255',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Photo is optional during update
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'details' => 'nullable|string', // Add validation rule for the 'details' field
         ]);
 
-// Find the company info by its ID
+        // Find the company info by its ID
         $companyInfo = CompanyInFo::findOrFail($id);
 
-// Handle photo upload and updating
+        // Handle photo upload and updating
         $photoPath = $companyInfo->photo; // Keep the old photo path by default
         if ($request->hasFile('photo')) {
             // Delete the old photo if it exists
@@ -142,15 +145,17 @@ class ProfileController extends Controller
             $photoPath = $request->file('photo')->store('photos', 'public');
         }
 
-// Update the company info with the new data
+        // Update the company info with the new data, including 'details'
         $companyInfo->update([
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
             'location' => $request->location,
             'photo' => $photoPath,
+            'details' => $request->details, // Ensure the 'details' field is being updated
         ]);
-        return redirect()->route('admin.company.index')->with('Company information updated successfully!');
 
+        return redirect()->route('admin.company.index')->with('success', 'Company information updated successfully!');
     }
+
 }
