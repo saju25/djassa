@@ -105,7 +105,7 @@ class AdminManageController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'sub_title' => 'nullable|string|max:255',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4072',
             'link' => 'nullable|url',
         ]);
 

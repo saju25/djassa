@@ -85,7 +85,7 @@
                                 <li class="lvl1 parent megamenu">
                                     <a href="{{Route('user.sub')}}">
 
-                                         Veuillez vous <span class="sub_tex">abonner</span>  au vendeur de permis.
+                                         Cliquez ici pour choisir votre abonnement.
 
                                     </a>
                                 </li>
