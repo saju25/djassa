@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
+        // Validate the form data
         $request->validate([
             'name' => 'required|string|max:255',
             'sku' => 'required|string|max:255',
@@ -43,44 +43,15 @@ class PostController extends Controller
             'number' => 'required|numeric',
         ]);
 
+        // Custom validation: Check if at least two images are uploaded
+        if (!$request->hasFile('product_img') || count($request->file('product_img')) < 2) {
+            return redirect()->back()->withErrors(['product_img' => 'Vous devez télécharger au moins deux images.']);
+        }
+
         $user = Auth::user();
-
-        // $enddate = Carbon::parse($hireCount->sub_date);
-
-        // $enddate = $enddate->addDays(30);
-
-        // $trial_end = Carbon::parse($hireCount->created_at)->addDays(30);
-
-        // if ($hireCount->sub_id == null) {
-        //     # code...
-        //     if ($trial_end->lt(Carbon::today())) {
-        //         # code...
-        //         toastr()->success('', 'Please Update subscription to hire!');
-        //         return redirect(route('user.sub'));
-        //     }
-        // } elseif ($hireCount->sub_id == 1) {
-        //     # code...
-        //     if ($enddate->lt(Carbon::today())) {
-        //         # code...
-        //         toastr()->success('', 'Please Update subscription to hire!');
-        //         return redirect(route('user.sub'));
-        //     }
-        //     if ($hireCount->hire_count > 29) {
-        //         # code...
-        //         toastr()->success('', 'Please Update subscription to hire!');
-        //         return redirect(route('user.sub'));
-        //     }
-        // } elseif ($hireCount->sub_id == 2) {
-        //     # code...
-        //     if ($enddate->lt(Carbon::today())) {
-        //         # code...
-        //         toastr()->success('', 'Please Update subscription to hire!');
-        //         return redirect(route('user.sub'));
-        //     }
-        // }
-
-// Store image files
         $imagePaths = [];
+
+        // Handle image upload
         if ($request->hasFile('product_img')) {
             foreach ($request->file('product_img') as $image) {
                 // Store the image in the public disk
@@ -90,7 +61,7 @@ class PostController extends Controller
             }
         }
 
-// Create a new product record
+        // Create a new product record
         $product = new Post();
         $product->user_id = $user->id;
         $product->name = $request->input('name');
@@ -107,11 +78,15 @@ class PostController extends Controller
         $product->city = $request->input('city');
         $product->number = $request->input('number');
 
+        // Save the product
         $product->save();
 
-        toastr()->success('', 'Your product add product  successfully  dones!');
+        toastr()->success('', 'Your product has been successfully added!');
+
+        // Redirect back
         return redirect()->back();
     }
+
     public function show($id)
     {
         $product = Post::where('id', $id)->first();

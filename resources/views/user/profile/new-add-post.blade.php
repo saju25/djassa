@@ -153,7 +153,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div>
-                                    <label class="col-form-label">Photo du produit</label>
+                                    <label class="col-form-label">Photo du produit(Ajoutez plus d’une image)</label>
                                 </div>
                                 <div class="dropify_div">
                                     <input type="file" id="input-file-now" name="product_img[]" class="dropify"
@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
 
-                                @error('photo')
+                                @error('product_img')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>

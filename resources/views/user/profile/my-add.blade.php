@@ -37,7 +37,7 @@
                                         $array = json_decode($imgs, true);
                                         @endphp
                                         <img class="data_table_img" src="{{ $array[0] }}" alt="">
-                                        {{ ucwords(Str::limit($post->name, 15, '...')) }}
+                                        {{ ucwords(Str::limit($post->name, 10, '...')) }}
                                     </a>
                                 </td>
                                 <td>{{ $post->sku }}</td>
