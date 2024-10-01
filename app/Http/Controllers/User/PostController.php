@@ -38,7 +38,7 @@ class PostController extends Controller
             'size' => 'nullable|json',
             'add_cate' => 'required|string|max:255',
             'sub_cate' => 'required|string|max:255',
-            'product_img.*' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'product_img.*' => 'image|mimes:jpeg,png,jpg,heic|max:2048',
             'city' => 'required|string|max:255',
             'number' => 'required|numeric',
         ]);
@@ -51,12 +51,9 @@ class PostController extends Controller
         $user = Auth::user();
         $imagePaths = [];
 
-        // Handle image upload
         if ($request->hasFile('product_img')) {
             foreach ($request->file('product_img') as $image) {
-                // Store the image in the public disk
                 $path = $image->store('images', 'public');
-                // Get the URL to the stored image
                 $imagePaths[] = Storage::url($path);
             }
         }

@@ -14,36 +14,56 @@ $(document).ready(function () {
 
 
 // Dropify data show
-
-
 $(document).ready(function () {
+       // Initialize Dropify
+       $('.dropify').dropify();
 
+       // Handle file input change
        $('#input-file-now').on('change', function () {
               var files = this.files;
-              var fileList = [];
-
               $('#file-preview').empty(); // Clear previous previews
 
-              for (var i = 0; i < files.length; i++) {
-                     fileList.push(files[i].name);
+              for (let i = 0; i < files.length; i++) {
+                     let file = files[i];
 
-                     var reader = new FileReader();
-
-
-                     reader.onload = function (e) {
-                            var img = $('<img>').attr('src', e.target.result).css({
-                                   'width': '100px',
-                                   'height': '100px',
-                                   'margin': '10px'
-                            });
-                            $('#file-preview').append(img);
-                     };
-
-                     reader.readAsDataURL(files[i]);
+                     if (file.type === "image/heic") {
+                            // Convert HEIC to JPG using heic2any
+                            heic2any({
+                                   blob: file,
+                                   toType: "image/jpeg"
+                            })
+                                   .then(function (convertedBlob) {
+                                          var reader = new FileReader();
+                                          reader.onload = function (e) {
+                                                 var img = $('<img>').attr('src', e.target.result).css({
+                                                        'width': '100px',
+                                                        'height': '100px',
+                                                        'margin': '10px'
+                                                 });
+                                                 $('#file-preview').append(img);
+                                          };
+                                          reader.readAsDataURL(convertedBlob); // Read the converted image as data URL for preview
+                                   })
+                                   .catch(function (error) {
+                                          console.error("HEIC conversion error: ", error);
+                                          alert("Failed to convert HEIC file.");
+                                   });
+                     } else {
+                            // For other image types (JPEG, PNG, etc.)
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                   var img = $('<img>').attr('src', e.target.result).css({
+                                          'width': '100px',
+                                          'height': '100px',
+                                          'margin': '10px'
+                                   });
+                                   $('#file-preview').append(img);
+                            };
+                            reader.readAsDataURL(file); // Read the image as data URL for preview
+                     }
               }
        });
 });
-
 // ClassicEditor add functionality
 $(document).ready(function () {
        ClassicEditor

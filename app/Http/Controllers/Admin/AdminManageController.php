@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\ImageManager;
 
 class AdminManageController extends Controller
 {
@@ -100,22 +102,25 @@ class AdminManageController extends Controller
     }
     public function bannerStore(Request $request)
     {
-        //dd($request->all());
+
+        dd(phpinfo());
         // Validate the incoming request
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'sub_title' => 'nullable|string|max:255',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4072',
+            // 'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg,heic,heif|max:4072',
             'link' => 'nullable|url',
         ]);
 
 // Handle file upload for the banner photo
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
+            $manager = new ImageManager(new Driver());
             $fileName = time() . '_' . $file->getClientOriginalName();
+            $image = $manager->read($file);
             $filePath = $file->storeAs('banners', $fileName, 'public');
+            $image->toJpeg(80)->save($filePath);
         }
-        //  dd($filePath);
 
 // Create a new banner record in the database
         $banner = new Banner();

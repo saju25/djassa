@@ -73,7 +73,7 @@
                             <div class="col-md-6">
                                 <div>
                                     <label class="col-form-label">Dernier prix
-</label>
+                                    </label>
                                 </div>
                                 <input type="number" name="discounted_price" class="form-control"
                                     placeholder="Denier prix">
@@ -183,8 +183,10 @@
                                     <option id="5" value="Immobilier">Immobilier</option>
                                     <option id="6" value="Maison & Vie">Maison & Vie</option>
                                     <option id="7" value="Mode et Soins pour Hommes">Mode et Soins pour Hommes</option>
-                                    <option id="8" value="Mode et Beauté pour Femmes">Mode et Beauté pour Femmes</option>
-                                    <option id="9" value="Animaux & Animaux de Compagnie">Animaux & Animaux de Compagnie</option>
+                                    <option id="8" value="Mode et Beauté pour Femmes">Mode et Beauté pour Femmes
+                                    </option>
+                                    <option id="9" value="Animaux & Animaux de Compagnie">Animaux & Animaux de Compagnie
+                                    </option>
                                     <option id="10" value="Loisirs, Sports & Enfants">Loisirs, Sports & Enfants</option>
                                     <option id="11" value="Affaires & Industrie">Affaires & Industrie</option>
                                     <option id="12" value="Éducation">Éducation</option>
@@ -214,7 +216,7 @@
                                 </div>
                                 <select class="form-select w-100" name="city">
                                     <option selected disabled>Choisissez en une
-</option>
+                                    </option>
                                     <option value="Abidjan">Abidjan</option>
                                     <option value="Aboisso">Aboisso</option>
                                     <option value="Adiaké">Adiaké</option>
@@ -334,6 +336,8 @@
     @endpush
     @push('script')
     <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.1.4/dist/heic2any.min.js"></script>
+
     <script src="{{ asset('assets') }}/js/dropify.js"></script>
     <script src="{{ asset('assets') }}/js/tagify.js"></script>
 
@@ -607,6 +611,7 @@
                 $('.meth').html(html); // Add the HTML to the .meth element
             });
         });
+
     </script>
 
     @endpush
