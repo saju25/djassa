@@ -101,13 +101,13 @@ class PostController extends Controller
         $product = Post::findOrFail($id);
         $imagePat = json_decode($product->img_path);
 
-        if (!$request->hasFile('product_img') || count($request->file('product_img')) < 2) {
-            return redirect()->back()->withErrors(['product_img' => 'Vous devez télécharger au moins deux images.']);
-        }
-
         $imagePaths = [];
 
         if ($request->hasFile('product_img')) {
+            if (!$request->hasFile('product_img') || count($request->file('product_img')) < 2) {
+                return redirect()->back()->withErrors(['product_img' => 'Vous devez télécharger au moins deux images.']);
+            }
+
             // delete old picture
             foreach ($imagePat as $image) {
                 $filePath = public_path('product/' . $image);

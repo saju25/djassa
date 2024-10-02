@@ -232,14 +232,7 @@
                                         <input type="number" name="number" placeholder="8855..." required>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-6">
-                                    <div class="form-group">
-                                        <label for="address_zip">Code postal</label>
-                                        <input type="text" id="zip_code" name="zip_code" placeholder="Code postal"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6">
+                                <div class="col-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <label for="">Entreprise de livraison</label>
                                          <select id="" name="dcompany" required>
@@ -247,7 +240,7 @@
                                                @forelse ($delivery as $deliver)
                                                    <option value="{{$deliver->name}}">{{$deliver->name}}</option>
                                               @empty
-                                               <option value="Any One">Any One</option>
+                                               <option value="Any One">n’importe laquelle</option>
                                               @endforelse
                                          </select>
                                     </div>

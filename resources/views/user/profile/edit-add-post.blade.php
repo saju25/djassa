@@ -137,15 +137,7 @@
             </div>
             <div class="dropify_div">
                 <input type="file" id="input-file-now" name="product_img[]" class="dropify" multiple />
-                <div id="file-preview">
-                    <!-- Display current images if needed -->
-                    @if($product->img_path)
-                        @foreach(json_decode($product->img_path) as $imgPath)
-                            <img src="{{ Storage::url($imgPath) }}" alt="Product Image" width="100" height="100">
-                        @endforeach
-                    @endif
                 </div>
-            </div>
             @error('product_img')
             <span class="text-danger">{{ $message }}</span>
             @enderror

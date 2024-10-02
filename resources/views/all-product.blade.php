@@ -989,11 +989,11 @@
                                                 @if ( $array )
                                                 <!-- image -->
 
-                                                <img class="primary blur-up lazyload" src=" {{$array[0]}}" alt="image"
+                                                <img class="primary blur-up lazyload" src="{{asset('product')}}/{{$array[0]}}" alt="image"
                                                     title="product">
                                                 <!-- End image -->
                                                 <!-- Hover image -->
-                                                <img class="hover blur-up lazyload" src=" {{$array[1]}}" alt="image"
+                                                <img class="hover blur-up lazyload" src="{{asset('product')}}/{{$array[1]}}" alt="image"
                                                     title="product">
                                                 <!-- End hover image -->
                                                 @endif
