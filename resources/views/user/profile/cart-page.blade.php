@@ -39,7 +39,7 @@
                                     $array = json_decode( $imgs, true);
                                     @endphp
                                     <td class="cart__image-wrapper cart-flex-item">
-                                        <a href="#"><img class="cart__image" src="{{$array[0]}}"
+                                        <a href="#"><img class="cart__image" src="{{asset('product')}}/{{$array[0]}}"
                                                 alt="Elastic Waist Dress - Navy / Small"></a>
                                     </td>
                                     <td class="cart__meta small--text-left cart-flex-item">

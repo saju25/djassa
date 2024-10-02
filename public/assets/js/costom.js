@@ -68,12 +68,22 @@ $(document).ready(function () {
 $(document).ready(function () {
        ClassicEditor
               .create(document.querySelector('#editor'), {
-                     toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
                      heading: {
                             options: [
-                                   { model: 'paragraphe', title: 'Paragraphe', class: 'ck-heading_paragraph' },
+                                   { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
                                    { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
                                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                            ]
+                     },
+                     // Disable content filtering
+                     htmlSupport: {
+                            allow: [
+                                   {
+                                          name: /.*/, // Allow all elements
+                                          attributes: true,
+                                          classes: true,
+                                          styles: true
+                                   }
                             ]
                      }
               })
@@ -83,8 +93,8 @@ $(document).ready(function () {
               .catch(error => {
                      console.error(error);
               });
-
 });
+
 
 
 

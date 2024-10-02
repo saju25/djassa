@@ -33,15 +33,15 @@
                                         @foreach($array as $image)
                                         <a data-image="{{ $image}}" data-zoom-image="{{ $image}}"
                                             class="slick-slide slick-cloned">
-                                            <img class="blur-up lazyload" src="{{ $image}}" alt="" />
+                                            <img class="blur-up lazyload" src="{{asset('product')}}/{{ $image}}" alt="" />
                                         </a>
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="zoompro-wrap product-zoom-right pl-20">
                                     <div class="zoompro-span">
-                                        <img class="blur-up lazyload zoompro" data-zoom-image="{{ $array[0]}}" alt=""
-                                            src="{{ $array[0]}}" />
+                                        <img class="blur-up lazyload zoompro" data-zoom-image="{{asset('product')}}/{{$array[0]}}" alt=""
+                                            src="{{asset('product')}}/{{$array[0]}}" />
                                     </div>
                                     <div class="product-labels"><span class="lbl on-sale">Nouveau</span><span
                                             class="lbl pr-label1">En vente</span></div>

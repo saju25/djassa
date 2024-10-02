@@ -8,7 +8,6 @@ use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Imagick\Driver;
 use Intervention\Image\ImageManager;
 
@@ -103,7 +102,7 @@ class AdminManageController extends Controller
     public function bannerStore(Request $request)
     {
 
-        dd(phpinfo());
+        // dd(phpinfo());
         // Validate the incoming request
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
@@ -116,10 +115,10 @@ class AdminManageController extends Controller
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $manager = new ImageManager(new Driver());
-            $fileName = time() . '_' . $file->getClientOriginalName();
+            $fileName = time() . '_' . '.png';
             $image = $manager->read($file);
-            $filePath = $file->storeAs('banners', $fileName, 'public');
-            $image->toJpeg(80)->save($filePath);
+            $image->toPng(indexed: true)->save(base_path('public/banners/' . $fileName));
+            $filePath = $fileName;
         }
 
 // Create a new banner record in the database
@@ -150,7 +149,7 @@ class AdminManageController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'sub_title' => 'nullable|string|max:255',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            //'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'link' => 'nullable|url',
         ]);
 
@@ -163,16 +162,22 @@ class AdminManageController extends Controller
         $banner->link = $validatedData['link'];
 
         // Handle file upload for the banner photo
+
         if ($request->hasFile('photo')) {
             // Delete the old photo if necessary (optional)
             if ($banner->photo) {
-                Storage::disk('public')->delete($banner->photo);
+                $filePath = public_path('banners/' . $banner->photo);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
             }
 
-            // Upload the new photo
             $file = $request->file('photo');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('banners', $fileName, 'public');
+            $manager = new ImageManager(new Driver());
+            $fileName = time() . '_' . '.png';
+            $image = $manager->read($file);
+            $image->toPng(indexed: true)->save(base_path('public/banners/' . $fileName));
+            $filePath = $fileName;
             $banner->photo = $filePath; // Update the photo path
         }
 
@@ -190,10 +195,7 @@ class AdminManageController extends Controller
 
         // Check if the banner has an associated photo
         if ($banner->photo) {
-            // Get the file path and delete the file from storage
-            $filePath = public_path('storage/' . $banner->photo);
-
-            // Check if the file exists before attempting to delete
+            $filePath = public_path('banners/' . $banner->photo);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }

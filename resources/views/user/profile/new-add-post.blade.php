@@ -76,7 +76,7 @@
                                     </label>
                                 </div>
                                 <input type="number" name="discounted_price" class="form-control"
-                                    placeholder="Denier prix">
+                                    placeholder="Dernier prix">
 
                                 @error('discounted_price')
                                 <span class="text-danger">{{ $message }}</span>
@@ -395,7 +395,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Téléphones portables">Téléphones portables</option>
                         <option value="Accessoires pour téléphones portables">Accessoires pour téléphones portables</option>
                         <option value="Mobiles">Mobiles</option>
@@ -410,7 +410,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Ordinateurs de bureau">Ordinateurs de bureau</option>
                         <option value="Ordinateurs portables & accessoires">Ordinateurs portables & accessoires</option>
                         <option value="Tablettes & accessoires">Tablettes & accessoires</option>
@@ -431,7 +431,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Voitures">Voitures</option>
                         <option value="Motos">Motos</option>
                         <option value="Vélos">Vélos</option>
@@ -452,7 +452,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Terrains à vendre">Terrains à vendre</option>
                         <option value="Appartements à vendre">Appartements à vendre</option>
                         <option value="Maisons à vendre">Maisons à vendre</option>
@@ -464,7 +464,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Meubles de bureau & de magasin">Meubles de bureau & de magasin</option>
                         <option value="Meubles pour enfants"> Meubles pour enfants</option>
                         <option value="Articles ménagers">Articles ménagers</option>
@@ -478,7 +478,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                          <option id="1" selected disabled>Choosissez en un</option>
+                          <option id="1" selected disabled>Choisissez en une</option>
                          <option value="Vestes & Manteaux">Vestes & Manteaux</option>
                          <option value="Chemises & T-Shirts">Chemises & T-Shirts</option>
                          <option value="Pantalons">Pantalons</option>
@@ -498,7 +498,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                        <option id="1" selected disabled>Choosissez en un</option>
+                        <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Vêtements traditionnels">Vêtements traditionnels</option>
                         <option value="Vêtements d'hiver">Vêtements d'hiver</option>
                         <option value="Sacs & Accessoires">Sacs & Accessoires</option>
@@ -516,7 +516,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='client_type' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                         <option value="Animaux de compagnie">Animaux de compagnie</option>
                         <option value="Animaux de ferme">Animaux de ferme</option>
                         <option value="Accessoires pour animaux">Accessoires pour animaux</option>
@@ -529,7 +529,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                        <option value="Instruments de musique">Instruments de musique</option>
                        <option value="Sports">Sports</option>
                        <option value="Fitness & Gym">Fitness & Gym</option>
@@ -543,7 +543,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                      <option id="1" selected disabled>Choosissez en un</option>
+                      <option id="1" selected disabled>Choisissez en une</option>
                       <option value="Fournitures de bureau & papeterie">Fournitures de bureau & papeterie</option>
                       <option value="Sécurité">Sécurité</option>
                       <option value="Machines & outils industriels">Machines & outils industriels</option>
@@ -558,7 +558,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                       <option value="Manuels scolaires">Manuels scolaires</option>
                       <option value="Cours particuliers">Cours particuliers</option>
                       <option value="Cours">Cours</option>
@@ -571,7 +571,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='client_type' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                      <option value="Produits pour bébés">Produits pour bébés</option>
                      <option value="Soins de santé">Soins de santé</option>
                      <option value="Articles ménagers">Articles ménagers</option>
@@ -583,7 +583,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                          <option value="Entretien de bâtiments">Entretien de bâtiments</option>
                          <option value="Services domestiques & de garde d'enfants">Services domestiques & de garde d'enfants</option>
                          <option value="Services de fitness & de beauté">Services de fitness & de beauté</option>
@@ -600,7 +600,7 @@
                     html = `
                     <label>Sélectionnez une sous-catégorie</label>
                     <select name='sub_cate' class='form-control'>
-                         <option id="1" selected disabled>Choosissez en un</option>
+                         <option id="1" selected disabled>Choisissez en une</option>
                          <option value="Cultures, semences & plantes">Cultures, semences & plantes</option>
                          <option value="Outils & machines agricoles">Outils & machines agricoles</option>
                          <option value="Autres articles agricoles">Autres articles agricoles</option>

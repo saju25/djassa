@@ -2,7 +2,7 @@
     <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">Buying Product</h1>
+                <h1 class="page-width">Produits a acheter</h1>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
                     $imgs = $postsById[$order->add_id]->img_path;
                     $array = json_decode($imgs, true);
                     @endphp
-                    <img class="data_table_img" src="{{ $array[0] }}" alt="">
+                    <img class="data_table_img" src="{{asset('product')}}/{{$array[0]}}" alt="">
                     {{ ucwords(Str::limit($postsById[$order->add_id]->name, 45, '...')) }}
                 </a>
             </td>

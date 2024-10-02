@@ -7,7 +7,7 @@
                 @forelse ($banners as $banner)
                 <div class="slide">
                     <div class="blur-up lazyload bg-size">
-                        <img class="blur-up lazyload bg-img" src="{{asset('storage')}}/{{ $banner->photo }}"
+                        <img class="blur-up lazyload bg-img" src="{{asset('banners')}}/{{ $banner->photo }}"
                             title="Shop Our New Collection" />
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
@@ -222,11 +222,11 @@
                                     @if ( $array )
                                     <!-- image -->
 
-                                    <img class="primary blur-up lazyload" src=" {{$array[0]}}" alt="image"
+                                    <img class="primary blur-up lazyload" src="{{asset('product')}}/{{$array[0]}}" alt="image"
                                         title="product">
                                     <!-- End image -->
                                     <!-- Hover image -->
-                                    <img class="hover blur-up lazyload" src=" {{$array[1]}}" alt="image"
+                                    <img class="hover blur-up lazyload" src="{{asset('product')}}/{{$array[1]}}" alt="image"
                                         title="product">
                                     <!-- End hover image -->
                                     @endif

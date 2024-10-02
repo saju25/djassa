@@ -7,6 +7,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\ImageManager;
 
 class PostController extends Controller
 {
@@ -38,7 +40,7 @@ class PostController extends Controller
             'size' => 'nullable|json',
             'add_cate' => 'required|string|max:255',
             'sub_cate' => 'required|string|max:255',
-            'product_img.*' => 'image|mimes:jpeg,png,jpg,heic|max:2048',
+            // 'product_img.*' => 'image|mimes:jpeg,png,jpg,heic|max:2048',
             'city' => 'required|string|max:255',
             'number' => 'required|numeric',
         ]);
@@ -53,8 +55,11 @@ class PostController extends Controller
 
         if ($request->hasFile('product_img')) {
             foreach ($request->file('product_img') as $image) {
-                $path = $image->store('images', 'public');
-                $imagePaths[] = Storage::url($path);
+                $manager = new ImageManager(new Driver());
+                $fileName = time() . '_' . uniqid() . '.png';
+                $image = $manager->read($image);
+                $image->toPng(indexed: true)->save(base_path('public/product/' . $fileName));
+                $imagePaths[] = $fileName;
             }
         }
 
@@ -94,17 +99,32 @@ class PostController extends Controller
     {
         // Retrieve the existing product record
         $product = Post::findOrFail($id);
+        $imagePat = json_decode($product->img_path);
 
-        // Initialize an array to hold image paths
+        if (!$request->hasFile('product_img') || count($request->file('product_img')) < 2) {
+            return redirect()->back()->withErrors(['product_img' => 'Vous devez télécharger au moins deux images.']);
+        }
+
         $imagePaths = [];
 
-        // Check if new images are uploaded
         if ($request->hasFile('product_img')) {
+            // delete old picture
+            foreach ($imagePat as $image) {
+                $filePath = public_path('product/' . $image);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+
+            }
+            // add new picture
             foreach ($request->file('product_img') as $image) {
-                // Store the image in the public disk
-                $path = $image->store('images', 'public');
-                // Get the URL to the stored image
-                $imagePaths[] = Storage::url($path);
+                $manager = new ImageManager(new Driver());
+                $fileName = time() . '_' . '.png';
+                $image = $manager->read($image);
+                $image->toPng(indexed: true)->save(base_path('public/product/' . $fileName));
+                $filePath = $fileName;
+                $imagePaths[] = $filePath; //
+
             }
         }
 
@@ -162,7 +182,15 @@ class PostController extends Controller
     {
         // Find the user by ID
         $product = Post::findOrFail($id);
+        $imagePat = json_decode($product->img_path);
 
+        foreach ($imagePat as $imgPath) {
+            $filePath = public_path('product/' . $imgPath);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+
+        }
         if ($product) {
             $product->delete(); // Delete the user
             toastr()->success('', 'Product Delete successfully!');

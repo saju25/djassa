@@ -2,7 +2,7 @@
     <div class="page section-header text-center ">
         <div class="page-title">
             <div class="wrapper">
-                <h1 class="page-width">My Add Page</h1>
+                <h1 class="page-width">Mes annonces</h1>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                                         $imgs = $post->img_path;
                                         $array = json_decode($imgs, true);
                                         @endphp
-                                        <img class="data_table_img" src="{{ $array[0] }}" alt="">
+                                        <img class="data_table_img" src="{{asset('product')}}/{{$array[0]}}" alt="">
                                         {{ ucwords(Str::limit($post->name, 10, '...')) }}
                                     </a>
                                 </td>

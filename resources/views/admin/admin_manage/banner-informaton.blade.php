@@ -38,7 +38,7 @@
                                          <tr>
                                                 <td>{{ $banner->id }}</td>
                                                 <td>
-                                                    <img height="50" width="50" class="img-fluid" src="{{asset('storage')}}/{{ $banner->photo }}" alt="">
+                                                    <img height="50" width="50" class="img-fluid" src="{{asset('banners')}}/{{ $banner->photo }}" alt="">
                                                 </td>
 
 

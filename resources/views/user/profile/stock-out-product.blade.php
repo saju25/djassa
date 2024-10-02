@@ -35,7 +35,7 @@
                     $imgs = $post->img_path;
                     $array = json_decode($imgs, true);
                     @endphp
-                    <img class="data_table_img" src="{{ $array[0] }}" alt="">
+                    <img class="data_table_img" src="{{asset('product')}}/{{$array[0]}}" alt="">
                     {{ ucwords(Str::limit($post->name, 15, '...')) }}
                 </a>
             </td>
