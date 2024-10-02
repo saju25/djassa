@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button id="print-button" class="btn btn-success">Print</button>
+                    <button id="print-button" class="btn btn-success">Imprimer</button>
                 </div>
             </div>
         </div>
