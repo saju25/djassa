@@ -18,36 +18,33 @@ $(document).ready(function () {
        // Initialize Dropify
        $('.dropify').dropify();
 
+       // Function to get the file extension
+       function getFileExtension(file) {
+              return file.name.split('.').pop().toLowerCase(); // Get the extension and convert to lower case
+       }
+
        // Handle file input change
        $('#input-file-now').on('change', function () {
               var files = this.files;
               $('#file-preview').empty(); // Clear previous previews
+              let heicMessageDisplayed = false; // Flag to track if the message has been displayed
 
               for (let i = 0; i < files.length; i++) {
                      let file = files[i];
+                     var extension = getFileExtension(file); // Get the file extension
+                     console.log('File:', file);
+                     console.log('Extension:', extension); // Log the file extension
 
-                     if (file.type === "image/heic") {
-                            // Convert HEIC to JPG using heic2any
-                            heic2any({
-                                   blob: file,
-                                   toType: "image/jpeg"
-                            })
-                                   .then(function (convertedBlob) {
-                                          var reader = new FileReader();
-                                          reader.onload = function (e) {
-                                                 var img = $('<img>').attr('src', e.target.result).css({
-                                                        'width': '100px',
-                                                        'height': '100px',
-                                                        'margin': '10px'
-                                                 });
-                                                 $('#file-preview').append(img);
-                                          };
-                                          reader.readAsDataURL(convertedBlob); // Read the converted image as data URL for preview
-                                   })
-                                   .catch(function (error) {
-                                          console.error("HEIC conversion error: ", error);
-                                          alert("Failed to convert HEIC file.");
+                     if (extension === "heic") {
+                            if (!heicMessageDisplayed) { // Check if the message has already been displayed
+                                   console.log("hello");
+                                   var textDiv = $('<div>').text(`Vous avez sélectionné le fichier ${extension} et vous ne pouvez donc pas voir l'aperçu. Si le bon fichier est sélectionné, continuez`).css({
+                                          'margin': '10px',
+                                          'text-align': 'center'
                                    });
+                                   $('#file-preview').append(textDiv);
+                                   heicMessageDisplayed = true; // Set the flag to true after displaying the message
+                            }
                      } else {
                             // For other image types (JPEG, PNG, etc.)
                             var reader = new FileReader();
@@ -57,13 +54,16 @@ $(document).ready(function () {
                                           'height': '100px',
                                           'margin': '10px'
                                    });
+                                   // Append the image and the text div to the preview container
                                    $('#file-preview').append(img);
                             };
                             reader.readAsDataURL(file); // Read the image as data URL for preview
                      }
               }
+
        });
 });
+
 // ClassicEditor add functionality
 $(document).ready(function () {
        ClassicEditor
