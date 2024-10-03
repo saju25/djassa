@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -91,8 +92,23 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $product = Post::where('id', $id)->first();
-        return view('user.profile.edit-add-post', compact('product'));
+        $now = Carbon::now();
+        $authUser = Auth::user();
+        if ($authUser->created_at < $now->subDays(30)) {
+            if (empty($user->sub_id)) {
+                return redirect()->route('user.sub');
+
+            } else {
+                $product = Post::where('id', $id)->first();
+                return view('user.profile.edit-add-post', compact('product'));
+
+            }
+
+        } else {
+            $product = Post::where('id', $id)->first();
+            return view('user.profile.edit-add-post', compact('product'));
+
+        }
 
     }
     public function update(Request $request, $id)

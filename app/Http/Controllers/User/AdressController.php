@@ -30,6 +30,7 @@ class AdressController extends Controller
             $photo->move(public_path($destinationPath), $fileNameToStore);
             $userinfo->photo = 'files/profile_photo/' . $fileNameToStore;
         }
+        $userinfo->fullname = $request->input('fullname');
         $userinfo->phone = $request->input('phone');
         $userinfo->password = $request->input('password');
 

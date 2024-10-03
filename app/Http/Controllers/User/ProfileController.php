@@ -7,7 +7,9 @@ use App\Models\Order;
 use App\Models\Post;
 use App\Models\SocialMedia;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -22,10 +24,20 @@ class ProfileController extends Controller
     public function profileAdd(Request $request)
     {
         $user = $request->user();
-//  dd($user->sub_id);
+        $now = Carbon::now();
+        $authUser = Auth::user();
+        if ($authUser->created_at < $now->subDays(30)) {
+            if (empty($user->sub_id)) {
+                return redirect()->route('user.sub');
+            } else {
+                $user = $request->user();
 
-        if (empty($user->sub_id)) {
-            return redirect()->route('user.sub');
+                $posts = Post::where('user_id', $user->id)->get();
+
+                return view('user.profile.my-add', compact('user', 'posts'));
+
+            }
+
         } else {
             $user = $request->user();
 
@@ -39,9 +51,27 @@ class ProfileController extends Controller
     public function orderList(Request $request)
     {
         $user = $request->user();
+        $now = Carbon::now();
+        $authUser = Auth::user();
 
-        if (empty($user->sub_id)) {
-            return redirect()->route('user.sub');
+        if ($authUser->created_at < $now->subDays(30)) {
+            if (empty($user->sub_id)) {
+                return redirect()->route('user.sub');
+            } else {
+                $posts = Post::all();
+                $orders = Order::where('post_by_user', $user->id)
+                    ->orderBy('created_at', 'desc') // Sort in descending order for LIFO
+                    ->get();
+                $userid = 0;
+
+                foreach ($orders as $order) {
+                    $userid = $order->user_id;
+                }
+                $postsById = $posts->keyBy('id');
+                return view('user.profile.my-order', compact('user', 'orders', 'postsById', 'userid'));
+
+            }
+
         } else {
             $posts = Post::all();
             $orders = Order::where('post_by_user', $user->id)
@@ -88,10 +118,21 @@ class ProfileController extends Controller
     public function stockOut(Request $request)
     {
         $user = $request->user();
-        //  dd($user->sub_id);
+        $now = Carbon::now();
+        $authUser = Auth::user();
 
-        if (empty($user->sub_id)) {
-            return redirect()->route('user.sub');
+        if ($authUser->created_at < $now->subDays(30)) {
+            if (empty($user->sub_id)) {
+                return redirect()->route('user.sub');
+            } else {
+                $posts = Post::where('user_id', $user->id)
+                    ->where('sku', '1') // Only fetch posts where sku is '1'
+                    ->get();
+
+                return view('user.profile.stock-out-product', compact('user', 'posts'));
+
+            }
+
         } else {
             $posts = Post::where('user_id', $user->id)
                 ->where('sku', '1') // Only fetch posts where sku is '1'
