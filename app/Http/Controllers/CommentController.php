@@ -41,29 +41,35 @@ class CommentController extends Controller
             ->orderBy('created_at', 'desc')
             ->first();
 
-        $daysPassed = Carbon::now()->diffInDays($order->updated_at);
+        if (empty($order->updated_at)) {
+            toastr()->error('', "Si vous n'achetez pas le produit, vous ne pouvez pas commenter");
 
-        // dd($order->status);
-        if (empty($order->status)) {
-            toastr()->error('', 'You can comment after the buy!');
         } else {
-            if ($order->status == "Delivered") {
-                if ($daysPassed < 3) {
-                    $user = Auth::user();
-                    $comment = new comment();
-                    $comment->user_id = $user->id;
-                    $comment->post_id = $request->post_id;
-                    $comment->rating = $request->rating;
-                    $comment->comment = $request->comment;
-                    $comment->save();
+            $daysPassed = Carbon::now()->diffInDays($order->updated_at);
+
+// dd($order->status);
+            if (empty($order->status)) {
+                toastr()->error('', "Vous pouvez commenter après l'achat !");
+            } else {
+                if ($order->status == "Delivered") {
+                    if ($daysPassed < 3) {
+                        $user = Auth::user();
+                        $comment = new comment();
+                        $comment->user_id = $user->id;
+                        $comment->post_id = $request->post_id;
+                        $comment->rating = $request->rating;
+                        $comment->comment = $request->comment;
+                        $comment->save();
+
+                    } else {
+                        toastr()->error('', "Vous pouvez commenter dans les 3 jours !");
+
+                    }
 
                 } else {
-                    toastr()->error('', 'You can comment within 3 days!');
-
+                    toastr()->error('', "Vous pouvez commenter après la livraison !");
                 }
 
-            } else {
-                toastr()->error('', 'You can comment after the delivery!');
             }
 
         }
@@ -72,35 +78,4 @@ class CommentController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

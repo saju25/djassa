@@ -53,7 +53,7 @@ class OrderController extends Controller
         $order->status = $request->input('status');
         $order->save();
         // Redirect to a desired route with a success message
-        return redirect()->route('home')->with('success', 'Order created successfully.');
+        return redirect()->route('home')->with('success', "Commande créée avec succès.");
     }
 
     public function update(Request $request, $id)
@@ -72,7 +72,7 @@ class OrderController extends Controller
         $order->save();
 
         // Show a success message and redirect
-        toastr()->success('Product updated successfully!');
+        toastr()->success("Produit mis à jour avec succès !");
         return redirect()->route('profile.order');
     }
 

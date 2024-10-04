@@ -84,7 +84,7 @@ class PostController extends Controller
         // Save the product
         $product->save();
 
-        toastr()->success('', 'Your product has been successfully added!');
+        toastr()->success('', "Votre produit a été ajouté avec succès !");
 
         // Redirect back
         return redirect()->back();
@@ -190,7 +190,7 @@ class PostController extends Controller
         // Save the updated record
         $product->save();
 
-        toastr()->success('', 'Product updated successfully!');
+        toastr()->success('', "Produit mis à jour avec succès !");
         return redirect()->route('profile.add');
     }
 
@@ -209,11 +209,11 @@ class PostController extends Controller
         }
         if ($product) {
             $product->delete(); // Delete the user
-            toastr()->success('', 'Product Delete successfully!');
+            toastr()->success('', "Produit supprimé avec succès !");
             return redirect()->route('profile.add');
 
         } else {
-            toastr()->success('', 'Product not found!');
+            toastr()->success('', "Produit non trouvé !");
             return redirect()->route('profile.add');
 
         }

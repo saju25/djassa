@@ -44,14 +44,14 @@ class SubController extends Controller
 
         $user->save();
 
-        toastr()->success('', 'You have successfully registered!');
+        toastr()->success('', "Vous vous êtes inscrit avec succès !");
 
         return redirect()->route('home');
     }
 
     public function fail(Request $request)
     {
-        toastr()->success("", "Invalid credentials provided for payment!");
+        toastr()->success("", "Informations d'identification non valides fournies pour le paiement !");
         return redirect(route('user.sub'));
     }
 }
